@@ -102,6 +102,8 @@ plt.show()
 fig = plt.figure()
 
 plt.plot(errors_array)
+plt.xlabel("steps")
+plt.ylabel("the sum of errors")
 print(errors_array[-1])
 
 # show the plot
