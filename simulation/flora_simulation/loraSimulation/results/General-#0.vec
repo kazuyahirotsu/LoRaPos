@@ -1,0 +1,184 @@
+version 3
+run General-0-20230420-14:11:33-58960
+attr configname General
+attr datetime 20230420-14:11:33
+attr datetimef 20230420-141133
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network loraSimulation.LoRaNetwork
+attr processid 58960
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config image-path ../../../../Downloads/omnetpp-6.0.1/samples/inet4.4/images
+config network loraSimulation.LoRaNetwork
+config **.maxTransmissionDuration 4s
+config **.energyDetection -110dBm
+config **.numberOfNodes 4
+config **.numberOfGateways 1
+config **.loRaNodes[*].LoRaNic.radio.energyConsumer.typename LoRaEnergyConsumer
+config **.loRaNodes[*].**.energySourceModule "\"^.IdealEpEnergyStorage\""
+config **.loRaNodes[*].LoRaNic.radio.energyConsumer.configFile "xmldoc(\"energyConsumptionParameters.xml\")"
+config **.sigma 3.57
+config **.constraintAreaMinX 0m
+config **.constraintAreaMinY 0m
+config **.constraintAreaMinZ 0m
+config **.constraintAreaMaxZ 0m
+config LoRaNetwork.**.radio.separateTransmissionParts false
+config LoRaNetwork.**.radio.separateReceptionParts false
+config **.ipv4Delayer.config "xmldoc(\"cloudDelays.xml\")"
+config **.radio.radioMediumModule "\"LoRaMedium\""
+config **.LoRaMedium.pathLossType "\"LoRaLogNormalShadowing\""
+config **.minInterferenceTime 0s
+config **.displayAddresses false
+config **.LoRaMedium.mediumLimitCacheType "\"LoRaMediumCache\""
+config **.LoRaMedium.rangeFilter "\"communicationRange\""
+config **.LoRaMedium.neighborCacheType "\"LoRaNeighborCache\""
+config **.LoRaMedium.neighborCache.range 546m
+config **.LoRaMedium.neighborCache.refillPeriod 3000s
+
+vector 0 LoRaNetwork.loRaGW[0].udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetSentToUpper
+attr title "packets passed up, count"
+vector 1 LoRaNetwork.loRaGW[0].udp droppedPkWrongPort:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+vector 2 LoRaNetwork.loRaGW[0].udp droppedPkBadChecksum:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+vector 3 LoRaNetwork.loRaNodes[0].LoRaNic.radio.IdealEpEnergyStorage powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source powerConsumptionChanged
+attr title "Power consumption"
+vector 4 LoRaNetwork.loRaNodes[1].LoRaNic.radio.IdealEpEnergyStorage powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source powerConsumptionChanged
+attr title "Power consumption"
+vector 5 LoRaNetwork.loRaNodes[2].LoRaNic.radio.IdealEpEnergyStorage powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source powerConsumptionChanged
+attr title "Power consumption"
+vector 6 LoRaNetwork.loRaNodes[3].LoRaNic.radio.IdealEpEnergyStorage powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source powerConsumptionChanged
+attr title "Power consumption"
+vector 7 LoRaNetwork.loRaNodes[0].LoRaNic.radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source radioModeChanged
+attr title "Radio mode"
+vector 8 LoRaNetwork.loRaNodes[0].LoRaNic.radio.energyConsumer powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source powerConsumptionChanged
+attr title "Power consumption"
+vector 9 LoRaNetwork.loRaNodes[1].LoRaNic.radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source radioModeChanged
+attr title "Radio mode"
+vector 10 LoRaNetwork.loRaNodes[1].LoRaNic.radio.energyConsumer powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source powerConsumptionChanged
+attr title "Power consumption"
+vector 11 LoRaNetwork.loRaNodes[2].LoRaNic.radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source radioModeChanged
+attr title "Radio mode"
+vector 12 LoRaNetwork.loRaNodes[2].LoRaNic.radio.energyConsumer powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source powerConsumptionChanged
+attr title "Power consumption"
+vector 13 LoRaNetwork.loRaNodes[3].LoRaNic.radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source radioModeChanged
+attr title "Radio mode"
+vector 14 LoRaNetwork.loRaNodes[3].LoRaNic.radio.energyConsumer powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source powerConsumptionChanged
+attr title "Power consumption"
+vector 15 LoRaNetwork.loRaGW[0].LoRaGWNic.radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source radioModeChanged
+attr title "Radio mode"
+vector 16 LoRaNetwork.loRaGW[0].LoRaGWNic.radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source receptionStateChanged
+attr title "Radio reception state"
+vector 17 LoRaNetwork.loRaGW[0].LoRaGWNic.radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "Radio transmission state"
+0	0	0	0
+1	0	0	0
+2	0	0	0
+3	0	0	0
+3	0	0	0
+3	0	0	0
+3	0	0	0
+4	0	0	0
+4	0	0	0
+4	0	0	0
+4	0	0	0
+5	0	0	0
+5	0	0	0
+5	0	0	0
+5	0	0	0
+6	0	0	0
+6	0	0	0
+6	0	0	0
+6	0	0	0
+7	0	0	0
+7	0	0	0
+7	0	0	1
+8	0	0	0
+8	0	0	0
+8	0	0	0
+9	0	0	0
+9	0	0	0
+9	0	0	1
+10	0	0	0
+10	0	0	0
+10	0	0	0
+11	0	0	0
+11	0	0	0
+11	0	0	1
+12	0	0	0
+12	0	0	0
+12	0	0	0
+13	0	0	0
+13	0	0	0
+13	0	0	1
+14	0	0	0
+14	0	0	0
+14	0	0	0
+15	0	0	0
+15	0	0	0
+15	0	0	4
+16	0	0	1
+17	0	0	1
+
