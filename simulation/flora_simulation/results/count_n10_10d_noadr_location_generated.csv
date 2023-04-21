@@ -1,0 +1,11 @@
+run,repetition,module,name,value
+General-0-20230421-16:55:12-47656,0,LoRaNetworkTest.networkServer.app[0],numReceivedFromNode 0,765
+General-0-20230421-16:55:12-47656,0,LoRaNetworkTest.networkServer.app[0],numReceivedFromNode 1,738
+General-0-20230421-16:55:12-47656,0,LoRaNetworkTest.networkServer.app[0],numReceivedFromNode 2,737
+General-0-20230421-16:55:12-47656,0,LoRaNetworkTest.networkServer.app[0],numReceivedFromNode 3,713
+General-0-20230421-16:55:12-47656,0,LoRaNetworkTest.networkServer.app[0],numReceivedFromNode 4,730
+General-0-20230421-16:55:12-47656,0,LoRaNetworkTest.networkServer.app[0],numReceivedFromNode 5,782
+General-0-20230421-16:55:12-47656,0,LoRaNetworkTest.networkServer.app[0],numReceivedFromNode 6,752
+General-0-20230421-16:55:12-47656,0,LoRaNetworkTest.networkServer.app[0],numReceivedFromNode 7,692
+General-0-20230421-16:55:12-47656,0,LoRaNetworkTest.networkServer.app[0],numReceivedFromNode 8,712
+General-0-20230421-16:55:12-47656,0,LoRaNetworkTest.networkServer.app[0],numReceivedFromNode 9,734

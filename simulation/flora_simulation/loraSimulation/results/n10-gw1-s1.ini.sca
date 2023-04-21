@@ -1,8 +1,8 @@
 version 3
-run General-1-20230420-16:34:44-14298
+run General-1-20230421-12:38:45-71481
 attr configname General
-attr datetime 20230420-16:34:44
-attr datetimef 20230420-163444
+attr datetime 20230421-12:38:45
+attr datetimef 20230421-123845
 attr experiment General
 attr inifile n10-gw1.ini
 attr iterationvars "$0=\"avg\""
@@ -10,7 +10,7 @@ attr iterationvarsd avg
 attr iterationvarsf avg-
 attr measurement "$0=\"avg\""
 attr network flora.simulations.LoRaNetworkTest
-attr processid 14298
+attr processid 71481
 attr repetition 1
 attr replication #1
 attr resultdir results
@@ -37,7 +37,7 @@ config **.networkServer.app[0].destPort 2000
 config **.networkServer.app[0].localPort 1000
 config **.networkServer.app[0].adrMethod "\"avg\""
 config **.numberOfPacketsToSend 0
-config sim-time-limit 1d
+config sim-time-limit 100d
 config simtime-resolution -11
 config repeat 5
 config **.timeToFirstPacket exponential(1000s)
@@ -328,7 +328,7 @@ attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetP
 attr title "queue bit length, timeavg"
 attr unit b
 statistic LoRaNetworkTest.loRaNodes[0].LoRaNic.queue queueingTime:histogram
-field count 81
+field count 872
 field mean 0
 field stddev 0
 field min 0
@@ -366,7 +366,7 @@ bin	-0.08	0
 bin	-0.06	0
 bin	-0.04	0
 bin	-0.02	0
-bin	0	81
+bin	0	872
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -392,25 +392,25 @@ bin	0.44	0
 bin	0.46	0
 bin	0.48	0
 bin	0.5	0
-scalar LoRaNetworkTest.loRaNodes[0].LoRaNic.queue outgoingPackets:count 81
+scalar LoRaNetworkTest.loRaNodes[0].LoRaNic.queue outgoingPackets:count 872
 attr recordingmode count
 attr source packetPulled
 attr title "outgoing packets, count"
 attr unit pk
-scalar LoRaNetworkTest.loRaNodes[0].LoRaNic.queue outgoingPacketLengths:sum 6480
+scalar LoRaNetworkTest.loRaNodes[0].LoRaNic.queue outgoingPacketLengths:sum 69760
 attr interpolationmode none
 attr recordingmode sum
 attr source packetLength(packetPulled)
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic LoRaNetworkTest.loRaNodes[0].LoRaNic.queue outgoingPacketLengths:histogram
-field count 81
+field count 872
 field mean 80
 field stddev 0
 field min 80
 field max 80
-field sum 6480
-field sqrsum 518400
+field sum 69760
+field sqrsum 5580800
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetLength(packetPulled)
@@ -418,7 +418,7 @@ attr title "outgoing packet lengths"
 attr unit b
 bin	-inf	0
 bin	79	0
-bin	80	81
+bin	80	872
 bin	81	0
 statistic LoRaNetworkTest.loRaNodes[0].LoRaNic.queue flowQueueingTime:histogram
 field count 0
@@ -436,25 +436,25 @@ attr unit s
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar LoRaNetworkTest.loRaNodes[0].LoRaNic.queue incomingPackets:count 81
+scalar LoRaNetworkTest.loRaNodes[0].LoRaNic.queue incomingPackets:count 872
 attr recordingmode count
 attr source packetPushStarted
 attr title "incoming packets, count"
 attr unit pk
-scalar LoRaNetworkTest.loRaNodes[0].LoRaNic.queue incomingPacketLengths:sum 6480
+scalar LoRaNetworkTest.loRaNodes[0].LoRaNic.queue incomingPacketLengths:sum 69760
 attr interpolationmode none
 attr recordingmode sum
 attr source packetLength(packetPushStarted)
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic LoRaNetworkTest.loRaNodes[0].LoRaNic.queue incomingPacketLengths:histogram
-field count 81
+field count 872
 field mean 80
 field stddev 0
 field min 80
 field max 80
-field sum 6480
-field sqrsum 518400
+field sum 69760
+field sqrsum 5580800
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetLength(packetPushStarted)
@@ -462,7 +462,7 @@ attr title "incoming packet lengths"
 attr unit b
 bin	-inf	0
 bin	79	0
-bin	80	81
+bin	80	872
 bin	81	0
 scalar LoRaNetworkTest.loRaNodes[0].LoRaNic.queue droppedPacketsQueueOverflow:count 0
 attr interpolationmode none
@@ -506,8 +506,8 @@ par LoRaNetworkTest.loRaNodes[0].LoRaNic.mac retryLimit 7
 scalar LoRaNetworkTest.loRaNodes[0].LoRaNic.mac numRetry 0
 scalar LoRaNetworkTest.loRaNodes[0].LoRaNic.mac numSentWithoutRetry 0
 scalar LoRaNetworkTest.loRaNodes[0].LoRaNic.mac numGivenUp 0
-scalar LoRaNetworkTest.loRaNodes[0].LoRaNic.mac numSent 81
-scalar LoRaNetworkTest.loRaNodes[0].LoRaNic.mac numReceived 3
+scalar LoRaNetworkTest.loRaNodes[0].LoRaNic.mac numSent 872
+scalar LoRaNetworkTest.loRaNodes[0].LoRaNic.mac numReceived 39
 scalar LoRaNetworkTest.loRaNodes[0].LoRaNic.mac numSentBroadcast 0
 scalar LoRaNetworkTest.loRaNodes[0].LoRaNic.mac numReceivedBroadcast 0
 scalar LoRaNetworkTest.loRaNodes[0].LoRaNic.mac packetDropIncorrectlyReceived:count 0
@@ -572,7 +572,7 @@ attr unit Hz
 par LoRaNetworkTest.loRaNodes[0].LoRaNic.radio.transmitter bandwidth 250000Hz
 attr unit Hz
 par LoRaNetworkTest.loRaNodes[0].LoRaNic.radio.transmitter modulation "\"LoRaModulation\""
-scalar LoRaNetworkTest.loRaNodes[0].LoRaNic.radio.transmitter LoRaTransmissionCreated:count 81
+scalar LoRaNetworkTest.loRaNodes[0].LoRaNic.radio.transmitter LoRaTransmissionCreated:count 872
 attr recordingmode count
 attr source LoRaTransmissionCreated
 par LoRaNetworkTest.loRaNodes[0].LoRaNic.radio.receiver typename "\"flora.LoRaPhy.LoRaReceiver\""
@@ -591,7 +591,7 @@ attr unit Hz
 par LoRaNetworkTest.loRaNodes[0].LoRaNic.radio.receiver modulation "\"BPSK\""
 par LoRaNetworkTest.loRaNodes[0].LoRaNic.radio.receiver alohaChannelModel false
 scalar LoRaNetworkTest.loRaNodes[0].LoRaNic.radio.receiver numCollisions 0
-scalar LoRaNetworkTest.loRaNodes[0].LoRaNic.radio.receiver rcvBelowSensitivity 2
+scalar LoRaNetworkTest.loRaNodes[0].LoRaNic.radio.receiver rcvBelowSensitivity 5
 scalar LoRaNetworkTest.loRaNodes[0].LoRaNic.radio.receiver LoRaReceptionCollision:count 0
 attr recordingmode count
 attr source LoRaReceptionCollision
@@ -626,9 +626,9 @@ attr unit W
 par LoRaNetworkTest.loRaNodes[0].LoRaNic.radio.energyConsumer transmitterTransmittingDataPowerConsumption 0.1W
 attr unit W
 par LoRaNetworkTest.loRaNodes[0].LoRaNic.radio.energyConsumer configFile "<root>...</root> at /Users/hiro/LoRaPos/simulation/flora_simulation/loraSimulation/exmples//../energyConsumptionParameters.xml:2"
-scalar LoRaNetworkTest.loRaNodes[0].LoRaNic.radio.energyConsumer totalEnergyConsumed 5.8658245777159
+scalar LoRaNetworkTest.loRaNodes[0].LoRaNic.radio.energyConsumer totalEnergyConsumed 61.730277931385
 par LoRaNetworkTest.loRaNodes[0].LoRaNic.radio.IdealEpEnergyStorage typename "\"inet.power.storage.IdealEpEnergyStorage\""
-scalar LoRaNetworkTest.loRaNodes[0].LoRaNic.radio.IdealEpEnergyStorage residualEnergyCapacity:last -5.8658245777159
+scalar LoRaNetworkTest.loRaNodes[0].LoRaNic.radio.IdealEpEnergyStorage residualEnergyCapacity:last -61.730277931385
 attr interpolationmode linear
 attr recordingmode last
 attr source residualEnergyCapacityChanged
@@ -649,61 +649,62 @@ attr unit Hz
 par LoRaNetworkTest.loRaNodes[0].LoRaNic.radio bandwidth 250000Hz
 attr unit Hz
 par LoRaNetworkTest.loRaNodes[0].LoRaNic.radio iAmGateway false
-scalar LoRaNetworkTest.loRaNodes[0].LoRaNic.radio radioMode:count 489
+scalar LoRaNetworkTest.loRaNodes[0].LoRaNic.radio radioMode:count 5180
 attr interpolationmode sample-hold
 attr recordingmode count
 attr source radioModeChanged
 attr title "Radio mode, count"
-scalar LoRaNetworkTest.loRaNodes[0].LoRaNic.radio receptionState:count 332
+scalar LoRaNetworkTest.loRaNodes[0].LoRaNic.radio receptionState:count 3524
 attr interpolationmode sample-hold
 attr recordingmode count
 attr source receptionStateChanged
 attr title "Radio reception state, count"
-scalar LoRaNetworkTest.loRaNodes[0].LoRaNic.radio transmissionState:count 324
+scalar LoRaNetworkTest.loRaNodes[0].LoRaNic.radio transmissionState:count 3488
 attr interpolationmode sample-hold
 attr recordingmode count
 attr source transmissionStateChanged
 attr title "Radio transmission state, count"
 statistic LoRaNetworkTest.loRaNodes[0].LoRaNic.radio minSnir:histogram
-field count 3
-field mean 36.576264328389
-field stddev 22.309375663618
-field min 12.579628472257
+field count 43
+field mean 11.999903925872
+field stddev 13.668487476825
+field min 1.7628074554849
 field max 56.688110662247
-field sum 109.72879298517
-field sqrsum 5008.8858216615
+field sum 515.99586881251
+field sqrsum 14038.65794787
 attr recordingmode histogram
 attr source minimumSnir(packetSentToUpper)
 attr title "Min SNIR"
 bin	-inf	0
-bin	1	0
-bin	2	0
-bin	3	0
-bin	4	0
-bin	5	0
-bin	6	0
-bin	7	0
-bin	8	0
-bin	9	0
+bin	0	0
+bin	1	2
+bin	2	5
+bin	3	1
+bin	4	5
+bin	5	7
+bin	6	3
+bin	7	3
+bin	8	3
+bin	9	1
 bin	10	0
-bin	11	0
-bin	12	1
+bin	11	1
+bin	12	2
 bin	13	0
 bin	14	0
-bin	15	0
+bin	15	2
 bin	16	0
-bin	17	0
+bin	17	1
 bin	18	0
 bin	19	0
 bin	20	0
 bin	21	0
-bin	22	0
+bin	22	1
 bin	23	0
-bin	24	0
+bin	24	1
 bin	25	0
 bin	26	0
 bin	27	0
-bin	28	0
+bin	28	1
 bin	29	0
 bin	30	0
 bin	31	0
@@ -724,9 +725,9 @@ bin	45	0
 bin	46	0
 bin	47	0
 bin	48	0
-bin	49	0
+bin	49	1
 bin	50	0
-bin	51	0
+bin	51	1
 bin	52	0
 bin	53	0
 bin	54	0
@@ -744,8 +745,11 @@ bin	65	0
 bin	66	0
 bin	67	0
 bin	68	0
+bin	69	0
+bin	70	0
+bin	71	0
 statistic LoRaNetworkTest.loRaNodes[0].LoRaNic.radio packetErrorRate:histogram
-field count 3
+field count 43
 field mean 0
 field stddev 0
 field min 0
@@ -781,7 +785,7 @@ bin	-0.08	0
 bin	-0.06	0
 bin	-0.04	0
 bin	-0.02	0
-bin	0	3
+bin	0	43
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -808,7 +812,7 @@ bin	0.46	0
 bin	0.48	0
 bin	0.5	0
 statistic LoRaNetworkTest.loRaNodes[0].LoRaNic.radio bitErrorRate:histogram
-field count 3
+field count 43
 field mean 0
 field stddev 0
 field min 0
@@ -844,7 +848,7 @@ bin	-0.08	0
 bin	-0.06	0
 bin	-0.04	0
 bin	-0.02	0
-bin	0	3
+bin	0	43
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -871,7 +875,7 @@ bin	0.46	0
 bin	0.48	0
 bin	0.5	0
 statistic LoRaNetworkTest.loRaNodes[0].LoRaNic.radio symbolErrorRate:histogram
-field count 3
+field count 43
 field mean 0
 field stddev 0
 field min 0
@@ -907,7 +911,7 @@ bin	-0.08	0
 bin	-0.06	0
 bin	-0.04	0
 bin	-0.02	0
-bin	0	3
+bin	0	43
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -982,9 +986,9 @@ scalar LoRaNetworkTest.loRaNodes[0].app[0] positionX 590.63
 scalar LoRaNetworkTest.loRaNodes[0].app[0] positionY 529.08
 scalar LoRaNetworkTest.loRaNodes[0].app[0] finalTP 8
 scalar LoRaNetworkTest.loRaNodes[0].app[0] finalSF 7
-scalar LoRaNetworkTest.loRaNodes[0].app[0] sentPackets 81
-scalar LoRaNetworkTest.loRaNodes[0].app[0] receivedADRCommands 3
-scalar LoRaNetworkTest.loRaNodes[0].app[0] LoRa_AppPacketSent:count 81
+scalar LoRaNetworkTest.loRaNodes[0].app[0] sentPackets 872
+scalar LoRaNetworkTest.loRaNodes[0].app[0] receivedADRCommands 39
+scalar LoRaNetworkTest.loRaNodes[0].app[0] LoRa_AppPacketSent:count 872
 attr recordingmode count
 attr source LoRa_AppPacketSent
 par LoRaNetworkTest.loRaNodes[0] typename "\"flora.LoraNode.LoRaNode\""
@@ -1087,7 +1091,7 @@ attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetP
 attr title "queue bit length, timeavg"
 attr unit b
 statistic LoRaNetworkTest.loRaNodes[1].LoRaNic.queue queueingTime:histogram
-field count 94
+field count 859
 field mean 0
 field stddev 0
 field min 0
@@ -1125,7 +1129,7 @@ bin	-0.08	0
 bin	-0.06	0
 bin	-0.04	0
 bin	-0.02	0
-bin	0	94
+bin	0	859
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -1151,25 +1155,25 @@ bin	0.44	0
 bin	0.46	0
 bin	0.48	0
 bin	0.5	0
-scalar LoRaNetworkTest.loRaNodes[1].LoRaNic.queue outgoingPackets:count 94
+scalar LoRaNetworkTest.loRaNodes[1].LoRaNic.queue outgoingPackets:count 859
 attr recordingmode count
 attr source packetPulled
 attr title "outgoing packets, count"
 attr unit pk
-scalar LoRaNetworkTest.loRaNodes[1].LoRaNic.queue outgoingPacketLengths:sum 7520
+scalar LoRaNetworkTest.loRaNodes[1].LoRaNic.queue outgoingPacketLengths:sum 68720
 attr interpolationmode none
 attr recordingmode sum
 attr source packetLength(packetPulled)
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic LoRaNetworkTest.loRaNodes[1].LoRaNic.queue outgoingPacketLengths:histogram
-field count 94
+field count 859
 field mean 80
 field stddev 0
 field min 80
 field max 80
-field sum 7520
-field sqrsum 601600
+field sum 68720
+field sqrsum 5497600
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetLength(packetPulled)
@@ -1177,7 +1181,7 @@ attr title "outgoing packet lengths"
 attr unit b
 bin	-inf	0
 bin	79	0
-bin	80	94
+bin	80	859
 bin	81	0
 statistic LoRaNetworkTest.loRaNodes[1].LoRaNic.queue flowQueueingTime:histogram
 field count 0
@@ -1195,25 +1199,25 @@ attr unit s
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar LoRaNetworkTest.loRaNodes[1].LoRaNic.queue incomingPackets:count 94
+scalar LoRaNetworkTest.loRaNodes[1].LoRaNic.queue incomingPackets:count 859
 attr recordingmode count
 attr source packetPushStarted
 attr title "incoming packets, count"
 attr unit pk
-scalar LoRaNetworkTest.loRaNodes[1].LoRaNic.queue incomingPacketLengths:sum 7520
+scalar LoRaNetworkTest.loRaNodes[1].LoRaNic.queue incomingPacketLengths:sum 68720
 attr interpolationmode none
 attr recordingmode sum
 attr source packetLength(packetPushStarted)
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic LoRaNetworkTest.loRaNodes[1].LoRaNic.queue incomingPacketLengths:histogram
-field count 94
+field count 859
 field mean 80
 field stddev 0
 field min 80
 field max 80
-field sum 7520
-field sqrsum 601600
+field sum 68720
+field sqrsum 5497600
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetLength(packetPushStarted)
@@ -1221,7 +1225,7 @@ attr title "incoming packet lengths"
 attr unit b
 bin	-inf	0
 bin	79	0
-bin	80	94
+bin	80	859
 bin	81	0
 scalar LoRaNetworkTest.loRaNodes[1].LoRaNic.queue droppedPacketsQueueOverflow:count 0
 attr interpolationmode none
@@ -1265,8 +1269,8 @@ par LoRaNetworkTest.loRaNodes[1].LoRaNic.mac retryLimit 7
 scalar LoRaNetworkTest.loRaNodes[1].LoRaNic.mac numRetry 0
 scalar LoRaNetworkTest.loRaNodes[1].LoRaNic.mac numSentWithoutRetry 0
 scalar LoRaNetworkTest.loRaNodes[1].LoRaNic.mac numGivenUp 0
-scalar LoRaNetworkTest.loRaNodes[1].LoRaNic.mac numSent 94
-scalar LoRaNetworkTest.loRaNodes[1].LoRaNic.mac numReceived 4
+scalar LoRaNetworkTest.loRaNodes[1].LoRaNic.mac numSent 859
+scalar LoRaNetworkTest.loRaNodes[1].LoRaNic.mac numReceived 38
 scalar LoRaNetworkTest.loRaNodes[1].LoRaNic.mac numSentBroadcast 0
 scalar LoRaNetworkTest.loRaNodes[1].LoRaNic.mac numReceivedBroadcast 0
 scalar LoRaNetworkTest.loRaNodes[1].LoRaNic.mac packetDropIncorrectlyReceived:count 0
@@ -1331,7 +1335,7 @@ attr unit Hz
 par LoRaNetworkTest.loRaNodes[1].LoRaNic.radio.transmitter bandwidth 250000Hz
 attr unit Hz
 par LoRaNetworkTest.loRaNodes[1].LoRaNic.radio.transmitter modulation "\"LoRaModulation\""
-scalar LoRaNetworkTest.loRaNodes[1].LoRaNic.radio.transmitter LoRaTransmissionCreated:count 94
+scalar LoRaNetworkTest.loRaNodes[1].LoRaNic.radio.transmitter LoRaTransmissionCreated:count 859
 attr recordingmode count
 attr source LoRaTransmissionCreated
 par LoRaNetworkTest.loRaNodes[1].LoRaNic.radio.receiver typename "\"flora.LoRaPhy.LoRaReceiver\""
@@ -1350,7 +1354,7 @@ attr unit Hz
 par LoRaNetworkTest.loRaNodes[1].LoRaNic.radio.receiver modulation "\"BPSK\""
 par LoRaNetworkTest.loRaNodes[1].LoRaNic.radio.receiver alohaChannelModel false
 scalar LoRaNetworkTest.loRaNodes[1].LoRaNic.radio.receiver numCollisions 0
-scalar LoRaNetworkTest.loRaNodes[1].LoRaNic.radio.receiver rcvBelowSensitivity 0
+scalar LoRaNetworkTest.loRaNodes[1].LoRaNic.radio.receiver rcvBelowSensitivity 3
 scalar LoRaNetworkTest.loRaNodes[1].LoRaNic.radio.receiver LoRaReceptionCollision:count 0
 attr recordingmode count
 attr source LoRaReceptionCollision
@@ -1385,9 +1389,9 @@ attr unit W
 par LoRaNetworkTest.loRaNodes[1].LoRaNic.radio.energyConsumer transmitterTransmittingDataPowerConsumption 0.1W
 attr unit W
 par LoRaNetworkTest.loRaNodes[1].LoRaNic.radio.energyConsumer configFile "<root>...</root> at /Users/hiro/LoRaPos/simulation/flora_simulation/loraSimulation/exmples//../energyConsumptionParameters.xml:2"
-scalar LoRaNetworkTest.loRaNodes[1].LoRaNic.radio.energyConsumer totalEnergyConsumed 7.2610718183971
+scalar LoRaNetworkTest.loRaNodes[1].LoRaNic.radio.energyConsumer totalEnergyConsumed 62.923126979814
 par LoRaNetworkTest.loRaNodes[1].LoRaNic.radio.IdealEpEnergyStorage typename "\"inet.power.storage.IdealEpEnergyStorage\""
-scalar LoRaNetworkTest.loRaNodes[1].LoRaNic.radio.IdealEpEnergyStorage residualEnergyCapacity:last -7.2610718183971
+scalar LoRaNetworkTest.loRaNodes[1].LoRaNic.radio.IdealEpEnergyStorage residualEnergyCapacity:last -62.923126979814
 attr interpolationmode linear
 attr recordingmode last
 attr source residualEnergyCapacityChanged
@@ -1408,137 +1412,96 @@ attr unit Hz
 par LoRaNetworkTest.loRaNodes[1].LoRaNic.radio bandwidth 250000Hz
 attr unit Hz
 par LoRaNetworkTest.loRaNodes[1].LoRaNic.radio iAmGateway false
-scalar LoRaNetworkTest.loRaNodes[1].LoRaNic.radio radioMode:count 559
+scalar LoRaNetworkTest.loRaNodes[1].LoRaNic.radio radioMode:count 5104
 attr interpolationmode sample-hold
 attr recordingmode count
 attr source radioModeChanged
 attr title "Radio mode, count"
-scalar LoRaNetworkTest.loRaNodes[1].LoRaNic.radio receptionState:count 376
+scalar LoRaNetworkTest.loRaNodes[1].LoRaNic.radio receptionState:count 3476
 attr interpolationmode sample-hold
 attr recordingmode count
 attr source receptionStateChanged
 attr title "Radio reception state, count"
-scalar LoRaNetworkTest.loRaNodes[1].LoRaNic.radio transmissionState:count 376
+scalar LoRaNetworkTest.loRaNodes[1].LoRaNic.radio transmissionState:count 3436
 attr interpolationmode sample-hold
 attr recordingmode count
 attr source transmissionStateChanged
 attr title "Radio transmission state, count"
 statistic LoRaNetworkTest.loRaNodes[1].LoRaNic.radio minSnir:histogram
-field count 4
-field mean 12.777458706812
-field stddev 6.980481089707
-field min 5.9998254614985
-field max 19.284661151857
-field sum 51.109834827248
-field sqrsum 799.23515274841
+field count 45
+field mean 5.9925291825274
+field stddev 5.0487937287718
+field min 1.1029531392589
+field max 24.129669037165
+field sum 269.66381321373
+field sqrsum 2737.5422672451
 attr recordingmode histogram
 attr source minimumSnir(packetSentToUpper)
 attr title "Min SNIR"
 bin	-inf	0
-bin	2.6	0
-bin	2.8	0
-bin	3	0
-bin	3.2	0
-bin	3.4	0
-bin	3.6	0
-bin	3.8	0
+bin	0	0
+bin	0.5	0
+bin	1	3
+bin	1.5	5
+bin	2	3
+bin	2.5	3
+bin	3	7
+bin	3.5	2
 bin	4	0
-bin	4.2	0
-bin	4.4	0
-bin	4.6	0
-bin	4.8	0
-bin	5	0
-bin	5.2	0
-bin	5.4	0
-bin	5.6	0
-bin	5.8	1
-bin	6	0
-bin	6.2	0
-bin	6.4	0
-bin	6.6	0
-bin	6.8	0
-bin	7	0
-bin	7.2	0
-bin	7.4	1
-bin	7.6	0
-bin	7.8	0
+bin	4.5	0
+bin	5	1
+bin	5.5	3
+bin	6	1
+bin	6.5	2
+bin	7	3
+bin	7.5	4
 bin	8	0
-bin	8.2	0
-bin	8.4	0
-bin	8.6	0
-bin	8.8	0
+bin	8.5	2
 bin	9	0
-bin	9.2	0
-bin	9.4	0
-bin	9.6	0
-bin	9.8	0
+bin	9.5	1
 bin	10	0
-bin	10.2	0
-bin	10.4	0
-bin	10.6	0
-bin	10.8	0
+bin	10.5	0
 bin	11	0
-bin	11.2	0
-bin	11.4	0
-bin	11.6	0
-bin	11.8	0
+bin	11.5	0
 bin	12	0
-bin	12.2	0
-bin	12.4	0
-bin	12.6	0
-bin	12.8	0
-bin	13	0
-bin	13.2	0
-bin	13.4	0
-bin	13.6	0
-bin	13.8	0
-bin	14	0
-bin	14.2	0
-bin	14.4	0
-bin	14.6	0
-bin	14.8	0
+bin	12.5	0
+bin	13	1
+bin	13.5	0
+bin	14	1
+bin	14.5	0
 bin	15	0
-bin	15.2	0
-bin	15.4	0
-bin	15.6	0
-bin	15.8	0
+bin	15.5	0
 bin	16	0
-bin	16.2	0
-bin	16.4	0
-bin	16.6	0
-bin	16.8	0
+bin	16.5	0
 bin	17	0
-bin	17.2	0
-bin	17.4	0
-bin	17.6	0
-bin	17.8	0
-bin	18	0
-bin	18.2	1
-bin	18.4	0
-bin	18.6	0
-bin	18.8	0
-bin	19	0
-bin	19.2	1
-bin	19.4	0
-bin	19.6	0
-bin	19.8	0
+bin	17.5	0
+bin	18	1
+bin	18.5	0
+bin	19	1
+bin	19.5	0
 bin	20	0
-bin	20.2	0
-bin	20.4	0
-bin	20.6	0
-bin	20.8	0
+bin	20.5	0
 bin	21	0
-bin	21.2	0
-bin	21.4	0
-bin	21.6	0
-bin	21.8	0
+bin	21.5	0
 bin	22	0
-bin	22.2	0
-bin	22.4	0
-bin	22.6	0
-bin	22.8	0
+bin	22.5	0
+bin	23	0
+bin	23.5	0
+bin	24	1
+bin	24.5	0
+bin	25	0
+bin	25.5	0
+bin	26	0
+bin	26.5	0
+bin	27	0
+bin	27.5	0
+bin	28	0
+bin	28.5	0
+bin	29	0
+bin	29.5	0
+bin	30	0
 statistic LoRaNetworkTest.loRaNodes[1].LoRaNic.radio packetErrorRate:histogram
-field count 4
+field count 45
 field mean 0
 field stddev 0
 field min 0
@@ -1574,7 +1537,7 @@ bin	-0.08	0
 bin	-0.06	0
 bin	-0.04	0
 bin	-0.02	0
-bin	0	4
+bin	0	45
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -1601,7 +1564,7 @@ bin	0.46	0
 bin	0.48	0
 bin	0.5	0
 statistic LoRaNetworkTest.loRaNodes[1].LoRaNic.radio bitErrorRate:histogram
-field count 4
+field count 45
 field mean 0
 field stddev 0
 field min 0
@@ -1637,7 +1600,7 @@ bin	-0.08	0
 bin	-0.06	0
 bin	-0.04	0
 bin	-0.02	0
-bin	0	4
+bin	0	45
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -1664,7 +1627,7 @@ bin	0.46	0
 bin	0.48	0
 bin	0.5	0
 statistic LoRaNetworkTest.loRaNodes[1].LoRaNic.radio symbolErrorRate:histogram
-field count 4
+field count 45
 field mean 0
 field stddev 0
 field min 0
@@ -1700,7 +1663,7 @@ bin	-0.08	0
 bin	-0.06	0
 bin	-0.04	0
 bin	-0.02	0
-bin	0	4
+bin	0	45
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -1773,11 +1736,11 @@ par LoRaNetworkTest.loRaNodes[1].app[0] dataSize 10B
 attr unit B
 scalar LoRaNetworkTest.loRaNodes[1].app[0] positionX 488.29
 scalar LoRaNetworkTest.loRaNodes[1].app[0] positionY 504.24
-scalar LoRaNetworkTest.loRaNodes[1].app[0] finalTP 11
-scalar LoRaNetworkTest.loRaNodes[1].app[0] finalSF 8
-scalar LoRaNetworkTest.loRaNodes[1].app[0] sentPackets 94
-scalar LoRaNetworkTest.loRaNodes[1].app[0] receivedADRCommands 4
-scalar LoRaNetworkTest.loRaNodes[1].app[0] LoRa_AppPacketSent:count 94
+scalar LoRaNetworkTest.loRaNodes[1].app[0] finalTP 14
+scalar LoRaNetworkTest.loRaNodes[1].app[0] finalSF 7
+scalar LoRaNetworkTest.loRaNodes[1].app[0] sentPackets 859
+scalar LoRaNetworkTest.loRaNodes[1].app[0] receivedADRCommands 38
+scalar LoRaNetworkTest.loRaNodes[1].app[0] LoRa_AppPacketSent:count 859
 attr recordingmode count
 attr source LoRa_AppPacketSent
 par LoRaNetworkTest.loRaNodes[1] typename "\"flora.LoraNode.LoRaNode\""
@@ -1880,7 +1843,7 @@ attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetP
 attr title "queue bit length, timeavg"
 attr unit b
 statistic LoRaNetworkTest.loRaNodes[2].LoRaNic.queue queueingTime:histogram
-field count 90
+field count 876
 field mean 0
 field stddev 0
 field min 0
@@ -1918,7 +1881,7 @@ bin	-0.08	0
 bin	-0.06	0
 bin	-0.04	0
 bin	-0.02	0
-bin	0	90
+bin	0	876
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -1944,25 +1907,25 @@ bin	0.44	0
 bin	0.46	0
 bin	0.48	0
 bin	0.5	0
-scalar LoRaNetworkTest.loRaNodes[2].LoRaNic.queue outgoingPackets:count 90
+scalar LoRaNetworkTest.loRaNodes[2].LoRaNic.queue outgoingPackets:count 876
 attr recordingmode count
 attr source packetPulled
 attr title "outgoing packets, count"
 attr unit pk
-scalar LoRaNetworkTest.loRaNodes[2].LoRaNic.queue outgoingPacketLengths:sum 7200
+scalar LoRaNetworkTest.loRaNodes[2].LoRaNic.queue outgoingPacketLengths:sum 70080
 attr interpolationmode none
 attr recordingmode sum
 attr source packetLength(packetPulled)
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic LoRaNetworkTest.loRaNodes[2].LoRaNic.queue outgoingPacketLengths:histogram
-field count 90
+field count 876
 field mean 80
 field stddev 0
 field min 80
 field max 80
-field sum 7200
-field sqrsum 576000
+field sum 70080
+field sqrsum 5606400
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetLength(packetPulled)
@@ -1970,7 +1933,7 @@ attr title "outgoing packet lengths"
 attr unit b
 bin	-inf	0
 bin	79	0
-bin	80	90
+bin	80	876
 bin	81	0
 statistic LoRaNetworkTest.loRaNodes[2].LoRaNic.queue flowQueueingTime:histogram
 field count 0
@@ -1988,25 +1951,25 @@ attr unit s
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar LoRaNetworkTest.loRaNodes[2].LoRaNic.queue incomingPackets:count 90
+scalar LoRaNetworkTest.loRaNodes[2].LoRaNic.queue incomingPackets:count 876
 attr recordingmode count
 attr source packetPushStarted
 attr title "incoming packets, count"
 attr unit pk
-scalar LoRaNetworkTest.loRaNodes[2].LoRaNic.queue incomingPacketLengths:sum 7200
+scalar LoRaNetworkTest.loRaNodes[2].LoRaNic.queue incomingPacketLengths:sum 70080
 attr interpolationmode none
 attr recordingmode sum
 attr source packetLength(packetPushStarted)
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic LoRaNetworkTest.loRaNodes[2].LoRaNic.queue incomingPacketLengths:histogram
-field count 90
+field count 876
 field mean 80
 field stddev 0
 field min 80
 field max 80
-field sum 7200
-field sqrsum 576000
+field sum 70080
+field sqrsum 5606400
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetLength(packetPushStarted)
@@ -2014,7 +1977,7 @@ attr title "incoming packet lengths"
 attr unit b
 bin	-inf	0
 bin	79	0
-bin	80	90
+bin	80	876
 bin	81	0
 scalar LoRaNetworkTest.loRaNodes[2].LoRaNic.queue droppedPacketsQueueOverflow:count 0
 attr interpolationmode none
@@ -2058,8 +2021,8 @@ par LoRaNetworkTest.loRaNodes[2].LoRaNic.mac retryLimit 7
 scalar LoRaNetworkTest.loRaNodes[2].LoRaNic.mac numRetry 0
 scalar LoRaNetworkTest.loRaNodes[2].LoRaNic.mac numSentWithoutRetry 0
 scalar LoRaNetworkTest.loRaNodes[2].LoRaNic.mac numGivenUp 0
-scalar LoRaNetworkTest.loRaNodes[2].LoRaNic.mac numSent 90
-scalar LoRaNetworkTest.loRaNodes[2].LoRaNic.mac numReceived 4
+scalar LoRaNetworkTest.loRaNodes[2].LoRaNic.mac numSent 876
+scalar LoRaNetworkTest.loRaNodes[2].LoRaNic.mac numReceived 37
 scalar LoRaNetworkTest.loRaNodes[2].LoRaNic.mac numSentBroadcast 0
 scalar LoRaNetworkTest.loRaNodes[2].LoRaNic.mac numReceivedBroadcast 0
 scalar LoRaNetworkTest.loRaNodes[2].LoRaNic.mac packetDropIncorrectlyReceived:count 0
@@ -2124,7 +2087,7 @@ attr unit Hz
 par LoRaNetworkTest.loRaNodes[2].LoRaNic.radio.transmitter bandwidth 250000Hz
 attr unit Hz
 par LoRaNetworkTest.loRaNodes[2].LoRaNic.radio.transmitter modulation "\"LoRaModulation\""
-scalar LoRaNetworkTest.loRaNodes[2].LoRaNic.radio.transmitter LoRaTransmissionCreated:count 90
+scalar LoRaNetworkTest.loRaNodes[2].LoRaNic.radio.transmitter LoRaTransmissionCreated:count 876
 attr recordingmode count
 attr source LoRaTransmissionCreated
 par LoRaNetworkTest.loRaNodes[2].LoRaNic.radio.receiver typename "\"flora.LoRaPhy.LoRaReceiver\""
@@ -2143,7 +2106,7 @@ attr unit Hz
 par LoRaNetworkTest.loRaNodes[2].LoRaNic.radio.receiver modulation "\"BPSK\""
 par LoRaNetworkTest.loRaNodes[2].LoRaNic.radio.receiver alohaChannelModel false
 scalar LoRaNetworkTest.loRaNodes[2].LoRaNic.radio.receiver numCollisions 0
-scalar LoRaNetworkTest.loRaNodes[2].LoRaNic.radio.receiver rcvBelowSensitivity 0
+scalar LoRaNetworkTest.loRaNodes[2].LoRaNic.radio.receiver rcvBelowSensitivity 2
 scalar LoRaNetworkTest.loRaNodes[2].LoRaNic.radio.receiver LoRaReceptionCollision:count 0
 attr recordingmode count
 attr source LoRaReceptionCollision
@@ -2178,9 +2141,9 @@ attr unit W
 par LoRaNetworkTest.loRaNodes[2].LoRaNic.radio.energyConsumer transmitterTransmittingDataPowerConsumption 0.1W
 attr unit W
 par LoRaNetworkTest.loRaNodes[2].LoRaNic.radio.energyConsumer configFile "<root>...</root> at /Users/hiro/LoRaPos/simulation/flora_simulation/loraSimulation/exmples//../energyConsumptionParameters.xml:2"
-scalar LoRaNetworkTest.loRaNodes[2].LoRaNic.radio.energyConsumer totalEnergyConsumed 6.1284536733439
+scalar LoRaNetworkTest.loRaNodes[2].LoRaNic.radio.energyConsumer totalEnergyConsumed 60.012550278049
 par LoRaNetworkTest.loRaNodes[2].LoRaNic.radio.IdealEpEnergyStorage typename "\"inet.power.storage.IdealEpEnergyStorage\""
-scalar LoRaNetworkTest.loRaNodes[2].LoRaNic.radio.IdealEpEnergyStorage residualEnergyCapacity:last -6.1284536733439
+scalar LoRaNetworkTest.loRaNodes[2].LoRaNic.radio.IdealEpEnergyStorage residualEnergyCapacity:last -60.012550278049
 attr interpolationmode linear
 attr recordingmode last
 attr source residualEnergyCapacityChanged
@@ -2201,115 +2164,119 @@ attr unit Hz
 par LoRaNetworkTest.loRaNodes[2].LoRaNic.radio bandwidth 250000Hz
 attr unit Hz
 par LoRaNetworkTest.loRaNodes[2].LoRaNic.radio iAmGateway false
-scalar LoRaNetworkTest.loRaNodes[2].LoRaNic.radio radioMode:count 539
+scalar LoRaNetworkTest.loRaNodes[2].LoRaNic.radio radioMode:count 5217
 attr interpolationmode sample-hold
 attr recordingmode count
 attr source radioModeChanged
 attr title "Radio mode, count"
-scalar LoRaNetworkTest.loRaNodes[2].LoRaNic.radio receptionState:count 368
+scalar LoRaNetworkTest.loRaNodes[2].LoRaNic.radio receptionState:count 3564
 attr interpolationmode sample-hold
 attr recordingmode count
 attr source receptionStateChanged
 attr title "Radio reception state, count"
-scalar LoRaNetworkTest.loRaNodes[2].LoRaNic.radio transmissionState:count 360
+scalar LoRaNetworkTest.loRaNodes[2].LoRaNic.radio transmissionState:count 3504
 attr interpolationmode sample-hold
 attr recordingmode count
 attr source transmissionStateChanged
 attr title "Radio transmission state, count"
 statistic LoRaNetworkTest.loRaNodes[2].LoRaNic.radio minSnir:histogram
-field count 6
-field mean 22.199241882922
-field stddev 21.413927649663
-field min 5.91394993844
-field max 64.024974254499
-field sum 133.19545129753
-field sqrsum 5249.619527984
+field count 50
+field mean 20.415203246522
+field stddev 23.743357742284
+field min 1.036051092197
+field max 132.87405046419
+field sum 1020.7601623261
+field sqrsum 48462.630986866
 attr recordingmode histogram
 attr source minimumSnir(packetSentToUpper)
 attr title "Min SNIR"
 bin	-inf	0
-bin	0	0
-bin	1	0
-bin	2	0
-bin	3	0
-bin	4	0
-bin	5	1
-bin	6	0
-bin	7	1
-bin	8	0
-bin	9	0
-bin	10	0
-bin	11	0
-bin	12	0
-bin	13	0
-bin	14	0
-bin	15	1
-bin	16	0
-bin	17	1
-bin	18	0
-bin	19	0
-bin	20	0
-bin	21	0
-bin	22	1
-bin	23	0
-bin	24	0
-bin	25	0
+bin	0	6
+bin	2	2
+bin	4	6
+bin	6	4
+bin	8	1
+bin	10	3
+bin	12	4
+bin	14	4
+bin	16	2
+bin	18	3
+bin	20	1
+bin	22	2
+bin	24	1
 bin	26	0
-bin	27	0
-bin	28	0
-bin	29	0
+bin	28	2
 bin	30	0
-bin	31	0
-bin	32	0
-bin	33	0
+bin	32	1
 bin	34	0
-bin	35	0
 bin	36	0
-bin	37	0
 bin	38	0
-bin	39	0
 bin	40	0
-bin	41	0
-bin	42	0
-bin	43	0
+bin	42	1
 bin	44	0
-bin	45	0
-bin	46	0
-bin	47	0
+bin	46	1
 bin	48	0
-bin	49	0
 bin	50	0
-bin	51	0
-bin	52	0
-bin	53	0
+bin	52	2
 bin	54	0
-bin	55	0
 bin	56	0
-bin	57	0
 bin	58	0
-bin	59	0
-bin	60	0
-bin	61	0
+bin	60	1
 bin	62	0
-bin	63	0
 bin	64	1
-bin	65	0
-bin	66	0
-bin	67	0
+bin	66	1
 bin	68	0
-bin	69	0
 bin	70	0
-bin	71	0
 bin	72	0
-bin	73	0
 bin	74	0
-bin	75	0
 bin	76	0
-bin	77	0
 bin	78	0
-bin	79	0
+bin	80	0
+bin	82	0
+bin	84	0
+bin	86	0
+bin	88	0
+bin	90	0
+bin	92	0
+bin	94	0
+bin	96	0
+bin	98	0
+bin	100	0
+bin	102	0
+bin	104	0
+bin	106	0
+bin	108	0
+bin	110	0
+bin	112	0
+bin	114	0
+bin	116	0
+bin	118	0
+bin	120	0
+bin	122	0
+bin	124	0
+bin	126	0
+bin	128	0
+bin	130	0
+bin	132	1
+bin	134	0
+bin	136	0
+bin	138	0
+bin	140	0
+bin	142	0
+bin	144	0
+bin	146	0
+bin	148	0
+bin	150	0
+bin	152	0
+bin	154	0
+bin	156	0
+bin	158	0
+bin	160	0
+bin	162	0
+bin	164	0
+bin	166	0
 statistic LoRaNetworkTest.loRaNodes[2].LoRaNic.radio packetErrorRate:histogram
-field count 6
+field count 50
 field mean 0
 field stddev 0
 field min 0
@@ -2345,7 +2312,7 @@ bin	-0.08	0
 bin	-0.06	0
 bin	-0.04	0
 bin	-0.02	0
-bin	0	6
+bin	0	50
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -2372,7 +2339,7 @@ bin	0.46	0
 bin	0.48	0
 bin	0.5	0
 statistic LoRaNetworkTest.loRaNodes[2].LoRaNic.radio bitErrorRate:histogram
-field count 6
+field count 50
 field mean 0
 field stddev 0
 field min 0
@@ -2408,7 +2375,7 @@ bin	-0.08	0
 bin	-0.06	0
 bin	-0.04	0
 bin	-0.02	0
-bin	0	6
+bin	0	50
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -2435,7 +2402,7 @@ bin	0.46	0
 bin	0.48	0
 bin	0.5	0
 statistic LoRaNetworkTest.loRaNodes[2].LoRaNic.radio symbolErrorRate:histogram
-field count 6
+field count 50
 field mean 0
 field stddev 0
 field min 0
@@ -2471,7 +2438,7 @@ bin	-0.08	0
 bin	-0.06	0
 bin	-0.04	0
 bin	-0.02	0
-bin	0	6
+bin	0	50
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -2544,11 +2511,11 @@ par LoRaNetworkTest.loRaNodes[2].app[0] dataSize 10B
 attr unit B
 scalar LoRaNetworkTest.loRaNodes[2].app[0] positionX 561.6
 scalar LoRaNetworkTest.loRaNodes[2].app[0] positionY 570.25
-scalar LoRaNetworkTest.loRaNodes[2].app[0] finalTP 11
+scalar LoRaNetworkTest.loRaNodes[2].app[0] finalTP 8
 scalar LoRaNetworkTest.loRaNodes[2].app[0] finalSF 7
-scalar LoRaNetworkTest.loRaNodes[2].app[0] sentPackets 90
-scalar LoRaNetworkTest.loRaNodes[2].app[0] receivedADRCommands 4
-scalar LoRaNetworkTest.loRaNodes[2].app[0] LoRa_AppPacketSent:count 90
+scalar LoRaNetworkTest.loRaNodes[2].app[0] sentPackets 876
+scalar LoRaNetworkTest.loRaNodes[2].app[0] receivedADRCommands 37
+scalar LoRaNetworkTest.loRaNodes[2].app[0] LoRa_AppPacketSent:count 876
 attr recordingmode count
 attr source LoRa_AppPacketSent
 par LoRaNetworkTest.loRaNodes[2] typename "\"flora.LoraNode.LoRaNode\""
@@ -2651,7 +2618,7 @@ attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetP
 attr title "queue bit length, timeavg"
 attr unit b
 statistic LoRaNetworkTest.loRaNodes[3].LoRaNic.queue queueingTime:histogram
-field count 78
+field count 825
 field mean 0
 field stddev 0
 field min 0
@@ -2689,7 +2656,7 @@ bin	-0.08	0
 bin	-0.06	0
 bin	-0.04	0
 bin	-0.02	0
-bin	0	78
+bin	0	825
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -2715,25 +2682,25 @@ bin	0.44	0
 bin	0.46	0
 bin	0.48	0
 bin	0.5	0
-scalar LoRaNetworkTest.loRaNodes[3].LoRaNic.queue outgoingPackets:count 78
+scalar LoRaNetworkTest.loRaNodes[3].LoRaNic.queue outgoingPackets:count 825
 attr recordingmode count
 attr source packetPulled
 attr title "outgoing packets, count"
 attr unit pk
-scalar LoRaNetworkTest.loRaNodes[3].LoRaNic.queue outgoingPacketLengths:sum 6240
+scalar LoRaNetworkTest.loRaNodes[3].LoRaNic.queue outgoingPacketLengths:sum 66000
 attr interpolationmode none
 attr recordingmode sum
 attr source packetLength(packetPulled)
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic LoRaNetworkTest.loRaNodes[3].LoRaNic.queue outgoingPacketLengths:histogram
-field count 78
+field count 825
 field mean 80
 field stddev 0
 field min 80
 field max 80
-field sum 6240
-field sqrsum 499200
+field sum 66000
+field sqrsum 5280000
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetLength(packetPulled)
@@ -2741,7 +2708,7 @@ attr title "outgoing packet lengths"
 attr unit b
 bin	-inf	0
 bin	79	0
-bin	80	78
+bin	80	825
 bin	81	0
 statistic LoRaNetworkTest.loRaNodes[3].LoRaNic.queue flowQueueingTime:histogram
 field count 0
@@ -2759,25 +2726,25 @@ attr unit s
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar LoRaNetworkTest.loRaNodes[3].LoRaNic.queue incomingPackets:count 78
+scalar LoRaNetworkTest.loRaNodes[3].LoRaNic.queue incomingPackets:count 825
 attr recordingmode count
 attr source packetPushStarted
 attr title "incoming packets, count"
 attr unit pk
-scalar LoRaNetworkTest.loRaNodes[3].LoRaNic.queue incomingPacketLengths:sum 6240
+scalar LoRaNetworkTest.loRaNodes[3].LoRaNic.queue incomingPacketLengths:sum 66000
 attr interpolationmode none
 attr recordingmode sum
 attr source packetLength(packetPushStarted)
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic LoRaNetworkTest.loRaNodes[3].LoRaNic.queue incomingPacketLengths:histogram
-field count 78
+field count 825
 field mean 80
 field stddev 0
 field min 80
 field max 80
-field sum 6240
-field sqrsum 499200
+field sum 66000
+field sqrsum 5280000
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetLength(packetPushStarted)
@@ -2785,7 +2752,7 @@ attr title "incoming packet lengths"
 attr unit b
 bin	-inf	0
 bin	79	0
-bin	80	78
+bin	80	825
 bin	81	0
 scalar LoRaNetworkTest.loRaNodes[3].LoRaNic.queue droppedPacketsQueueOverflow:count 0
 attr interpolationmode none
@@ -2829,8 +2796,8 @@ par LoRaNetworkTest.loRaNodes[3].LoRaNic.mac retryLimit 7
 scalar LoRaNetworkTest.loRaNodes[3].LoRaNic.mac numRetry 0
 scalar LoRaNetworkTest.loRaNodes[3].LoRaNic.mac numSentWithoutRetry 0
 scalar LoRaNetworkTest.loRaNodes[3].LoRaNic.mac numGivenUp 0
-scalar LoRaNetworkTest.loRaNodes[3].LoRaNic.mac numSent 78
-scalar LoRaNetworkTest.loRaNodes[3].LoRaNic.mac numReceived 3
+scalar LoRaNetworkTest.loRaNodes[3].LoRaNic.mac numSent 825
+scalar LoRaNetworkTest.loRaNodes[3].LoRaNic.mac numReceived 39
 scalar LoRaNetworkTest.loRaNodes[3].LoRaNic.mac numSentBroadcast 0
 scalar LoRaNetworkTest.loRaNodes[3].LoRaNic.mac numReceivedBroadcast 0
 scalar LoRaNetworkTest.loRaNodes[3].LoRaNic.mac packetDropIncorrectlyReceived:count 0
@@ -2895,7 +2862,7 @@ attr unit Hz
 par LoRaNetworkTest.loRaNodes[3].LoRaNic.radio.transmitter bandwidth 250000Hz
 attr unit Hz
 par LoRaNetworkTest.loRaNodes[3].LoRaNic.radio.transmitter modulation "\"LoRaModulation\""
-scalar LoRaNetworkTest.loRaNodes[3].LoRaNic.radio.transmitter LoRaTransmissionCreated:count 78
+scalar LoRaNetworkTest.loRaNodes[3].LoRaNic.radio.transmitter LoRaTransmissionCreated:count 825
 attr recordingmode count
 attr source LoRaTransmissionCreated
 par LoRaNetworkTest.loRaNodes[3].LoRaNic.radio.receiver typename "\"flora.LoRaPhy.LoRaReceiver\""
@@ -2914,7 +2881,7 @@ attr unit Hz
 par LoRaNetworkTest.loRaNodes[3].LoRaNic.radio.receiver modulation "\"BPSK\""
 par LoRaNetworkTest.loRaNodes[3].LoRaNic.radio.receiver alohaChannelModel false
 scalar LoRaNetworkTest.loRaNodes[3].LoRaNic.radio.receiver numCollisions 0
-scalar LoRaNetworkTest.loRaNodes[3].LoRaNic.radio.receiver rcvBelowSensitivity 0
+scalar LoRaNetworkTest.loRaNodes[3].LoRaNic.radio.receiver rcvBelowSensitivity 1
 scalar LoRaNetworkTest.loRaNodes[3].LoRaNic.radio.receiver LoRaReceptionCollision:count 0
 attr recordingmode count
 attr source LoRaReceptionCollision
@@ -2949,9 +2916,9 @@ attr unit W
 par LoRaNetworkTest.loRaNodes[3].LoRaNic.radio.energyConsumer transmitterTransmittingDataPowerConsumption 0.1W
 attr unit W
 par LoRaNetworkTest.loRaNodes[3].LoRaNic.radio.energyConsumer configFile "<root>...</root> at /Users/hiro/LoRaPos/simulation/flora_simulation/loraSimulation/exmples//../energyConsumptionParameters.xml:2"
-scalar LoRaNetworkTest.loRaNodes[3].LoRaNic.radio.energyConsumer totalEnergyConsumed 5.3192399682276
+scalar LoRaNetworkTest.loRaNodes[3].LoRaNic.radio.energyConsumer totalEnergyConsumed 55.88388601274
 par LoRaNetworkTest.loRaNodes[3].LoRaNic.radio.IdealEpEnergyStorage typename "\"inet.power.storage.IdealEpEnergyStorage\""
-scalar LoRaNetworkTest.loRaNodes[3].LoRaNic.radio.IdealEpEnergyStorage residualEnergyCapacity:last -5.3192399682276
+scalar LoRaNetworkTest.loRaNodes[3].LoRaNic.radio.IdealEpEnergyStorage residualEnergyCapacity:last -55.88388601274
 attr interpolationmode linear
 attr recordingmode last
 attr source residualEnergyCapacityChanged
@@ -2972,46 +2939,46 @@ attr unit Hz
 par LoRaNetworkTest.loRaNodes[3].LoRaNic.radio bandwidth 250000Hz
 attr unit Hz
 par LoRaNetworkTest.loRaNodes[3].LoRaNic.radio iAmGateway false
-scalar LoRaNetworkTest.loRaNodes[3].LoRaNic.radio radioMode:count 469
+scalar LoRaNetworkTest.loRaNodes[3].LoRaNic.radio radioMode:count 4896
 attr interpolationmode sample-hold
 attr recordingmode count
 attr source radioModeChanged
 attr title "Radio mode, count"
-scalar LoRaNetworkTest.loRaNodes[3].LoRaNic.radio receptionState:count 320
+scalar LoRaNetworkTest.loRaNodes[3].LoRaNic.radio receptionState:count 3340
 attr interpolationmode sample-hold
 attr recordingmode count
 attr source receptionStateChanged
 attr title "Radio reception state, count"
-scalar LoRaNetworkTest.loRaNodes[3].LoRaNic.radio transmissionState:count 312
+scalar LoRaNetworkTest.loRaNodes[3].LoRaNic.radio transmissionState:count 3300
 attr interpolationmode sample-hold
 attr recordingmode count
 attr source transmissionStateChanged
 attr title "Radio transmission state, count"
 statistic LoRaNetworkTest.loRaNodes[3].LoRaNic.radio minSnir:histogram
-field count 5
-field mean 198.74674531602
-field stddev 392.37234170804
-field min 3.762350578122
+field count 48
+field mean 79.903666129438
+field stddev 137.78143097261
+field min 2.1077535759351
 field max 899.8380742682
-field sum 993.73372658011
-field sqrsum 813325.56201836
+field sum 3835.375974213
+field sqrsum 1198695.5692049
 attr recordingmode histogram
 attr source minimumSnir(packetSentToUpper)
 attr title "Min SNIR"
 bin	-inf	0
-bin	0	2
-bin	20	1
-bin	40	1
-bin	60	0
-bin	80	0
-bin	100	0
-bin	120	0
-bin	140	0
-bin	160	0
+bin	0	12
+bin	20	13
+bin	40	8
+bin	60	3
+bin	80	1
+bin	100	1
+bin	120	2
+bin	140	1
+bin	160	2
 bin	180	0
-bin	200	0
+bin	200	2
 bin	220	0
-bin	240	0
+bin	240	2
 bin	260	0
 bin	280	0
 bin	300	0
@@ -3058,7 +3025,7 @@ bin	1100	0
 bin	1120	0
 bin	1140	0
 statistic LoRaNetworkTest.loRaNodes[3].LoRaNic.radio packetErrorRate:histogram
-field count 5
+field count 48
 field mean 0
 field stddev 0
 field min 0
@@ -3094,7 +3061,7 @@ bin	-0.08	0
 bin	-0.06	0
 bin	-0.04	0
 bin	-0.02	0
-bin	0	5
+bin	0	48
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -3121,7 +3088,7 @@ bin	0.46	0
 bin	0.48	0
 bin	0.5	0
 statistic LoRaNetworkTest.loRaNodes[3].LoRaNic.radio bitErrorRate:histogram
-field count 5
+field count 48
 field mean 0
 field stddev 0
 field min 0
@@ -3157,7 +3124,7 @@ bin	-0.08	0
 bin	-0.06	0
 bin	-0.04	0
 bin	-0.02	0
-bin	0	5
+bin	0	48
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -3184,7 +3151,7 @@ bin	0.46	0
 bin	0.48	0
 bin	0.5	0
 statistic LoRaNetworkTest.loRaNodes[3].LoRaNic.radio symbolErrorRate:histogram
-field count 5
+field count 48
 field mean 0
 field stddev 0
 field min 0
@@ -3220,7 +3187,7 @@ bin	-0.08	0
 bin	-0.06	0
 bin	-0.04	0
 bin	-0.02	0
-bin	0	5
+bin	0	48
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -3295,9 +3262,9 @@ scalar LoRaNetworkTest.loRaNodes[3].app[0] positionX 556.86
 scalar LoRaNetworkTest.loRaNodes[3].app[0] positionY 529.63
 scalar LoRaNetworkTest.loRaNodes[3].app[0] finalTP 5
 scalar LoRaNetworkTest.loRaNodes[3].app[0] finalSF 7
-scalar LoRaNetworkTest.loRaNodes[3].app[0] sentPackets 78
-scalar LoRaNetworkTest.loRaNodes[3].app[0] receivedADRCommands 3
-scalar LoRaNetworkTest.loRaNodes[3].app[0] LoRa_AppPacketSent:count 78
+scalar LoRaNetworkTest.loRaNodes[3].app[0] sentPackets 825
+scalar LoRaNetworkTest.loRaNodes[3].app[0] receivedADRCommands 39
+scalar LoRaNetworkTest.loRaNodes[3].app[0] LoRa_AppPacketSent:count 825
 attr recordingmode count
 attr source LoRa_AppPacketSent
 par LoRaNetworkTest.loRaNodes[3] typename "\"flora.LoraNode.LoRaNode\""
@@ -3400,7 +3367,7 @@ attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetP
 attr title "queue bit length, timeavg"
 attr unit b
 statistic LoRaNetworkTest.loRaNodes[4].LoRaNic.queue queueingTime:histogram
-field count 96
+field count 830
 field mean 0
 field stddev 0
 field min 0
@@ -3438,7 +3405,7 @@ bin	-0.08	0
 bin	-0.06	0
 bin	-0.04	0
 bin	-0.02	0
-bin	0	96
+bin	0	830
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -3464,25 +3431,25 @@ bin	0.44	0
 bin	0.46	0
 bin	0.48	0
 bin	0.5	0
-scalar LoRaNetworkTest.loRaNodes[4].LoRaNic.queue outgoingPackets:count 96
+scalar LoRaNetworkTest.loRaNodes[4].LoRaNic.queue outgoingPackets:count 830
 attr recordingmode count
 attr source packetPulled
 attr title "outgoing packets, count"
 attr unit pk
-scalar LoRaNetworkTest.loRaNodes[4].LoRaNic.queue outgoingPacketLengths:sum 7680
+scalar LoRaNetworkTest.loRaNodes[4].LoRaNic.queue outgoingPacketLengths:sum 66400
 attr interpolationmode none
 attr recordingmode sum
 attr source packetLength(packetPulled)
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic LoRaNetworkTest.loRaNodes[4].LoRaNic.queue outgoingPacketLengths:histogram
-field count 96
+field count 830
 field mean 80
 field stddev 0
 field min 80
 field max 80
-field sum 7680
-field sqrsum 614400
+field sum 66400
+field sqrsum 5312000
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetLength(packetPulled)
@@ -3490,7 +3457,7 @@ attr title "outgoing packet lengths"
 attr unit b
 bin	-inf	0
 bin	79	0
-bin	80	96
+bin	80	830
 bin	81	0
 statistic LoRaNetworkTest.loRaNodes[4].LoRaNic.queue flowQueueingTime:histogram
 field count 0
@@ -3508,25 +3475,25 @@ attr unit s
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar LoRaNetworkTest.loRaNodes[4].LoRaNic.queue incomingPackets:count 96
+scalar LoRaNetworkTest.loRaNodes[4].LoRaNic.queue incomingPackets:count 830
 attr recordingmode count
 attr source packetPushStarted
 attr title "incoming packets, count"
 attr unit pk
-scalar LoRaNetworkTest.loRaNodes[4].LoRaNic.queue incomingPacketLengths:sum 7680
+scalar LoRaNetworkTest.loRaNodes[4].LoRaNic.queue incomingPacketLengths:sum 66400
 attr interpolationmode none
 attr recordingmode sum
 attr source packetLength(packetPushStarted)
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic LoRaNetworkTest.loRaNodes[4].LoRaNic.queue incomingPacketLengths:histogram
-field count 96
+field count 830
 field mean 80
 field stddev 0
 field min 80
 field max 80
-field sum 7680
-field sqrsum 614400
+field sum 66400
+field sqrsum 5312000
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetLength(packetPushStarted)
@@ -3534,7 +3501,7 @@ attr title "incoming packet lengths"
 attr unit b
 bin	-inf	0
 bin	79	0
-bin	80	96
+bin	80	830
 bin	81	0
 scalar LoRaNetworkTest.loRaNodes[4].LoRaNic.queue droppedPacketsQueueOverflow:count 0
 attr interpolationmode none
@@ -3578,8 +3545,8 @@ par LoRaNetworkTest.loRaNodes[4].LoRaNic.mac retryLimit 7
 scalar LoRaNetworkTest.loRaNodes[4].LoRaNic.mac numRetry 0
 scalar LoRaNetworkTest.loRaNodes[4].LoRaNic.mac numSentWithoutRetry 0
 scalar LoRaNetworkTest.loRaNodes[4].LoRaNic.mac numGivenUp 0
-scalar LoRaNetworkTest.loRaNodes[4].LoRaNic.mac numSent 96
-scalar LoRaNetworkTest.loRaNodes[4].LoRaNic.mac numReceived 4
+scalar LoRaNetworkTest.loRaNodes[4].LoRaNic.mac numSent 830
+scalar LoRaNetworkTest.loRaNodes[4].LoRaNic.mac numReceived 35
 scalar LoRaNetworkTest.loRaNodes[4].LoRaNic.mac numSentBroadcast 0
 scalar LoRaNetworkTest.loRaNodes[4].LoRaNic.mac numReceivedBroadcast 0
 scalar LoRaNetworkTest.loRaNodes[4].LoRaNic.mac packetDropIncorrectlyReceived:count 0
@@ -3644,7 +3611,7 @@ attr unit Hz
 par LoRaNetworkTest.loRaNodes[4].LoRaNic.radio.transmitter bandwidth 250000Hz
 attr unit Hz
 par LoRaNetworkTest.loRaNodes[4].LoRaNic.radio.transmitter modulation "\"LoRaModulation\""
-scalar LoRaNetworkTest.loRaNodes[4].LoRaNic.radio.transmitter LoRaTransmissionCreated:count 96
+scalar LoRaNetworkTest.loRaNodes[4].LoRaNic.radio.transmitter LoRaTransmissionCreated:count 830
 attr recordingmode count
 attr source LoRaTransmissionCreated
 par LoRaNetworkTest.loRaNodes[4].LoRaNic.radio.receiver typename "\"flora.LoRaPhy.LoRaReceiver\""
@@ -3663,7 +3630,7 @@ attr unit Hz
 par LoRaNetworkTest.loRaNodes[4].LoRaNic.radio.receiver modulation "\"BPSK\""
 par LoRaNetworkTest.loRaNodes[4].LoRaNic.radio.receiver alohaChannelModel false
 scalar LoRaNetworkTest.loRaNodes[4].LoRaNic.radio.receiver numCollisions 0
-scalar LoRaNetworkTest.loRaNodes[4].LoRaNic.radio.receiver rcvBelowSensitivity 2
+scalar LoRaNetworkTest.loRaNodes[4].LoRaNic.radio.receiver rcvBelowSensitivity 8
 scalar LoRaNetworkTest.loRaNodes[4].LoRaNic.radio.receiver LoRaReceptionCollision:count 0
 attr recordingmode count
 attr source LoRaReceptionCollision
@@ -3698,9 +3665,9 @@ attr unit W
 par LoRaNetworkTest.loRaNodes[4].LoRaNic.radio.energyConsumer transmitterTransmittingDataPowerConsumption 0.1W
 attr unit W
 par LoRaNetworkTest.loRaNodes[4].LoRaNic.radio.energyConsumer configFile "<root>...</root> at /Users/hiro/LoRaPos/simulation/flora_simulation/loraSimulation/exmples//../energyConsumptionParameters.xml:2"
-scalar LoRaNetworkTest.loRaNodes[4].LoRaNic.radio.energyConsumer totalEnergyConsumed 7.2497416975665
+scalar LoRaNetworkTest.loRaNodes[4].LoRaNic.radio.energyConsumer totalEnergyConsumed 60.898535328734
 par LoRaNetworkTest.loRaNodes[4].LoRaNic.radio.IdealEpEnergyStorage typename "\"inet.power.storage.IdealEpEnergyStorage\""
-scalar LoRaNetworkTest.loRaNodes[4].LoRaNic.radio.IdealEpEnergyStorage residualEnergyCapacity:last -7.2497416975665
+scalar LoRaNetworkTest.loRaNodes[4].LoRaNic.radio.IdealEpEnergyStorage residualEnergyCapacity:last -60.898535328734
 attr interpolationmode linear
 attr recordingmode last
 attr source residualEnergyCapacityChanged
@@ -3721,81 +3688,120 @@ attr unit Hz
 par LoRaNetworkTest.loRaNodes[4].LoRaNic.radio bandwidth 250000Hz
 attr unit Hz
 par LoRaNetworkTest.loRaNodes[4].LoRaNic.radio iAmGateway false
-scalar LoRaNetworkTest.loRaNodes[4].LoRaNic.radio radioMode:count 577
+scalar LoRaNetworkTest.loRaNodes[4].LoRaNic.radio radioMode:count 4963
 attr interpolationmode sample-hold
 attr recordingmode count
 attr source radioModeChanged
 attr title "Radio mode, count"
-scalar LoRaNetworkTest.loRaNodes[4].LoRaNic.radio receptionState:count 392
+scalar LoRaNetworkTest.loRaNodes[4].LoRaNic.radio receptionState:count 3404
 attr interpolationmode sample-hold
 attr recordingmode count
 attr source receptionStateChanged
 attr title "Radio reception state, count"
-scalar LoRaNetworkTest.loRaNodes[4].LoRaNic.radio transmissionState:count 384
+scalar LoRaNetworkTest.loRaNodes[4].LoRaNic.radio transmissionState:count 3320
 attr interpolationmode sample-hold
 attr recordingmode count
 attr source transmissionStateChanged
 attr title "Radio transmission state, count"
 statistic LoRaNetworkTest.loRaNodes[4].LoRaNic.radio minSnir:histogram
-field count 4
-field mean 8.9967152744515
-field stddev 7.4039412305209
-field min 2.5307996217044
-field max 18.443431244562
-field sum 35.986861097806
-field sqrsum 488.21858015322
+field count 48
+field mean 7.8103515039373
+field stddev 10.421036352522
+field min 1.2132740425941
+field max 67.405678470266
+field sum 374.89687218899
+field sqrsum 8032.1822865699
 attr recordingmode histogram
 attr source minimumSnir(packetSentToUpper)
 attr title "Min SNIR"
 bin	-inf	0
 bin	0	0
-bin	0.5	0
-bin	1	0
-bin	1.5	0
-bin	2	0
-bin	2.5	1
-bin	3	0
-bin	3.5	1
-bin	4	0
-bin	4.5	0
-bin	5	0
-bin	5.5	0
-bin	6	0
-bin	6.5	0
+bin	1	4
+bin	2	8
+bin	3	6
+bin	4	6
+bin	5	5
+bin	6	5
 bin	7	0
-bin	7.5	0
-bin	8	0
-bin	8.5	0
-bin	9	0
-bin	9.5	0
+bin	8	4
+bin	9	2
 bin	10	0
-bin	10.5	0
 bin	11	1
-bin	11.5	0
-bin	12	0
-bin	12.5	0
-bin	13	0
-bin	13.5	0
+bin	12	2
+bin	13	1
 bin	14	0
-bin	14.5	0
 bin	15	0
-bin	15.5	0
 bin	16	0
-bin	16.5	0
 bin	17	0
-bin	17.5	0
 bin	18	1
-bin	18.5	0
 bin	19	0
-bin	19.5	0
 bin	20	0
-bin	20.5	0
-bin	21	0
-bin	21.5	0
+bin	21	1
 bin	22	0
-bin	22.5	0
+bin	23	0
+bin	24	0
+bin	25	0
+bin	26	0
+bin	27	0
+bin	28	0
+bin	29	0
+bin	30	0
+bin	31	1
+bin	32	0
+bin	33	0
+bin	34	0
+bin	35	0
+bin	36	0
+bin	37	0
+bin	38	0
+bin	39	0
+bin	40	0
+bin	41	0
+bin	42	0
+bin	43	0
+bin	44	0
+bin	45	0
+bin	46	0
+bin	47	0
+bin	48	0
+bin	49	0
+bin	50	0
+bin	51	0
+bin	52	0
+bin	53	0
+bin	54	0
+bin	55	0
+bin	56	0
+bin	57	0
+bin	58	0
+bin	59	0
+bin	60	0
+bin	61	0
+bin	62	0
+bin	63	0
+bin	64	0
+bin	65	0
+bin	66	0
+bin	67	1
+bin	68	0
+bin	69	0
+bin	70	0
+bin	71	0
+bin	72	0
+bin	73	0
+bin	74	0
+bin	75	0
+bin	76	0
+bin	77	0
+bin	78	0
+bin	79	0
+bin	80	0
+bin	81	0
+bin	82	0
+bin	83	0
+bin	84	0
 statistic LoRaNetworkTest.loRaNodes[4].LoRaNic.radio packetErrorRate:histogram
-field count 4
+field count 48
 field mean 0
 field stddev 0
 field min 0
@@ -3831,7 +3837,7 @@ bin	-0.08	0
 bin	-0.06	0
 bin	-0.04	0
 bin	-0.02	0
-bin	0	4
+bin	0	48
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -3858,7 +3864,7 @@ bin	0.46	0
 bin	0.48	0
 bin	0.5	0
 statistic LoRaNetworkTest.loRaNodes[4].LoRaNic.radio bitErrorRate:histogram
-field count 4
+field count 48
 field mean 0
 field stddev 0
 field min 0
@@ -3894,7 +3900,7 @@ bin	-0.08	0
 bin	-0.06	0
 bin	-0.04	0
 bin	-0.02	0
-bin	0	4
+bin	0	48
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -3921,7 +3927,7 @@ bin	0.46	0
 bin	0.48	0
 bin	0.5	0
 statistic LoRaNetworkTest.loRaNodes[4].LoRaNic.radio symbolErrorRate:histogram
-field count 4
+field count 48
 field mean 0
 field stddev 0
 field min 0
@@ -3957,7 +3963,7 @@ bin	-0.08	0
 bin	-0.06	0
 bin	-0.04	0
 bin	-0.02	0
-bin	0	4
+bin	0	48
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -4030,11 +4036,11 @@ par LoRaNetworkTest.loRaNodes[4].app[0] dataSize 10B
 attr unit B
 scalar LoRaNetworkTest.loRaNodes[4].app[0] positionX 527.85
 scalar LoRaNetworkTest.loRaNodes[4].app[0] positionY 484.11
-scalar LoRaNetworkTest.loRaNodes[4].app[0] finalTP 11
-scalar LoRaNetworkTest.loRaNodes[4].app[0] finalSF 8
-scalar LoRaNetworkTest.loRaNodes[4].app[0] sentPackets 96
-scalar LoRaNetworkTest.loRaNodes[4].app[0] receivedADRCommands 4
-scalar LoRaNetworkTest.loRaNodes[4].app[0] LoRa_AppPacketSent:count 96
+scalar LoRaNetworkTest.loRaNodes[4].app[0] finalTP 14
+scalar LoRaNetworkTest.loRaNodes[4].app[0] finalSF 7
+scalar LoRaNetworkTest.loRaNodes[4].app[0] sentPackets 830
+scalar LoRaNetworkTest.loRaNodes[4].app[0] receivedADRCommands 35
+scalar LoRaNetworkTest.loRaNodes[4].app[0] LoRa_AppPacketSent:count 830
 attr recordingmode count
 attr source LoRa_AppPacketSent
 par LoRaNetworkTest.loRaNodes[4] typename "\"flora.LoraNode.LoRaNode\""
@@ -4137,7 +4143,7 @@ attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetP
 attr title "queue bit length, timeavg"
 attr unit b
 statistic LoRaNetworkTest.loRaNodes[5].LoRaNic.queue queueingTime:histogram
-field count 78
+field count 865
 field mean 0
 field stddev 0
 field min 0
@@ -4175,7 +4181,7 @@ bin	-0.08	0
 bin	-0.06	0
 bin	-0.04	0
 bin	-0.02	0
-bin	0	78
+bin	0	865
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -4201,25 +4207,25 @@ bin	0.44	0
 bin	0.46	0
 bin	0.48	0
 bin	0.5	0
-scalar LoRaNetworkTest.loRaNodes[5].LoRaNic.queue outgoingPackets:count 78
+scalar LoRaNetworkTest.loRaNodes[5].LoRaNic.queue outgoingPackets:count 865
 attr recordingmode count
 attr source packetPulled
 attr title "outgoing packets, count"
 attr unit pk
-scalar LoRaNetworkTest.loRaNodes[5].LoRaNic.queue outgoingPacketLengths:sum 6240
+scalar LoRaNetworkTest.loRaNodes[5].LoRaNic.queue outgoingPacketLengths:sum 69200
 attr interpolationmode none
 attr recordingmode sum
 attr source packetLength(packetPulled)
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic LoRaNetworkTest.loRaNodes[5].LoRaNic.queue outgoingPacketLengths:histogram
-field count 78
+field count 865
 field mean 80
 field stddev 0
 field min 80
 field max 80
-field sum 6240
-field sqrsum 499200
+field sum 69200
+field sqrsum 5536000
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetLength(packetPulled)
@@ -4227,7 +4233,7 @@ attr title "outgoing packet lengths"
 attr unit b
 bin	-inf	0
 bin	79	0
-bin	80	78
+bin	80	865
 bin	81	0
 statistic LoRaNetworkTest.loRaNodes[5].LoRaNic.queue flowQueueingTime:histogram
 field count 0
@@ -4245,25 +4251,25 @@ attr unit s
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar LoRaNetworkTest.loRaNodes[5].LoRaNic.queue incomingPackets:count 78
+scalar LoRaNetworkTest.loRaNodes[5].LoRaNic.queue incomingPackets:count 865
 attr recordingmode count
 attr source packetPushStarted
 attr title "incoming packets, count"
 attr unit pk
-scalar LoRaNetworkTest.loRaNodes[5].LoRaNic.queue incomingPacketLengths:sum 6240
+scalar LoRaNetworkTest.loRaNodes[5].LoRaNic.queue incomingPacketLengths:sum 69200
 attr interpolationmode none
 attr recordingmode sum
 attr source packetLength(packetPushStarted)
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic LoRaNetworkTest.loRaNodes[5].LoRaNic.queue incomingPacketLengths:histogram
-field count 78
+field count 865
 field mean 80
 field stddev 0
 field min 80
 field max 80
-field sum 6240
-field sqrsum 499200
+field sum 69200
+field sqrsum 5536000
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetLength(packetPushStarted)
@@ -4271,7 +4277,7 @@ attr title "incoming packet lengths"
 attr unit b
 bin	-inf	0
 bin	79	0
-bin	80	78
+bin	80	865
 bin	81	0
 scalar LoRaNetworkTest.loRaNodes[5].LoRaNic.queue droppedPacketsQueueOverflow:count 0
 attr interpolationmode none
@@ -4315,8 +4321,8 @@ par LoRaNetworkTest.loRaNodes[5].LoRaNic.mac retryLimit 7
 scalar LoRaNetworkTest.loRaNodes[5].LoRaNic.mac numRetry 0
 scalar LoRaNetworkTest.loRaNodes[5].LoRaNic.mac numSentWithoutRetry 0
 scalar LoRaNetworkTest.loRaNodes[5].LoRaNic.mac numGivenUp 0
-scalar LoRaNetworkTest.loRaNodes[5].LoRaNic.mac numSent 78
-scalar LoRaNetworkTest.loRaNodes[5].LoRaNic.mac numReceived 3
+scalar LoRaNetworkTest.loRaNodes[5].LoRaNic.mac numSent 865
+scalar LoRaNetworkTest.loRaNodes[5].LoRaNic.mac numReceived 43
 scalar LoRaNetworkTest.loRaNodes[5].LoRaNic.mac numSentBroadcast 0
 scalar LoRaNetworkTest.loRaNodes[5].LoRaNic.mac numReceivedBroadcast 0
 scalar LoRaNetworkTest.loRaNodes[5].LoRaNic.mac packetDropIncorrectlyReceived:count 0
@@ -4381,7 +4387,7 @@ attr unit Hz
 par LoRaNetworkTest.loRaNodes[5].LoRaNic.radio.transmitter bandwidth 250000Hz
 attr unit Hz
 par LoRaNetworkTest.loRaNodes[5].LoRaNic.radio.transmitter modulation "\"LoRaModulation\""
-scalar LoRaNetworkTest.loRaNodes[5].LoRaNic.radio.transmitter LoRaTransmissionCreated:count 78
+scalar LoRaNetworkTest.loRaNodes[5].LoRaNic.radio.transmitter LoRaTransmissionCreated:count 865
 attr recordingmode count
 attr source LoRaTransmissionCreated
 par LoRaNetworkTest.loRaNodes[5].LoRaNic.radio.receiver typename "\"flora.LoRaPhy.LoRaReceiver\""
@@ -4435,9 +4441,9 @@ attr unit W
 par LoRaNetworkTest.loRaNodes[5].LoRaNic.radio.energyConsumer transmitterTransmittingDataPowerConsumption 0.1W
 attr unit W
 par LoRaNetworkTest.loRaNodes[5].LoRaNic.radio.energyConsumer configFile "<root>...</root> at /Users/hiro/LoRaPos/simulation/flora_simulation/loraSimulation/exmples//../energyConsumptionParameters.xml:2"
-scalar LoRaNetworkTest.loRaNodes[5].LoRaNic.radio.energyConsumer totalEnergyConsumed 5.3093256101896
+scalar LoRaNetworkTest.loRaNodes[5].LoRaNic.radio.energyConsumer totalEnergyConsumed 58.3425225532
 par LoRaNetworkTest.loRaNodes[5].LoRaNic.radio.IdealEpEnergyStorage typename "\"inet.power.storage.IdealEpEnergyStorage\""
-scalar LoRaNetworkTest.loRaNodes[5].LoRaNic.radio.IdealEpEnergyStorage residualEnergyCapacity:last -5.3093256101896
+scalar LoRaNetworkTest.loRaNodes[5].LoRaNic.radio.IdealEpEnergyStorage residualEnergyCapacity:last -58.3425225532
 attr interpolationmode linear
 attr recordingmode last
 attr source residualEnergyCapacityChanged
@@ -4458,82 +4464,121 @@ attr unit Hz
 par LoRaNetworkTest.loRaNodes[5].LoRaNic.radio bandwidth 250000Hz
 attr unit Hz
 par LoRaNetworkTest.loRaNodes[5].LoRaNic.radio iAmGateway false
-scalar LoRaNetworkTest.loRaNodes[5].LoRaNic.radio radioMode:count 474
+scalar LoRaNetworkTest.loRaNodes[5].LoRaNic.radio radioMode:count 5144
 attr interpolationmode sample-hold
 attr recordingmode count
 attr source radioModeChanged
 attr title "Radio mode, count"
-scalar LoRaNetworkTest.loRaNodes[5].LoRaNic.radio receptionState:count 328
+scalar LoRaNetworkTest.loRaNodes[5].LoRaNic.radio receptionState:count 3532
 attr interpolationmode sample-hold
 attr recordingmode count
 attr source receptionStateChanged
 attr title "Radio reception state, count"
-scalar LoRaNetworkTest.loRaNodes[5].LoRaNic.radio transmissionState:count 312
+scalar LoRaNetworkTest.loRaNodes[5].LoRaNic.radio transmissionState:count 3460
 attr interpolationmode sample-hold
 attr recordingmode count
 attr source transmissionStateChanged
 attr title "Radio transmission state, count"
 statistic LoRaNetworkTest.loRaNodes[5].LoRaNic.radio minSnir:histogram
-field count 6
-field mean 65.105831991361
-field stddev 77.731993103408
-field min 2.3233741836859
-field max 180.74301535296
-field sum 390.63499194817
-field sqrsum 55643.929914866
+field count 60
+field mean 179.17102950149
+field stddev 253.82066026693
+field min 1.2984718500055
+field max 1344.7241441175
+field sum 10750.261770089
+field sqrsum 5727206.1958793
 attr recordingmode histogram
 attr source minimumSnir(packetSentToUpper)
 attr title "Min SNIR"
 bin	-inf	0
-bin	0	3
-bin	5	0
-bin	10	0
-bin	15	0
-bin	20	0
-bin	25	0
-bin	30	0
-bin	35	0
-bin	40	0
-bin	45	0
-bin	50	0
-bin	55	0
-bin	60	1
-bin	65	0
-bin	70	0
-bin	75	0
-bin	80	0
-bin	85	0
-bin	90	0
-bin	95	0
-bin	100	0
-bin	105	0
-bin	110	0
-bin	115	0
-bin	120	0
-bin	125	0
-bin	130	0
-bin	135	1
-bin	140	0
-bin	145	0
-bin	150	0
-bin	155	0
-bin	160	0
-bin	165	0
-bin	170	0
-bin	175	0
-bin	180	1
-bin	185	0
-bin	190	0
-bin	195	0
-bin	200	0
-bin	205	0
-bin	210	0
-bin	215	0
-bin	220	0
-bin	225	0
-bin	230	0
+bin	0	15
+bin	20	4
+bin	40	4
+bin	60	4
+bin	80	4
+bin	100	3
+bin	120	2
+bin	140	3
+bin	160	2
+bin	180	3
+bin	200	2
+bin	220	1
+bin	240	1
+bin	260	1
+bin	280	1
+bin	300	0
+bin	320	0
+bin	340	0
+bin	360	3
+bin	380	1
+bin	400	0
+bin	420	0
+bin	440	0
+bin	460	1
+bin	480	1
+bin	500	0
+bin	520	0
+bin	540	0
+bin	560	1
+bin	580	0
+bin	600	0
+bin	620	0
+bin	640	0
+bin	660	0
+bin	680	0
+bin	700	0
+bin	720	1
+bin	740	0
+bin	760	0
+bin	780	0
+bin	800	0
+bin	820	0
+bin	840	0
+bin	860	0
+bin	880	0
+bin	900	0
+bin	920	0
+bin	940	0
+bin	960	0
+bin	980	0
+bin	1000	0
+bin	1020	0
+bin	1040	0
+bin	1060	0
+bin	1080	0
+bin	1100	0
+bin	1120	1
+bin	1140	0
+bin	1160	0
+bin	1180	0
+bin	1200	0
+bin	1220	0
+bin	1240	0
+bin	1260	0
+bin	1280	0
+bin	1300	0
+bin	1320	0
+bin	1340	1
+bin	1360	0
+bin	1380	0
+bin	1400	0
+bin	1420	0
+bin	1440	0
+bin	1460	0
+bin	1480	0
+bin	1500	0
+bin	1520	0
+bin	1540	0
+bin	1560	0
+bin	1580	0
+bin	1600	0
+bin	1620	0
+bin	1640	0
+bin	1660	0
+bin	1680	0
+bin	1700	0
 statistic LoRaNetworkTest.loRaNodes[5].LoRaNic.radio packetErrorRate:histogram
-field count 6
+field count 60
 field mean 0
 field stddev 0
 field min 0
@@ -4569,7 +4614,7 @@ bin	-0.08	0
 bin	-0.06	0
 bin	-0.04	0
 bin	-0.02	0
-bin	0	6
+bin	0	60
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -4596,7 +4641,7 @@ bin	0.46	0
 bin	0.48	0
 bin	0.5	0
 statistic LoRaNetworkTest.loRaNodes[5].LoRaNic.radio bitErrorRate:histogram
-field count 6
+field count 60
 field mean 0
 field stddev 0
 field min 0
@@ -4632,7 +4677,7 @@ bin	-0.08	0
 bin	-0.06	0
 bin	-0.04	0
 bin	-0.02	0
-bin	0	6
+bin	0	60
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -4659,7 +4704,7 @@ bin	0.46	0
 bin	0.48	0
 bin	0.5	0
 statistic LoRaNetworkTest.loRaNodes[5].LoRaNic.radio symbolErrorRate:histogram
-field count 6
+field count 60
 field mean 0
 field stddev 0
 field min 0
@@ -4695,7 +4740,7 @@ bin	-0.08	0
 bin	-0.06	0
 bin	-0.04	0
 bin	-0.02	0
-bin	0	6
+bin	0	60
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -4770,9 +4815,9 @@ scalar LoRaNetworkTest.loRaNodes[5].app[0] positionX 555.27
 scalar LoRaNetworkTest.loRaNodes[5].app[0] positionY 541.84
 scalar LoRaNetworkTest.loRaNodes[5].app[0] finalTP 2
 scalar LoRaNetworkTest.loRaNodes[5].app[0] finalSF 7
-scalar LoRaNetworkTest.loRaNodes[5].app[0] sentPackets 78
-scalar LoRaNetworkTest.loRaNodes[5].app[0] receivedADRCommands 3
-scalar LoRaNetworkTest.loRaNodes[5].app[0] LoRa_AppPacketSent:count 78
+scalar LoRaNetworkTest.loRaNodes[5].app[0] sentPackets 865
+scalar LoRaNetworkTest.loRaNodes[5].app[0] receivedADRCommands 43
+scalar LoRaNetworkTest.loRaNodes[5].app[0] LoRa_AppPacketSent:count 865
 attr recordingmode count
 attr source LoRa_AppPacketSent
 par LoRaNetworkTest.loRaNodes[5] typename "\"flora.LoraNode.LoRaNode\""
@@ -4875,7 +4920,7 @@ attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetP
 attr title "queue bit length, timeavg"
 attr unit b
 statistic LoRaNetworkTest.loRaNodes[6].LoRaNic.queue queueingTime:histogram
-field count 81
+field count 866
 field mean 0
 field stddev 0
 field min 0
@@ -4913,7 +4958,7 @@ bin	-0.08	0
 bin	-0.06	0
 bin	-0.04	0
 bin	-0.02	0
-bin	0	81
+bin	0	866
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -4939,25 +4984,25 @@ bin	0.44	0
 bin	0.46	0
 bin	0.48	0
 bin	0.5	0
-scalar LoRaNetworkTest.loRaNodes[6].LoRaNic.queue outgoingPackets:count 81
+scalar LoRaNetworkTest.loRaNodes[6].LoRaNic.queue outgoingPackets:count 866
 attr recordingmode count
 attr source packetPulled
 attr title "outgoing packets, count"
 attr unit pk
-scalar LoRaNetworkTest.loRaNodes[6].LoRaNic.queue outgoingPacketLengths:sum 6480
+scalar LoRaNetworkTest.loRaNodes[6].LoRaNic.queue outgoingPacketLengths:sum 69280
 attr interpolationmode none
 attr recordingmode sum
 attr source packetLength(packetPulled)
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic LoRaNetworkTest.loRaNodes[6].LoRaNic.queue outgoingPacketLengths:histogram
-field count 81
+field count 866
 field mean 80
 field stddev 0
 field min 80
 field max 80
-field sum 6480
-field sqrsum 518400
+field sum 69280
+field sqrsum 5542400
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetLength(packetPulled)
@@ -4965,7 +5010,7 @@ attr title "outgoing packet lengths"
 attr unit b
 bin	-inf	0
 bin	79	0
-bin	80	81
+bin	80	866
 bin	81	0
 statistic LoRaNetworkTest.loRaNodes[6].LoRaNic.queue flowQueueingTime:histogram
 field count 0
@@ -4983,25 +5028,25 @@ attr unit s
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar LoRaNetworkTest.loRaNodes[6].LoRaNic.queue incomingPackets:count 81
+scalar LoRaNetworkTest.loRaNodes[6].LoRaNic.queue incomingPackets:count 866
 attr recordingmode count
 attr source packetPushStarted
 attr title "incoming packets, count"
 attr unit pk
-scalar LoRaNetworkTest.loRaNodes[6].LoRaNic.queue incomingPacketLengths:sum 6480
+scalar LoRaNetworkTest.loRaNodes[6].LoRaNic.queue incomingPacketLengths:sum 69280
 attr interpolationmode none
 attr recordingmode sum
 attr source packetLength(packetPushStarted)
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic LoRaNetworkTest.loRaNodes[6].LoRaNic.queue incomingPacketLengths:histogram
-field count 81
+field count 866
 field mean 80
 field stddev 0
 field min 80
 field max 80
-field sum 6480
-field sqrsum 518400
+field sum 69280
+field sqrsum 5542400
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetLength(packetPushStarted)
@@ -5009,7 +5054,7 @@ attr title "incoming packet lengths"
 attr unit b
 bin	-inf	0
 bin	79	0
-bin	80	81
+bin	80	866
 bin	81	0
 scalar LoRaNetworkTest.loRaNodes[6].LoRaNic.queue droppedPacketsQueueOverflow:count 0
 attr interpolationmode none
@@ -5053,8 +5098,8 @@ par LoRaNetworkTest.loRaNodes[6].LoRaNic.mac retryLimit 7
 scalar LoRaNetworkTest.loRaNodes[6].LoRaNic.mac numRetry 0
 scalar LoRaNetworkTest.loRaNodes[6].LoRaNic.mac numSentWithoutRetry 0
 scalar LoRaNetworkTest.loRaNodes[6].LoRaNic.mac numGivenUp 0
-scalar LoRaNetworkTest.loRaNodes[6].LoRaNic.mac numSent 81
-scalar LoRaNetworkTest.loRaNodes[6].LoRaNic.mac numReceived 3
+scalar LoRaNetworkTest.loRaNodes[6].LoRaNic.mac numSent 865
+scalar LoRaNetworkTest.loRaNodes[6].LoRaNic.mac numReceived 36
 scalar LoRaNetworkTest.loRaNodes[6].LoRaNic.mac numSentBroadcast 0
 scalar LoRaNetworkTest.loRaNodes[6].LoRaNic.mac numReceivedBroadcast 0
 scalar LoRaNetworkTest.loRaNodes[6].LoRaNic.mac packetDropIncorrectlyReceived:count 0
@@ -5119,7 +5164,7 @@ attr unit Hz
 par LoRaNetworkTest.loRaNodes[6].LoRaNic.radio.transmitter bandwidth 250000Hz
 attr unit Hz
 par LoRaNetworkTest.loRaNodes[6].LoRaNic.radio.transmitter modulation "\"LoRaModulation\""
-scalar LoRaNetworkTest.loRaNodes[6].LoRaNic.radio.transmitter LoRaTransmissionCreated:count 81
+scalar LoRaNetworkTest.loRaNodes[6].LoRaNic.radio.transmitter LoRaTransmissionCreated:count 866
 attr recordingmode count
 attr source LoRaTransmissionCreated
 par LoRaNetworkTest.loRaNodes[6].LoRaNic.radio.receiver typename "\"flora.LoRaPhy.LoRaReceiver\""
@@ -5138,7 +5183,7 @@ attr unit Hz
 par LoRaNetworkTest.loRaNodes[6].LoRaNic.radio.receiver modulation "\"BPSK\""
 par LoRaNetworkTest.loRaNodes[6].LoRaNic.radio.receiver alohaChannelModel false
 scalar LoRaNetworkTest.loRaNodes[6].LoRaNic.radio.receiver numCollisions 0
-scalar LoRaNetworkTest.loRaNodes[6].LoRaNic.radio.receiver rcvBelowSensitivity 0
+scalar LoRaNetworkTest.loRaNodes[6].LoRaNic.radio.receiver rcvBelowSensitivity 15
 scalar LoRaNetworkTest.loRaNodes[6].LoRaNic.radio.receiver LoRaReceptionCollision:count 0
 attr recordingmode count
 attr source LoRaReceptionCollision
@@ -5173,9 +5218,9 @@ attr unit W
 par LoRaNetworkTest.loRaNodes[6].LoRaNic.radio.energyConsumer transmitterTransmittingDataPowerConsumption 0.1W
 attr unit W
 par LoRaNetworkTest.loRaNodes[6].LoRaNic.radio.energyConsumer configFile "<root>...</root> at /Users/hiro/LoRaPos/simulation/flora_simulation/loraSimulation/exmples//../energyConsumptionParameters.xml:2"
-scalar LoRaNetworkTest.loRaNodes[6].LoRaNic.radio.energyConsumer totalEnergyConsumed 6.2397050344072
+scalar LoRaNetworkTest.loRaNodes[6].LoRaNic.radio.energyConsumer totalEnergyConsumed 64.171976223878
 par LoRaNetworkTest.loRaNodes[6].LoRaNic.radio.IdealEpEnergyStorage typename "\"inet.power.storage.IdealEpEnergyStorage\""
-scalar LoRaNetworkTest.loRaNodes[6].LoRaNic.radio.IdealEpEnergyStorage residualEnergyCapacity:last -6.2397050344072
+scalar LoRaNetworkTest.loRaNodes[6].LoRaNic.radio.IdealEpEnergyStorage residualEnergyCapacity:last -64.171976223878
 attr interpolationmode linear
 attr recordingmode last
 attr source residualEnergyCapacityChanged
@@ -5196,44 +5241,44 @@ attr unit Hz
 par LoRaNetworkTest.loRaNodes[6].LoRaNic.radio bandwidth 250000Hz
 attr unit Hz
 par LoRaNetworkTest.loRaNodes[6].LoRaNic.radio iAmGateway false
-scalar LoRaNetworkTest.loRaNodes[6].LoRaNic.radio radioMode:count 485
+scalar LoRaNetworkTest.loRaNodes[6].LoRaNic.radio radioMode:count 5185
 attr interpolationmode sample-hold
 attr recordingmode count
 attr source radioModeChanged
 attr title "Radio mode, count"
-scalar LoRaNetworkTest.loRaNodes[6].LoRaNic.radio receptionState:count 328
+scalar LoRaNetworkTest.loRaNodes[6].LoRaNic.radio receptionState:count 3556
 attr interpolationmode sample-hold
 attr recordingmode count
 attr source receptionStateChanged
 attr title "Radio reception state, count"
-scalar LoRaNetworkTest.loRaNodes[6].LoRaNic.radio transmissionState:count 324
+scalar LoRaNetworkTest.loRaNodes[6].LoRaNic.radio transmissionState:count 3462
 attr interpolationmode sample-hold
 attr recordingmode count
 attr source transmissionStateChanged
 attr title "Radio transmission state, count"
 statistic LoRaNetworkTest.loRaNodes[6].LoRaNic.radio minSnir:histogram
-field count 4
-field mean 29.525590274396
-field stddev 48.191925203333
-field min 4.3951600720037
+field count 45
+field mean 8.3371018387756
+field stddev 15.127394647856
+field min 1.0547959361117
 field max 101.80474843586
-field sum 118.10236109758
-field sqrsum 10454.426888617
+field sum 375.1695827449
+field sqrsum 13196.702046763
 attr recordingmode histogram
 attr source minimumSnir(packetSentToUpper)
 attr title "Min SNIR"
 bin	-inf	0
-bin	0	0
-bin	2	0
-bin	4	2
-bin	6	1
-bin	8	0
-bin	10	0
-bin	12	0
+bin	0	10
+bin	2	11
+bin	4	6
+bin	6	5
+bin	8	3
+bin	10	1
+bin	12	6
 bin	14	0
 bin	16	0
 bin	18	0
-bin	20	0
+bin	20	2
 bin	22	0
 bin	24	0
 bin	26	0
@@ -5289,7 +5334,7 @@ bin	124	0
 bin	126	0
 bin	128	0
 statistic LoRaNetworkTest.loRaNodes[6].LoRaNic.radio packetErrorRate:histogram
-field count 4
+field count 45
 field mean 0
 field stddev 0
 field min 0
@@ -5325,7 +5370,7 @@ bin	-0.08	0
 bin	-0.06	0
 bin	-0.04	0
 bin	-0.02	0
-bin	0	4
+bin	0	45
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -5352,7 +5397,7 @@ bin	0.46	0
 bin	0.48	0
 bin	0.5	0
 statistic LoRaNetworkTest.loRaNodes[6].LoRaNic.radio bitErrorRate:histogram
-field count 4
+field count 45
 field mean 0
 field stddev 0
 field min 0
@@ -5388,7 +5433,7 @@ bin	-0.08	0
 bin	-0.06	0
 bin	-0.04	0
 bin	-0.02	0
-bin	0	4
+bin	0	45
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -5415,7 +5460,7 @@ bin	0.46	0
 bin	0.48	0
 bin	0.5	0
 statistic LoRaNetworkTest.loRaNodes[6].LoRaNic.radio symbolErrorRate:histogram
-field count 4
+field count 45
 field mean 0
 field stddev 0
 field min 0
@@ -5451,7 +5496,7 @@ bin	-0.08	0
 bin	-0.06	0
 bin	-0.04	0
 bin	-0.02	0
-bin	0	4
+bin	0	45
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -5524,11 +5569,11 @@ par LoRaNetworkTest.loRaNodes[6].app[0] dataSize 10B
 attr unit B
 scalar LoRaNetworkTest.loRaNodes[6].app[0] positionX 561.11
 scalar LoRaNetworkTest.loRaNodes[6].app[0] positionY 614.96
-scalar LoRaNetworkTest.loRaNodes[6].app[0] finalTP 11
-scalar LoRaNetworkTest.loRaNodes[6].app[0] finalSF 8
-scalar LoRaNetworkTest.loRaNodes[6].app[0] sentPackets 81
-scalar LoRaNetworkTest.loRaNodes[6].app[0] receivedADRCommands 3
-scalar LoRaNetworkTest.loRaNodes[6].app[0] LoRa_AppPacketSent:count 81
+scalar LoRaNetworkTest.loRaNodes[6].app[0] finalTP 14
+scalar LoRaNetworkTest.loRaNodes[6].app[0] finalSF 7
+scalar LoRaNetworkTest.loRaNodes[6].app[0] sentPackets 866
+scalar LoRaNetworkTest.loRaNodes[6].app[0] receivedADRCommands 36
+scalar LoRaNetworkTest.loRaNodes[6].app[0] LoRa_AppPacketSent:count 866
 attr recordingmode count
 attr source LoRa_AppPacketSent
 par LoRaNetworkTest.loRaNodes[6] typename "\"flora.LoraNode.LoRaNode\""
@@ -5631,7 +5676,7 @@ attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetP
 attr title "queue bit length, timeavg"
 attr unit b
 statistic LoRaNetworkTest.loRaNodes[7].LoRaNic.queue queueingTime:histogram
-field count 101
+field count 873
 field mean 0
 field stddev 0
 field min 0
@@ -5669,7 +5714,7 @@ bin	-0.08	0
 bin	-0.06	0
 bin	-0.04	0
 bin	-0.02	0
-bin	0	101
+bin	0	873
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -5695,25 +5740,25 @@ bin	0.44	0
 bin	0.46	0
 bin	0.48	0
 bin	0.5	0
-scalar LoRaNetworkTest.loRaNodes[7].LoRaNic.queue outgoingPackets:count 101
+scalar LoRaNetworkTest.loRaNodes[7].LoRaNic.queue outgoingPackets:count 873
 attr recordingmode count
 attr source packetPulled
 attr title "outgoing packets, count"
 attr unit pk
-scalar LoRaNetworkTest.loRaNodes[7].LoRaNic.queue outgoingPacketLengths:sum 8080
+scalar LoRaNetworkTest.loRaNodes[7].LoRaNic.queue outgoingPacketLengths:sum 69840
 attr interpolationmode none
 attr recordingmode sum
 attr source packetLength(packetPulled)
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic LoRaNetworkTest.loRaNodes[7].LoRaNic.queue outgoingPacketLengths:histogram
-field count 101
+field count 873
 field mean 80
 field stddev 0
 field min 80
 field max 80
-field sum 8080
-field sqrsum 646400
+field sum 69840
+field sqrsum 5587200
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetLength(packetPulled)
@@ -5721,7 +5766,7 @@ attr title "outgoing packet lengths"
 attr unit b
 bin	-inf	0
 bin	79	0
-bin	80	101
+bin	80	873
 bin	81	0
 statistic LoRaNetworkTest.loRaNodes[7].LoRaNic.queue flowQueueingTime:histogram
 field count 0
@@ -5739,25 +5784,25 @@ attr unit s
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar LoRaNetworkTest.loRaNodes[7].LoRaNic.queue incomingPackets:count 101
+scalar LoRaNetworkTest.loRaNodes[7].LoRaNic.queue incomingPackets:count 873
 attr recordingmode count
 attr source packetPushStarted
 attr title "incoming packets, count"
 attr unit pk
-scalar LoRaNetworkTest.loRaNodes[7].LoRaNic.queue incomingPacketLengths:sum 8080
+scalar LoRaNetworkTest.loRaNodes[7].LoRaNic.queue incomingPacketLengths:sum 69840
 attr interpolationmode none
 attr recordingmode sum
 attr source packetLength(packetPushStarted)
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic LoRaNetworkTest.loRaNodes[7].LoRaNic.queue incomingPacketLengths:histogram
-field count 101
+field count 873
 field mean 80
 field stddev 0
 field min 80
 field max 80
-field sum 8080
-field sqrsum 646400
+field sum 69840
+field sqrsum 5587200
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetLength(packetPushStarted)
@@ -5765,7 +5810,7 @@ attr title "incoming packet lengths"
 attr unit b
 bin	-inf	0
 bin	79	0
-bin	80	101
+bin	80	873
 bin	81	0
 scalar LoRaNetworkTest.loRaNodes[7].LoRaNic.queue droppedPacketsQueueOverflow:count 0
 attr interpolationmode none
@@ -5809,8 +5854,8 @@ par LoRaNetworkTest.loRaNodes[7].LoRaNic.mac retryLimit 7
 scalar LoRaNetworkTest.loRaNodes[7].LoRaNic.mac numRetry 0
 scalar LoRaNetworkTest.loRaNodes[7].LoRaNic.mac numSentWithoutRetry 0
 scalar LoRaNetworkTest.loRaNodes[7].LoRaNic.mac numGivenUp 0
-scalar LoRaNetworkTest.loRaNodes[7].LoRaNic.mac numSent 101
-scalar LoRaNetworkTest.loRaNodes[7].LoRaNic.mac numReceived 4
+scalar LoRaNetworkTest.loRaNodes[7].LoRaNic.mac numSent 873
+scalar LoRaNetworkTest.loRaNodes[7].LoRaNic.mac numReceived 40
 scalar LoRaNetworkTest.loRaNodes[7].LoRaNic.mac numSentBroadcast 0
 scalar LoRaNetworkTest.loRaNodes[7].LoRaNic.mac numReceivedBroadcast 0
 scalar LoRaNetworkTest.loRaNodes[7].LoRaNic.mac packetDropIncorrectlyReceived:count 0
@@ -5875,7 +5920,7 @@ attr unit Hz
 par LoRaNetworkTest.loRaNodes[7].LoRaNic.radio.transmitter bandwidth 250000Hz
 attr unit Hz
 par LoRaNetworkTest.loRaNodes[7].LoRaNic.radio.transmitter modulation "\"LoRaModulation\""
-scalar LoRaNetworkTest.loRaNodes[7].LoRaNic.radio.transmitter LoRaTransmissionCreated:count 101
+scalar LoRaNetworkTest.loRaNodes[7].LoRaNic.radio.transmitter LoRaTransmissionCreated:count 873
 attr recordingmode count
 attr source LoRaTransmissionCreated
 par LoRaNetworkTest.loRaNodes[7].LoRaNic.radio.receiver typename "\"flora.LoRaPhy.LoRaReceiver\""
@@ -5894,7 +5939,7 @@ attr unit Hz
 par LoRaNetworkTest.loRaNodes[7].LoRaNic.radio.receiver modulation "\"BPSK\""
 par LoRaNetworkTest.loRaNodes[7].LoRaNic.radio.receiver alohaChannelModel false
 scalar LoRaNetworkTest.loRaNodes[7].LoRaNic.radio.receiver numCollisions 0
-scalar LoRaNetworkTest.loRaNodes[7].LoRaNic.radio.receiver rcvBelowSensitivity 0
+scalar LoRaNetworkTest.loRaNodes[7].LoRaNic.radio.receiver rcvBelowSensitivity 1
 scalar LoRaNetworkTest.loRaNodes[7].LoRaNic.radio.receiver LoRaReceptionCollision:count 0
 attr recordingmode count
 attr source LoRaReceptionCollision
@@ -5929,9 +5974,9 @@ attr unit W
 par LoRaNetworkTest.loRaNodes[7].LoRaNic.radio.energyConsumer transmitterTransmittingDataPowerConsumption 0.1W
 attr unit W
 par LoRaNetworkTest.loRaNodes[7].LoRaNic.radio.energyConsumer configFile "<root>...</root> at /Users/hiro/LoRaPos/simulation/flora_simulation/loraSimulation/exmples//../energyConsumptionParameters.xml:2"
-scalar LoRaNetworkTest.loRaNodes[7].LoRaNic.radio.energyConsumer totalEnergyConsumed 6.9666587951812
+scalar LoRaNetworkTest.loRaNodes[7].LoRaNic.radio.energyConsumer totalEnergyConsumed 59.968516738721
 par LoRaNetworkTest.loRaNodes[7].LoRaNic.radio.IdealEpEnergyStorage typename "\"inet.power.storage.IdealEpEnergyStorage\""
-scalar LoRaNetworkTest.loRaNodes[7].LoRaNic.radio.IdealEpEnergyStorage residualEnergyCapacity:last -6.9666587951812
+scalar LoRaNetworkTest.loRaNodes[7].LoRaNic.radio.IdealEpEnergyStorage residualEnergyCapacity:last -59.968516738721
 attr interpolationmode linear
 attr recordingmode last
 attr source residualEnergyCapacityChanged
@@ -5952,38 +5997,38 @@ attr unit Hz
 par LoRaNetworkTest.loRaNodes[7].LoRaNic.radio bandwidth 250000Hz
 attr unit Hz
 par LoRaNetworkTest.loRaNodes[7].LoRaNic.radio iAmGateway false
-scalar LoRaNetworkTest.loRaNodes[7].LoRaNic.radio radioMode:count 605
+scalar LoRaNetworkTest.loRaNodes[7].LoRaNic.radio radioMode:count 5186
 attr interpolationmode sample-hold
 attr recordingmode count
 attr source radioModeChanged
 attr title "Radio mode, count"
-scalar LoRaNetworkTest.loRaNodes[7].LoRaNic.radio receptionState:count 412
+scalar LoRaNetworkTest.loRaNodes[7].LoRaNic.radio receptionState:count 3540
 attr interpolationmode sample-hold
 attr recordingmode count
 attr source receptionStateChanged
 attr title "Radio reception state, count"
-scalar LoRaNetworkTest.loRaNodes[7].LoRaNic.radio transmissionState:count 404
+scalar LoRaNetworkTest.loRaNodes[7].LoRaNic.radio transmissionState:count 3492
 attr interpolationmode sample-hold
 attr recordingmode count
 attr source transmissionStateChanged
 attr title "Radio transmission state, count"
 statistic LoRaNetworkTest.loRaNodes[7].LoRaNic.radio minSnir:histogram
-field count 6
-field mean 143.58351500852
-field stddev 309.67715244039
-field min 3.6346784027999
+field count 51
+field mean 40.772417428961
+field stddev 113.02080076912
+field min 1.1494156466148
 field max 773.86434158834
-field sum 861.50109005114
-field sqrsum 603197.04841117
+field sum 2079.393288877
+field sqrsum 723466.96149776
 attr recordingmode histogram
 attr source minimumSnir(packetSentToUpper)
 attr title "Min SNIR"
 bin	-inf	0
-bin	0	4
-bin	20	0
-bin	40	0
-bin	60	1
-bin	80	0
+bin	0	33
+bin	20	9
+bin	40	4
+bin	60	2
+bin	80	1
 bin	100	0
 bin	120	0
 bin	140	0
@@ -5993,7 +6038,7 @@ bin	200	0
 bin	220	0
 bin	240	0
 bin	260	0
-bin	280	0
+bin	280	1
 bin	300	0
 bin	320	0
 bin	340	0
@@ -6030,7 +6075,7 @@ bin	940	0
 bin	960	0
 bin	980	0
 statistic LoRaNetworkTest.loRaNodes[7].LoRaNic.radio packetErrorRate:histogram
-field count 6
+field count 51
 field mean 0
 field stddev 0
 field min 0
@@ -6066,7 +6111,7 @@ bin	-0.08	0
 bin	-0.06	0
 bin	-0.04	0
 bin	-0.02	0
-bin	0	6
+bin	0	51
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -6093,7 +6138,7 @@ bin	0.46	0
 bin	0.48	0
 bin	0.5	0
 statistic LoRaNetworkTest.loRaNodes[7].LoRaNic.radio bitErrorRate:histogram
-field count 6
+field count 51
 field mean 0
 field stddev 0
 field min 0
@@ -6129,7 +6174,7 @@ bin	-0.08	0
 bin	-0.06	0
 bin	-0.04	0
 bin	-0.02	0
-bin	0	6
+bin	0	51
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -6156,7 +6201,7 @@ bin	0.46	0
 bin	0.48	0
 bin	0.5	0
 statistic LoRaNetworkTest.loRaNodes[7].LoRaNic.radio symbolErrorRate:histogram
-field count 6
+field count 51
 field mean 0
 field stddev 0
 field min 0
@@ -6192,7 +6237,7 @@ bin	-0.08	0
 bin	-0.06	0
 bin	-0.04	0
 bin	-0.02	0
-bin	0	6
+bin	0	51
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -6265,11 +6310,11 @@ par LoRaNetworkTest.loRaNodes[7].app[0] dataSize 10B
 attr unit B
 scalar LoRaNetworkTest.loRaNodes[7].app[0] positionX 557.86
 scalar LoRaNetworkTest.loRaNodes[7].app[0] positionY 575.17
-scalar LoRaNetworkTest.loRaNodes[7].app[0] finalTP 5
+scalar LoRaNetworkTest.loRaNodes[7].app[0] finalTP 8
 scalar LoRaNetworkTest.loRaNodes[7].app[0] finalSF 7
-scalar LoRaNetworkTest.loRaNodes[7].app[0] sentPackets 101
-scalar LoRaNetworkTest.loRaNodes[7].app[0] receivedADRCommands 4
-scalar LoRaNetworkTest.loRaNodes[7].app[0] LoRa_AppPacketSent:count 101
+scalar LoRaNetworkTest.loRaNodes[7].app[0] sentPackets 873
+scalar LoRaNetworkTest.loRaNodes[7].app[0] receivedADRCommands 40
+scalar LoRaNetworkTest.loRaNodes[7].app[0] LoRa_AppPacketSent:count 873
 attr recordingmode count
 attr source LoRa_AppPacketSent
 par LoRaNetworkTest.loRaNodes[7] typename "\"flora.LoraNode.LoRaNode\""
@@ -6372,7 +6417,7 @@ attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetP
 attr title "queue bit length, timeavg"
 attr unit b
 statistic LoRaNetworkTest.loRaNodes[8].LoRaNic.queue queueingTime:histogram
-field count 69
+field count 829
 field mean 0
 field stddev 0
 field min 0
@@ -6410,7 +6455,7 @@ bin	-0.08	0
 bin	-0.06	0
 bin	-0.04	0
 bin	-0.02	0
-bin	0	69
+bin	0	829
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -6436,25 +6481,25 @@ bin	0.44	0
 bin	0.46	0
 bin	0.48	0
 bin	0.5	0
-scalar LoRaNetworkTest.loRaNodes[8].LoRaNic.queue outgoingPackets:count 69
+scalar LoRaNetworkTest.loRaNodes[8].LoRaNic.queue outgoingPackets:count 829
 attr recordingmode count
 attr source packetPulled
 attr title "outgoing packets, count"
 attr unit pk
-scalar LoRaNetworkTest.loRaNodes[8].LoRaNic.queue outgoingPacketLengths:sum 5520
+scalar LoRaNetworkTest.loRaNodes[8].LoRaNic.queue outgoingPacketLengths:sum 66320
 attr interpolationmode none
 attr recordingmode sum
 attr source packetLength(packetPulled)
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic LoRaNetworkTest.loRaNodes[8].LoRaNic.queue outgoingPacketLengths:histogram
-field count 69
+field count 829
 field mean 80
 field stddev 0
 field min 80
 field max 80
-field sum 5520
-field sqrsum 441600
+field sum 66320
+field sqrsum 5305600
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetLength(packetPulled)
@@ -6462,7 +6507,7 @@ attr title "outgoing packet lengths"
 attr unit b
 bin	-inf	0
 bin	79	0
-bin	80	69
+bin	80	829
 bin	81	0
 statistic LoRaNetworkTest.loRaNodes[8].LoRaNic.queue flowQueueingTime:histogram
 field count 0
@@ -6480,25 +6525,25 @@ attr unit s
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar LoRaNetworkTest.loRaNodes[8].LoRaNic.queue incomingPackets:count 69
+scalar LoRaNetworkTest.loRaNodes[8].LoRaNic.queue incomingPackets:count 829
 attr recordingmode count
 attr source packetPushStarted
 attr title "incoming packets, count"
 attr unit pk
-scalar LoRaNetworkTest.loRaNodes[8].LoRaNic.queue incomingPacketLengths:sum 5520
+scalar LoRaNetworkTest.loRaNodes[8].LoRaNic.queue incomingPacketLengths:sum 66320
 attr interpolationmode none
 attr recordingmode sum
 attr source packetLength(packetPushStarted)
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic LoRaNetworkTest.loRaNodes[8].LoRaNic.queue incomingPacketLengths:histogram
-field count 69
+field count 829
 field mean 80
 field stddev 0
 field min 80
 field max 80
-field sum 5520
-field sqrsum 441600
+field sum 66320
+field sqrsum 5305600
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetLength(packetPushStarted)
@@ -6506,7 +6551,7 @@ attr title "incoming packet lengths"
 attr unit b
 bin	-inf	0
 bin	79	0
-bin	80	69
+bin	80	829
 bin	81	0
 scalar LoRaNetworkTest.loRaNodes[8].LoRaNic.queue droppedPacketsQueueOverflow:count 0
 attr interpolationmode none
@@ -6550,8 +6595,8 @@ par LoRaNetworkTest.loRaNodes[8].LoRaNic.mac retryLimit 7
 scalar LoRaNetworkTest.loRaNodes[8].LoRaNic.mac numRetry 0
 scalar LoRaNetworkTest.loRaNodes[8].LoRaNic.mac numSentWithoutRetry 0
 scalar LoRaNetworkTest.loRaNodes[8].LoRaNic.mac numGivenUp 0
-scalar LoRaNetworkTest.loRaNodes[8].LoRaNic.mac numSent 69
-scalar LoRaNetworkTest.loRaNodes[8].LoRaNic.mac numReceived 2
+scalar LoRaNetworkTest.loRaNodes[8].LoRaNic.mac numSent 829
+scalar LoRaNetworkTest.loRaNodes[8].LoRaNic.mac numReceived 31
 scalar LoRaNetworkTest.loRaNodes[8].LoRaNic.mac numSentBroadcast 0
 scalar LoRaNetworkTest.loRaNodes[8].LoRaNic.mac numReceivedBroadcast 0
 scalar LoRaNetworkTest.loRaNodes[8].LoRaNic.mac packetDropIncorrectlyReceived:count 0
@@ -6616,7 +6661,7 @@ attr unit Hz
 par LoRaNetworkTest.loRaNodes[8].LoRaNic.radio.transmitter bandwidth 250000Hz
 attr unit Hz
 par LoRaNetworkTest.loRaNodes[8].LoRaNic.radio.transmitter modulation "\"LoRaModulation\""
-scalar LoRaNetworkTest.loRaNodes[8].LoRaNic.radio.transmitter LoRaTransmissionCreated:count 69
+scalar LoRaNetworkTest.loRaNodes[8].LoRaNic.radio.transmitter LoRaTransmissionCreated:count 829
 attr recordingmode count
 attr source LoRaTransmissionCreated
 par LoRaNetworkTest.loRaNodes[8].LoRaNic.radio.receiver typename "\"flora.LoRaPhy.LoRaReceiver\""
@@ -6670,9 +6715,9 @@ attr unit W
 par LoRaNetworkTest.loRaNodes[8].LoRaNic.radio.energyConsumer transmitterTransmittingDataPowerConsumption 0.1W
 attr unit W
 par LoRaNetworkTest.loRaNodes[8].LoRaNic.radio.energyConsumer configFile "<root>...</root> at /Users/hiro/LoRaPos/simulation/flora_simulation/loraSimulation/exmples//../energyConsumptionParameters.xml:2"
-scalar LoRaNetworkTest.loRaNodes[8].LoRaNic.radio.energyConsumer totalEnergyConsumed 4.8420091780189
+scalar LoRaNetworkTest.loRaNodes[8].LoRaNic.radio.energyConsumer totalEnergyConsumed 57.921413147523
 par LoRaNetworkTest.loRaNodes[8].LoRaNic.radio.IdealEpEnergyStorage typename "\"inet.power.storage.IdealEpEnergyStorage\""
-scalar LoRaNetworkTest.loRaNodes[8].LoRaNic.radio.IdealEpEnergyStorage residualEnergyCapacity:last -4.8420091780189
+scalar LoRaNetworkTest.loRaNodes[8].LoRaNic.radio.IdealEpEnergyStorage residualEnergyCapacity:last -57.921413147523
 attr interpolationmode linear
 attr recordingmode last
 attr source residualEnergyCapacityChanged
@@ -6693,92 +6738,103 @@ attr unit Hz
 par LoRaNetworkTest.loRaNodes[8].LoRaNic.radio bandwidth 250000Hz
 attr unit Hz
 par LoRaNetworkTest.loRaNodes[8].LoRaNic.radio iAmGateway false
-scalar LoRaNetworkTest.loRaNodes[8].LoRaNic.radio radioMode:count 413
+scalar LoRaNetworkTest.loRaNodes[8].LoRaNic.radio radioMode:count 4921
 attr interpolationmode sample-hold
 attr recordingmode count
 attr source radioModeChanged
 attr title "Radio mode, count"
-scalar LoRaNetworkTest.loRaNodes[8].LoRaNic.radio receptionState:count 276
+scalar LoRaNetworkTest.loRaNodes[8].LoRaNic.radio receptionState:count 3328
 attr interpolationmode sample-hold
 attr recordingmode count
 attr source receptionStateChanged
 attr title "Radio reception state, count"
-scalar LoRaNetworkTest.loRaNodes[8].LoRaNic.radio transmissionState:count 276
+scalar LoRaNetworkTest.loRaNodes[8].LoRaNic.radio transmissionState:count 3316
 attr interpolationmode sample-hold
 attr recordingmode count
 attr source transmissionStateChanged
 attr title "Radio transmission state, count"
 statistic LoRaNetworkTest.loRaNodes[8].LoRaNic.radio minSnir:histogram
-field count 2
-field mean 3.3536068359922
-field stddev 1.2782903970771
-field min 2.4497190278933
-field max 4.257494644091
-field sum 6.7072136719843
-field sqrsum 24.127383960086
+field count 34
+field mean 11.318606465254
+field stddev 11.738813799784
+field min 2.2947284549634
+field max 53.562176420471
+field sum 384.83261981864
+field sqrsum 8903.1607097782
 attr recordingmode histogram
 attr source minimumSnir(packetSentToUpper)
 attr title "Min SNIR"
 bin	-inf	0
-bin	1.95	0
-bin	2	0
-bin	2.05	0
-bin	2.1	0
-bin	2.15	0
-bin	2.2	0
-bin	2.25	0
-bin	2.3	0
-bin	2.35	0
-bin	2.4	1
-bin	2.45	0
-bin	2.5	0
-bin	2.55	0
-bin	2.6	0
-bin	2.65	0
-bin	2.7	0
-bin	2.75	0
-bin	2.8	0
-bin	2.85	0
-bin	2.9	0
-bin	2.95	0
-bin	3	0
-bin	3.05	0
-bin	3.1	0
-bin	3.15	0
-bin	3.2	0
-bin	3.25	0
-bin	3.3	0
-bin	3.35	0
-bin	3.4	0
-bin	3.45	0
-bin	3.5	0
-bin	3.55	0
-bin	3.6	0
-bin	3.65	0
-bin	3.7	0
-bin	3.75	0
-bin	3.8	0
-bin	3.85	0
-bin	3.9	0
-bin	3.95	0
-bin	4	0
-bin	4.05	0
-bin	4.1	0
-bin	4.15	0
-bin	4.2	0
-bin	4.25	1
-bin	4.3	0
-bin	4.35	0
-bin	4.4	0
-bin	4.45	0
-bin	4.5	0
-bin	4.55	0
-bin	4.6	0
-bin	4.65	0
-bin	4.7	0
-bin	4.75	0
+bin	0	0
+bin	1	0
+bin	2	6
+bin	3	3
+bin	4	5
+bin	5	2
+bin	6	0
+bin	7	4
+bin	8	1
+bin	9	1
+bin	10	0
+bin	11	2
+bin	12	0
+bin	13	1
+bin	14	1
+bin	15	0
+bin	16	1
+bin	17	1
+bin	18	0
+bin	19	1
+bin	20	0
+bin	21	0
+bin	22	0
+bin	23	0
+bin	24	0
+bin	25	1
+bin	26	1
+bin	27	0
+bin	28	0
+bin	29	0
+bin	30	1
+bin	31	0
+bin	32	0
+bin	33	0
+bin	34	0
+bin	35	0
+bin	36	0
+bin	37	0
+bin	38	0
+bin	39	1
+bin	40	0
+bin	41	0
+bin	42	0
+bin	43	0
+bin	44	0
+bin	45	0
+bin	46	0
+bin	47	0
+bin	48	0
+bin	49	0
+bin	50	0
+bin	51	0
+bin	52	0
+bin	53	1
+bin	54	0
+bin	55	0
+bin	56	0
+bin	57	0
+bin	58	0
+bin	59	0
+bin	60	0
+bin	61	0
+bin	62	0
+bin	63	0
+bin	64	0
+bin	65	0
+bin	66	0
+bin	67	0
 statistic LoRaNetworkTest.loRaNodes[8].LoRaNic.radio packetErrorRate:histogram
-field count 2
+field count 34
 field mean 0
 field stddev 0
 field min 0
@@ -6814,7 +6870,7 @@ bin	-0.08	0
 bin	-0.06	0
 bin	-0.04	0
 bin	-0.02	0
-bin	0	2
+bin	0	34
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -6841,7 +6897,7 @@ bin	0.46	0
 bin	0.48	0
 bin	0.5	0
 statistic LoRaNetworkTest.loRaNodes[8].LoRaNic.radio bitErrorRate:histogram
-field count 2
+field count 34
 field mean 0
 field stddev 0
 field min 0
@@ -6877,7 +6933,7 @@ bin	-0.08	0
 bin	-0.06	0
 bin	-0.04	0
 bin	-0.02	0
-bin	0	2
+bin	0	34
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -6904,7 +6960,7 @@ bin	0.46	0
 bin	0.48	0
 bin	0.5	0
 statistic LoRaNetworkTest.loRaNodes[8].LoRaNic.radio symbolErrorRate:histogram
-field count 2
+field count 34
 field mean 0
 field stddev 0
 field min 0
@@ -6940,7 +6996,7 @@ bin	-0.08	0
 bin	-0.06	0
 bin	-0.04	0
 bin	-0.02	0
-bin	0	2
+bin	0	34
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -7013,11 +7069,11 @@ par LoRaNetworkTest.loRaNodes[8].app[0] dataSize 10B
 attr unit B
 scalar LoRaNetworkTest.loRaNodes[8].app[0] positionX 500.41
 scalar LoRaNetworkTest.loRaNodes[8].app[0] positionY 537.16
-scalar LoRaNetworkTest.loRaNodes[8].app[0] finalTP 2
+scalar LoRaNetworkTest.loRaNodes[8].app[0] finalTP 11
 scalar LoRaNetworkTest.loRaNodes[8].app[0] finalSF 7
-scalar LoRaNetworkTest.loRaNodes[8].app[0] sentPackets 69
-scalar LoRaNetworkTest.loRaNodes[8].app[0] receivedADRCommands 2
-scalar LoRaNetworkTest.loRaNodes[8].app[0] LoRa_AppPacketSent:count 69
+scalar LoRaNetworkTest.loRaNodes[8].app[0] sentPackets 829
+scalar LoRaNetworkTest.loRaNodes[8].app[0] receivedADRCommands 31
+scalar LoRaNetworkTest.loRaNodes[8].app[0] LoRa_AppPacketSent:count 829
 attr recordingmode count
 attr source LoRa_AppPacketSent
 par LoRaNetworkTest.loRaNodes[8] typename "\"flora.LoraNode.LoRaNode\""
@@ -7120,7 +7176,7 @@ attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetP
 attr title "queue bit length, timeavg"
 attr unit b
 statistic LoRaNetworkTest.loRaNodes[9].LoRaNic.queue queueingTime:histogram
-field count 84
+field count 936
 field mean 0
 field stddev 0
 field min 0
@@ -7158,7 +7214,7 @@ bin	-0.08	0
 bin	-0.06	0
 bin	-0.04	0
 bin	-0.02	0
-bin	0	84
+bin	0	936
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -7184,25 +7240,25 @@ bin	0.44	0
 bin	0.46	0
 bin	0.48	0
 bin	0.5	0
-scalar LoRaNetworkTest.loRaNodes[9].LoRaNic.queue outgoingPackets:count 84
+scalar LoRaNetworkTest.loRaNodes[9].LoRaNic.queue outgoingPackets:count 936
 attr recordingmode count
 attr source packetPulled
 attr title "outgoing packets, count"
 attr unit pk
-scalar LoRaNetworkTest.loRaNodes[9].LoRaNic.queue outgoingPacketLengths:sum 6720
+scalar LoRaNetworkTest.loRaNodes[9].LoRaNic.queue outgoingPacketLengths:sum 74880
 attr interpolationmode none
 attr recordingmode sum
 attr source packetLength(packetPulled)
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic LoRaNetworkTest.loRaNodes[9].LoRaNic.queue outgoingPacketLengths:histogram
-field count 84
+field count 936
 field mean 80
 field stddev 0
 field min 80
 field max 80
-field sum 6720
-field sqrsum 537600
+field sum 74880
+field sqrsum 5990400
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetLength(packetPulled)
@@ -7210,7 +7266,7 @@ attr title "outgoing packet lengths"
 attr unit b
 bin	-inf	0
 bin	79	0
-bin	80	84
+bin	80	936
 bin	81	0
 statistic LoRaNetworkTest.loRaNodes[9].LoRaNic.queue flowQueueingTime:histogram
 field count 0
@@ -7228,25 +7284,25 @@ attr unit s
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar LoRaNetworkTest.loRaNodes[9].LoRaNic.queue incomingPackets:count 84
+scalar LoRaNetworkTest.loRaNodes[9].LoRaNic.queue incomingPackets:count 936
 attr recordingmode count
 attr source packetPushStarted
 attr title "incoming packets, count"
 attr unit pk
-scalar LoRaNetworkTest.loRaNodes[9].LoRaNic.queue incomingPacketLengths:sum 6720
+scalar LoRaNetworkTest.loRaNodes[9].LoRaNic.queue incomingPacketLengths:sum 74880
 attr interpolationmode none
 attr recordingmode sum
 attr source packetLength(packetPushStarted)
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic LoRaNetworkTest.loRaNodes[9].LoRaNic.queue incomingPacketLengths:histogram
-field count 84
+field count 936
 field mean 80
 field stddev 0
 field min 80
 field max 80
-field sum 6720
-field sqrsum 537600
+field sum 74880
+field sqrsum 5990400
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetLength(packetPushStarted)
@@ -7254,7 +7310,7 @@ attr title "incoming packet lengths"
 attr unit b
 bin	-inf	0
 bin	79	0
-bin	80	84
+bin	80	936
 bin	81	0
 scalar LoRaNetworkTest.loRaNodes[9].LoRaNic.queue droppedPacketsQueueOverflow:count 0
 attr interpolationmode none
@@ -7298,8 +7354,8 @@ par LoRaNetworkTest.loRaNodes[9].LoRaNic.mac retryLimit 7
 scalar LoRaNetworkTest.loRaNodes[9].LoRaNic.mac numRetry 0
 scalar LoRaNetworkTest.loRaNodes[9].LoRaNic.mac numSentWithoutRetry 0
 scalar LoRaNetworkTest.loRaNodes[9].LoRaNic.mac numGivenUp 0
-scalar LoRaNetworkTest.loRaNodes[9].LoRaNic.mac numSent 84
-scalar LoRaNetworkTest.loRaNodes[9].LoRaNic.mac numReceived 4
+scalar LoRaNetworkTest.loRaNodes[9].LoRaNic.mac numSent 936
+scalar LoRaNetworkTest.loRaNodes[9].LoRaNic.mac numReceived 44
 scalar LoRaNetworkTest.loRaNodes[9].LoRaNic.mac numSentBroadcast 0
 scalar LoRaNetworkTest.loRaNodes[9].LoRaNic.mac numReceivedBroadcast 0
 scalar LoRaNetworkTest.loRaNodes[9].LoRaNic.mac packetDropIncorrectlyReceived:count 0
@@ -7364,7 +7420,7 @@ attr unit Hz
 par LoRaNetworkTest.loRaNodes[9].LoRaNic.radio.transmitter bandwidth 250000Hz
 attr unit Hz
 par LoRaNetworkTest.loRaNodes[9].LoRaNic.radio.transmitter modulation "\"LoRaModulation\""
-scalar LoRaNetworkTest.loRaNodes[9].LoRaNic.radio.transmitter LoRaTransmissionCreated:count 84
+scalar LoRaNetworkTest.loRaNodes[9].LoRaNic.radio.transmitter LoRaTransmissionCreated:count 936
 attr recordingmode count
 attr source LoRaTransmissionCreated
 par LoRaNetworkTest.loRaNodes[9].LoRaNic.radio.receiver typename "\"flora.LoRaPhy.LoRaReceiver\""
@@ -7383,7 +7439,7 @@ attr unit Hz
 par LoRaNetworkTest.loRaNodes[9].LoRaNic.radio.receiver modulation "\"BPSK\""
 par LoRaNetworkTest.loRaNodes[9].LoRaNic.radio.receiver alohaChannelModel false
 scalar LoRaNetworkTest.loRaNodes[9].LoRaNic.radio.receiver numCollisions 0
-scalar LoRaNetworkTest.loRaNodes[9].LoRaNic.radio.receiver rcvBelowSensitivity 0
+scalar LoRaNetworkTest.loRaNodes[9].LoRaNic.radio.receiver rcvBelowSensitivity 2
 scalar LoRaNetworkTest.loRaNodes[9].LoRaNic.radio.receiver LoRaReceptionCollision:count 0
 attr recordingmode count
 attr source LoRaReceptionCollision
@@ -7418,9 +7474,9 @@ attr unit W
 par LoRaNetworkTest.loRaNodes[9].LoRaNic.radio.energyConsumer transmitterTransmittingDataPowerConsumption 0.1W
 attr unit W
 par LoRaNetworkTest.loRaNodes[9].LoRaNic.radio.energyConsumer configFile "<root>...</root> at /Users/hiro/LoRaPos/simulation/flora_simulation/loraSimulation/exmples//../energyConsumptionParameters.xml:2"
-scalar LoRaNetworkTest.loRaNodes[9].LoRaNic.radio.energyConsumer totalEnergyConsumed 6.1300207995837
+scalar LoRaNetworkTest.loRaNodes[9].LoRaNic.radio.energyConsumer totalEnergyConsumed 67.349747901438
 par LoRaNetworkTest.loRaNodes[9].LoRaNic.radio.IdealEpEnergyStorage typename "\"inet.power.storage.IdealEpEnergyStorage\""
-scalar LoRaNetworkTest.loRaNodes[9].LoRaNic.radio.IdealEpEnergyStorage residualEnergyCapacity:last -6.1300207995837
+scalar LoRaNetworkTest.loRaNodes[9].LoRaNic.radio.IdealEpEnergyStorage residualEnergyCapacity:last -67.349747901438
 attr interpolationmode linear
 attr recordingmode last
 attr source residualEnergyCapacityChanged
@@ -7441,74 +7497,74 @@ attr unit Hz
 par LoRaNetworkTest.loRaNodes[9].LoRaNic.radio bandwidth 250000Hz
 attr unit Hz
 par LoRaNetworkTest.loRaNodes[9].LoRaNic.radio iAmGateway false
-scalar LoRaNetworkTest.loRaNodes[9].LoRaNic.radio radioMode:count 501
+scalar LoRaNetworkTest.loRaNodes[9].LoRaNic.radio radioMode:count 5561
 attr interpolationmode sample-hold
 attr recordingmode count
 attr source radioModeChanged
 attr title "Radio mode, count"
-scalar LoRaNetworkTest.loRaNodes[9].LoRaNic.radio receptionState:count 340
+scalar LoRaNetworkTest.loRaNodes[9].LoRaNic.radio receptionState:count 3800
 attr interpolationmode sample-hold
 attr recordingmode count
 attr source receptionStateChanged
 attr title "Radio reception state, count"
-scalar LoRaNetworkTest.loRaNodes[9].LoRaNic.radio transmissionState:count 336
+scalar LoRaNetworkTest.loRaNodes[9].LoRaNic.radio transmissionState:count 3744
 attr interpolationmode sample-hold
 attr recordingmode count
 attr source transmissionStateChanged
 attr title "Radio transmission state, count"
 statistic LoRaNetworkTest.loRaNodes[9].LoRaNic.radio minSnir:histogram
-field count 5
-field mean 12.716063442968
-field stddev 8.1038422449126
-field min 3.2686655762516
-field max 25.069377838779
-field sum 63.580317214842
-field sqrsum 1071.1803839497
+field count 56
+field mean 8.5579098600225
+field stddev 6.6097164079088
+field min 1.0560002273165
+field max 33.853581246093
+field sum 479.24295216126
+field sqrsum 6504.177290261
 attr recordingmode histogram
 attr source minimumSnir(packetSentToUpper)
 attr title "Min SNIR"
 bin	-inf	0
 bin	0	0
 bin	0.5	0
-bin	1	0
-bin	1.5	0
-bin	2	0
-bin	2.5	0
-bin	3	1
-bin	3.5	0
-bin	4	0
-bin	4.5	0
+bin	1	4
+bin	1.5	1
+bin	2	3
+bin	2.5	2
+bin	3	6
+bin	3.5	1
+bin	4	3
+bin	4.5	2
 bin	5	0
-bin	5.5	0
-bin	6	0
-bin	6.5	0
-bin	7	0
-bin	7.5	0
+bin	5.5	4
+bin	6	1
+bin	6.5	3
+bin	7	1
+bin	7.5	1
 bin	8	0
-bin	8.5	0
+bin	8.5	2
 bin	9	1
-bin	9.5	0
+bin	9.5	1
 bin	10	0
-bin	10.5	0
-bin	11	1
-bin	11.5	0
-bin	12	0
-bin	12.5	0
+bin	10.5	1
+bin	11	2
+bin	11.5	2
+bin	12	2
+bin	12.5	1
 bin	13	0
 bin	13.5	0
 bin	14	0
-bin	14.5	1
-bin	15	0
-bin	15.5	0
-bin	16	0
-bin	16.5	0
+bin	14.5	3
+bin	15	2
+bin	15.5	1
+bin	16	1
+bin	16.5	1
 bin	17	0
 bin	17.5	0
-bin	18	0
+bin	18	1
 bin	18.5	0
 bin	19	0
 bin	19.5	0
-bin	20	0
+bin	20	1
 bin	20.5	0
 bin	21	0
 bin	21.5	0
@@ -7531,8 +7587,31 @@ bin	29.5	0
 bin	30	0
 bin	30.5	0
 bin	31	0
+bin	31.5	0
+bin	32	0
+bin	32.5	0
+bin	33	0
+bin	33.5	1
+bin	34	0
+bin	34.5	0
+bin	35	0
+bin	35.5	0
+bin	36	0
+bin	36.5	0
+bin	37	0
+bin	37.5	0
+bin	38	0
+bin	38.5	0
+bin	39	0
+bin	39.5	0
+bin	40	0
+bin	40.5	0
+bin	41	0
+bin	41.5	0
+bin	42	0
+bin	42.5	0
 statistic LoRaNetworkTest.loRaNodes[9].LoRaNic.radio packetErrorRate:histogram
-field count 5
+field count 56
 field mean 0
 field stddev 0
 field min 0
@@ -7568,7 +7647,7 @@ bin	-0.08	0
 bin	-0.06	0
 bin	-0.04	0
 bin	-0.02	0
-bin	0	5
+bin	0	56
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -7595,7 +7674,7 @@ bin	0.46	0
 bin	0.48	0
 bin	0.5	0
 statistic LoRaNetworkTest.loRaNodes[9].LoRaNic.radio bitErrorRate:histogram
-field count 5
+field count 56
 field mean 0
 field stddev 0
 field min 0
@@ -7631,7 +7710,7 @@ bin	-0.08	0
 bin	-0.06	0
 bin	-0.04	0
 bin	-0.02	0
-bin	0	5
+bin	0	56
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -7658,7 +7737,7 @@ bin	0.46	0
 bin	0.48	0
 bin	0.5	0
 statistic LoRaNetworkTest.loRaNodes[9].LoRaNic.radio symbolErrorRate:histogram
-field count 5
+field count 56
 field mean 0
 field stddev 0
 field min 0
@@ -7694,7 +7773,7 @@ bin	-0.08	0
 bin	-0.06	0
 bin	-0.04	0
 bin	-0.02	0
-bin	0	5
+bin	0	56
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -7767,11 +7846,11 @@ par LoRaNetworkTest.loRaNodes[9].app[0] dataSize 10B
 attr unit B
 scalar LoRaNetworkTest.loRaNodes[9].app[0] positionX 530.53
 scalar LoRaNetworkTest.loRaNodes[9].app[0] positionY 594.82
-scalar LoRaNetworkTest.loRaNodes[9].app[0] finalTP 8
-scalar LoRaNetworkTest.loRaNodes[9].app[0] finalSF 8
-scalar LoRaNetworkTest.loRaNodes[9].app[0] sentPackets 84
-scalar LoRaNetworkTest.loRaNodes[9].app[0] receivedADRCommands 4
-scalar LoRaNetworkTest.loRaNodes[9].app[0] LoRa_AppPacketSent:count 84
+scalar LoRaNetworkTest.loRaNodes[9].app[0] finalTP 11
+scalar LoRaNetworkTest.loRaNodes[9].app[0] finalSF 7
+scalar LoRaNetworkTest.loRaNodes[9].app[0] sentPackets 936
+scalar LoRaNetworkTest.loRaNodes[9].app[0] receivedADRCommands 44
+scalar LoRaNetworkTest.loRaNodes[9].app[0] LoRa_AppPacketSent:count 936
 attr recordingmode count
 attr source LoRa_AppPacketSent
 par LoRaNetworkTest.loRaNodes[9] typename "\"flora.LoraNode.LoRaNode\""
@@ -7873,8 +7952,8 @@ par LoRaNetworkTest.loRaGW[0].LoRaGWNic.mac cwMin 31
 par LoRaNetworkTest.loRaGW[0].LoRaGWNic.mac cwMax 1023
 par LoRaNetworkTest.loRaGW[0].LoRaGWNic.mac cwMulticast 31
 par LoRaNetworkTest.loRaGW[0].LoRaGWNic.mac retryLimit 7
-scalar LoRaNetworkTest.loRaGW[0].LoRaGWNic.mac GW_forwardedDown 34
-scalar LoRaNetworkTest.loRaGW[0].LoRaGWNic.mac GW_droppedDC 0
+scalar LoRaNetworkTest.loRaGW[0].LoRaGWNic.mac GW_forwardedDown 389
+scalar LoRaNetworkTest.loRaGW[0].LoRaGWNic.mac GW_droppedDC 1
 par LoRaNetworkTest.loRaGW[0].LoRaGWNic.radio.antenna typename "\"inet.physicallayer.wireless.common.antenna.IsotropicAntenna\""
 par LoRaNetworkTest.loRaGW[0].LoRaGWNic.radio.antenna mobilityModule "\"^.^.^.mobility\""
 par LoRaNetworkTest.loRaGW[0].LoRaGWNic.radio.antenna numAntennas 1
@@ -7892,7 +7971,7 @@ attr unit Hz
 par LoRaNetworkTest.loRaGW[0].LoRaGWNic.radio.transmitter bandwidth 250000Hz
 attr unit Hz
 par LoRaNetworkTest.loRaGW[0].LoRaGWNic.radio.transmitter modulation "\"LoRaModulation\""
-scalar LoRaNetworkTest.loRaGW[0].LoRaGWNic.radio.transmitter LoRaTransmissionCreated:count 34
+scalar LoRaNetworkTest.loRaGW[0].LoRaGWNic.radio.transmitter LoRaTransmissionCreated:count 389
 attr recordingmode count
 attr source LoRaTransmissionCreated
 par LoRaNetworkTest.loRaGW[0].LoRaGWNic.radio.receiver typename "\"flora.LoRaPhy.LoRaReceiver\""
@@ -7910,9 +7989,9 @@ par LoRaNetworkTest.loRaGW[0].LoRaGWNic.radio.receiver bandwidth 250000Hz
 attr unit Hz
 par LoRaNetworkTest.loRaGW[0].LoRaGWNic.radio.receiver modulation "\"BPSK\""
 par LoRaNetworkTest.loRaGW[0].LoRaGWNic.radio.receiver alohaChannelModel false
-scalar LoRaNetworkTest.loRaGW[0].LoRaGWNic.radio.receiver numCollisions 0
-scalar LoRaNetworkTest.loRaGW[0].LoRaGWNic.radio.receiver rcvBelowSensitivity 87
-scalar LoRaNetworkTest.loRaGW[0].LoRaGWNic.radio.receiver LoRaReceptionCollision:count 0
+scalar LoRaNetworkTest.loRaGW[0].LoRaGWNic.radio.receiver numCollisions 5
+scalar LoRaNetworkTest.loRaGW[0].LoRaGWNic.radio.receiver rcvBelowSensitivity 702
+scalar LoRaNetworkTest.loRaGW[0].LoRaGWNic.radio.receiver LoRaReceptionCollision:count 5
 attr recordingmode count
 attr source LoRaReceptionCollision
 par LoRaNetworkTest.loRaGW[0].LoRaGWNic.radio typename "\"flora.LoRa.LoRaGWRadio\""
@@ -7931,11 +8010,11 @@ attr unit Hz
 par LoRaNetworkTest.loRaGW[0].LoRaGWNic.radio bandwidth 250000Hz
 attr unit Hz
 par LoRaNetworkTest.loRaGW[0].LoRaGWNic.radio iAmGateway true
-scalar LoRaNetworkTest.loRaGW[0].LoRaGWNic.radio "DER - Data Extraction Rate" 0.89788732394366
-scalar LoRaNetworkTest.loRaGW[0].LoRaGWNic.radio LoRaGWRadioReceptionFinishedCorrect:count 765
+scalar LoRaNetworkTest.loRaGW[0].LoRaGWNic.radio "DER - Data Extraction Rate" 0.9178542463214
+scalar LoRaNetworkTest.loRaGW[0].LoRaGWNic.radio LoRaGWRadioReceptionFinishedCorrect:count 7922
 attr recordingmode count
 attr source LoRaGWRadioReceptionFinishedCorrect
-scalar LoRaNetworkTest.loRaGW[0].LoRaGWNic.radio LoRaGWRadioReceptionStarted:count 852
+scalar LoRaNetworkTest.loRaGW[0].LoRaGWNic.radio LoRaGWRadioReceptionStarted:count 8631
 attr recordingmode count
 attr source LoRaGWRadioReceptionStarted
 scalar LoRaNetworkTest.loRaGW[0].LoRaGWNic.radio radioMode:count 3
@@ -7954,68 +8033,68 @@ attr recordingmode count
 attr source transmissionStateChanged
 attr title "Radio transmission state, count"
 statistic LoRaNetworkTest.loRaGW[0].LoRaGWNic.radio minSnir:histogram
-field count 1530
-field mean 6.9310709915496
-field stddev 9.0152281442931
+field count 15844
+field mean 7.5048219124547
+field stddev 8.8374134986923
 field min 0.23371023072471
 field max 143.88446936259
-field sum 10604.538617071
-field sqrsum 197769.27354434
+field sum 118906.39838093
+field sqrsum 2129707.7009067
 attr recordingmode histogram
 attr source minimumSnir(packetSentToUpper)
 attr title "Min SNIR"
 bin	-inf	0
-bin	0	570
-bin	3	384
-bin	6	246
-bin	9	120
-bin	12	62
-bin	15	52
-bin	18	20
-bin	21	12
-bin	24	22
-bin	27	10
-bin	30	4
-bin	33	2
-bin	36	8
-bin	39	4
-bin	42	2
-bin	45	4
-bin	48	0
-bin	51	0
-bin	54	2
-bin	57	2
-bin	60	0
+bin	0	4734
+bin	3	4682
+bin	6	2492
+bin	9	1418
+bin	12	768
+bin	15	530
+bin	18	296
+bin	21	220
+bin	24	186
+bin	27	142
+bin	30	66
+bin	33	34
+bin	36	54
+bin	39	58
+bin	42	42
+bin	45	24
+bin	48	10
+bin	51	6
+bin	54	14
+bin	57	8
+bin	60	10
 bin	63	2
-bin	66	0
-bin	69	0
-bin	72	0
-bin	75	0
-bin	78	0
-bin	81	0
-bin	84	0
+bin	66	2
+bin	69	6
+bin	72	8
+bin	75	2
+bin	78	4
+bin	81	4
+bin	84	2
 bin	87	0
-bin	90	0
-bin	93	0
-bin	96	0
+bin	90	4
+bin	93	2
+bin	96	2
 bin	99	0
-bin	102	0
-bin	105	0
+bin	102	2
+bin	105	2
 bin	108	0
 bin	111	0
 bin	114	0
 bin	117	0
-bin	120	0
+bin	120	2
 bin	123	0
 bin	126	0
 bin	129	0
 bin	132	0
 bin	135	0
-bin	138	0
+bin	138	4
 bin	141	2
 bin	144	0
 statistic LoRaNetworkTest.loRaGW[0].LoRaGWNic.radio packetErrorRate:histogram
-field count 1530
+field count 15844
 field mean 0
 field stddev 0
 field min 0
@@ -8051,7 +8130,7 @@ bin	-0.08	0
 bin	-0.06	0
 bin	-0.04	0
 bin	-0.02	0
-bin	0	1530
+bin	0	15844
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -8078,7 +8157,7 @@ bin	0.46	0
 bin	0.48	0
 bin	0.5	0
 statistic LoRaNetworkTest.loRaGW[0].LoRaGWNic.radio bitErrorRate:histogram
-field count 1530
+field count 15844
 field mean 0
 field stddev 0
 field min 0
@@ -8114,7 +8193,7 @@ bin	-0.08	0
 bin	-0.06	0
 bin	-0.04	0
 bin	-0.02	0
-bin	0	1530
+bin	0	15844
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -8141,7 +8220,7 @@ bin	0.46	0
 bin	0.48	0
 bin	0.5	0
 statistic LoRaNetworkTest.loRaGW[0].LoRaGWNic.radio symbolErrorRate:histogram
-field count 1530
+field count 15844
 field mean 0
 field stddev 0
 field min 0
@@ -8177,7 +8256,7 @@ bin	-0.08	0
 bin	-0.06	0
 bin	-0.04	0
 bin	-0.02	0
-bin	0	1530
+bin	0	15844
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -8235,8 +8314,8 @@ par LoRaNetworkTest.loRaGW[0].packetForwarder localPort 2000
 par LoRaNetworkTest.loRaGW[0].packetForwarder destAddresses "\"networkServer\""
 par LoRaNetworkTest.loRaGW[0].packetForwarder localAddress "\"\""
 par LoRaNetworkTest.loRaGW[0].packetForwarder destPort 1000
-scalar LoRaNetworkTest.loRaGW[0].packetForwarder LoRa_GW_DER 0.89788732394366
-scalar LoRaNetworkTest.loRaGW[0].packetForwarder LoRa_GWPacketReceived:count 765
+scalar LoRaNetworkTest.loRaGW[0].packetForwarder LoRa_GW_DER 0.9178542463214
+scalar LoRaNetworkTest.loRaGW[0].packetForwarder LoRa_GWPacketReceived:count 7922
 attr recordingmode count
 attr source LoRa_GWPacketReceived
 par LoRaNetworkTest.loRaGW[0].eth[0].mac.phys$o.channel typename "\"ned.IdealChannel\""
@@ -8294,7 +8373,7 @@ attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetP
 attr title "queue bit length, timeavg"
 attr unit b
 statistic LoRaNetworkTest.loRaGW[0].eth[0].queue queueingTime:histogram
-field count 1143
+field count 11725
 field mean 0
 field stddev 0
 field min 0
@@ -8332,7 +8411,7 @@ bin	-0.08	0
 bin	-0.06	0
 bin	-0.04	0
 bin	-0.02	0
-bin	0	1143
+bin	0	11725
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -8358,25 +8437,25 @@ bin	0.44	0
 bin	0.46	0
 bin	0.48	0
 bin	0.5	0
-scalar LoRaNetworkTest.loRaGW[0].eth[0].queue outgoingPackets:count 1143
+scalar LoRaNetworkTest.loRaGW[0].eth[0].queue outgoingPackets:count 11725
 attr recordingmode count
 attr source packetPulled
 attr title "outgoing packets, count"
 attr unit pk
-scalar LoRaNetworkTest.loRaGW[0].eth[0].queue outgoingPacketLengths:sum 585864
+scalar LoRaNetworkTest.loRaGW[0].eth[0].queue outgoingPacketLengths:sum 6025952
 attr interpolationmode none
 attr recordingmode sum
 attr source packetLength(packetPulled)
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic LoRaNetworkTest.loRaGW[0].eth[0].queue outgoingPacketLengths:histogram
-field count 1143
-field mean 512.56692913386
-field stddev 101.6656405972
+field count 11725
+field mean 513.94046908316
+field stddev 101.12068486462
 field min 368
 field max 584
-field sum 585864
-field sqrsum 312098112
+field sum 6025952
+field sqrsum 3216863104
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetLength(packetPulled)
@@ -8394,7 +8473,7 @@ bin	345	0
 bin	350	0
 bin	355	0
 bin	360	0
-bin	365	378
+bin	365	3803
 bin	370	0
 bin	375	0
 bin	380	0
@@ -8437,7 +8516,7 @@ bin	560	0
 bin	565	0
 bin	570	0
 bin	575	0
-bin	580	765
+bin	580	7922
 bin	585	0
 bin	590	0
 bin	595	0
@@ -8466,25 +8545,25 @@ attr unit s
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar LoRaNetworkTest.loRaGW[0].eth[0].queue incomingPackets:count 1143
+scalar LoRaNetworkTest.loRaGW[0].eth[0].queue incomingPackets:count 11725
 attr recordingmode count
 attr source packetPushStarted
 attr title "incoming packets, count"
 attr unit pk
-scalar LoRaNetworkTest.loRaGW[0].eth[0].queue incomingPacketLengths:sum 585864
+scalar LoRaNetworkTest.loRaGW[0].eth[0].queue incomingPacketLengths:sum 6025952
 attr interpolationmode none
 attr recordingmode sum
 attr source packetLength(packetPushStarted)
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic LoRaNetworkTest.loRaGW[0].eth[0].queue incomingPacketLengths:histogram
-field count 1143
-field mean 512.56692913386
-field stddev 101.6656405972
+field count 11725
+field mean 513.94046908316
+field stddev 101.12068486462
 field min 368
 field max 584
-field sum 585864
-field sqrsum 312098112
+field sum 6025952
+field sqrsum 3216863104
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetLength(packetPushStarted)
@@ -8502,7 +8581,7 @@ bin	345	0
 bin	350	0
 bin	355	0
 bin	360	0
-bin	365	378
+bin	365	3803
 bin	370	0
 bin	375	0
 bin	380	0
@@ -8545,7 +8624,7 @@ bin	560	0
 bin	565	0
 bin	570	0
 bin	575	0
-bin	580	765
+bin	580	7922
 bin	585	0
 bin	590	0
 bin	595	0
@@ -8584,14 +8663,14 @@ par LoRaNetworkTest.loRaGW[0].eth[0].mac stopOperationExtraTime -1s
 attr unit s
 par LoRaNetworkTest.loRaGW[0].eth[0].mac stopOperationTimeout 2s
 attr unit s
-scalar LoRaNetworkTest.loRaGW[0].eth[0].mac "simulated time" 86400
+scalar LoRaNetworkTest.loRaGW[0].eth[0].mac "simulated time" 867834.46148312
 scalar LoRaNetworkTest.loRaGW[0].eth[0].mac full-duplex 1
-scalar LoRaNetworkTest.loRaGW[0].eth[0].mac "frames/sec sent" 0.013229166666667
-scalar LoRaNetworkTest.loRaGW[0].eth[0].mac "frames/sec rcvd" 0.0047685185185185
-scalar LoRaNetworkTest.loRaGW[0].eth[0].mac "bits/sec sent" 7.4108333333333
-scalar LoRaNetworkTest.loRaGW[0].eth[0].mac "bits/sec rcvd" 2.4414814814815
-scalar LoRaNetworkTest.loRaGW[0].eth[0].mac "rx channel idle (%)" 99.999999725333
-scalar LoRaNetworkTest.loRaGW[0].eth[0].mac "rx channel utilization (%)" 2.7466666666667e-07
+scalar LoRaNetworkTest.loRaGW[0].eth[0].mac "frames/sec sent" 0.013510641165323
+scalar LoRaNetworkTest.loRaGW[0].eth[0].mac "frames/sec rcvd" 0.0048315666018081
+scalar LoRaNetworkTest.loRaGW[0].eth[0].mac "bits/sec sent" 7.574698046406
+scalar LoRaNetworkTest.loRaGW[0].eth[0].mac "bits/sec rcvd" 2.4737621001258
+scalar LoRaNetworkTest.loRaGW[0].eth[0].mac "rx channel idle (%)" 99.999999721702
+scalar LoRaNetworkTest.loRaGW[0].eth[0].mac "rx channel utilization (%)" 2.7829823626415e-07
 scalar LoRaNetworkTest.loRaGW[0].eth[0].mac rxPausePkUnits:count 0
 attr interpolationmode none
 attr recordingmode count
@@ -8608,42 +8687,42 @@ scalar LoRaNetworkTest.loRaGW[0].eth[0].mac txPausePkUnits:sum 0
 attr interpolationmode none
 attr recordingmode sum
 attr title "pause units sent, sum"
-scalar LoRaNetworkTest.loRaGW[0].eth[0].mac rxPkOk:count 412
+scalar LoRaNetworkTest.loRaGW[0].eth[0].mac rxPkOk:count 4193
 attr interpolationmode none
 attr recordingmode count
 attr source rxPkOk
 attr title "packets received OK, count"
-scalar LoRaNetworkTest.loRaGW[0].eth[0].mac rxPkOk:sum(packetBytes) 26368
+scalar LoRaNetworkTest.loRaGW[0].eth[0].mac rxPkOk:sum(packetBytes) 268352
 attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr source rxPkOk
 attr title "packets received OK, sum(packetBytes)"
-scalar LoRaNetworkTest.loRaGW[0].eth[0].mac txPk:count 1143
+scalar LoRaNetworkTest.loRaGW[0].eth[0].mac txPk:count 11725
 attr interpolationmode none
 attr recordingmode count
 attr source packetSentToLower
 attr title "packets transmitted, count"
-scalar LoRaNetworkTest.loRaGW[0].eth[0].mac txPk:sum(packetBytes) 80037
+scalar LoRaNetworkTest.loRaGW[0].eth[0].mac txPk:sum(packetBytes) 821698
 attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr source packetSentToLower
 attr title "packets transmitted, sum(packetBytes)"
-scalar LoRaNetworkTest.loRaGW[0].eth[0].mac packetReceivedFromUpper:count 1143
+scalar LoRaNetworkTest.loRaGW[0].eth[0].mac packetReceivedFromUpper:count 11725
 attr interpolationmode none
 attr recordingmode count
 attr source packetReceivedFromUpper
 attr title "packet bytes from higher layer, count"
-scalar LoRaNetworkTest.loRaGW[0].eth[0].mac packetReceivedFromUpper:sum(packetBytes) 73233
+scalar LoRaNetworkTest.loRaGW[0].eth[0].mac packetReceivedFromUpper:sum(packetBytes) 753244
 attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr source packetReceivedFromUpper
 attr title "packet bytes from higher layer, sum(packetBytes)"
-scalar LoRaNetworkTest.loRaGW[0].eth[0].mac passedUpPk:count 412
+scalar LoRaNetworkTest.loRaGW[0].eth[0].mac passedUpPk:count 4193
 attr interpolationmode none
 attr recordingmode count
 attr source packetSentToUpper
 attr title "packets passed to higher layer, count"
-scalar LoRaNetworkTest.loRaGW[0].eth[0].mac passedUpPk:sum(packetBytes) 26368
+scalar LoRaNetworkTest.loRaGW[0].eth[0].mac passedUpPk:sum(packetBytes) 268352
 attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr source packetSentToUpper
@@ -8719,27 +8798,27 @@ par LoRaNetworkTest.loRaGW[0].udp icmpv6Module "\"^.ipv6.icmpv6\""
 par LoRaNetworkTest.loRaGW[0].udp crcMode "\"declared\""
 attr enum disabled,declared,computed
 par LoRaNetworkTest.loRaGW[0].udp defaultMulticastLoop true
-scalar LoRaNetworkTest.loRaGW[0].udp packetReceived:count 34
+scalar LoRaNetworkTest.loRaGW[0].udp packetReceived:count 390
 attr interpolationmode none
 attr recordingmode count
 attr source packetReceived
 attr title "packets received, count"
-scalar LoRaNetworkTest.loRaGW[0].udp packetReceived:sum(packetBytes) 816
+scalar LoRaNetworkTest.loRaGW[0].udp packetReceived:sum(packetBytes) 9360
 attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr source packetReceived
 attr title "packets received, sum(packetBytes)"
-scalar LoRaNetworkTest.loRaGW[0].udp packetSent:count 765
+scalar LoRaNetworkTest.loRaGW[0].udp packetSent:count 7922
 attr interpolationmode none
 attr recordingmode count
 attr source packetSent
 attr title "packets sent, count"
-scalar LoRaNetworkTest.loRaGW[0].udp packetSent:sum(packetBytes) 26775
+scalar LoRaNetworkTest.loRaGW[0].udp packetSent:sum(packetBytes) 277270
 attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr source packetSent
 attr title "packets sent, sum(packetBytes)"
-scalar LoRaNetworkTest.loRaGW[0].udp passedUpPk:count 34
+scalar LoRaNetworkTest.loRaGW[0].udp passedUpPk:count 390
 attr interpolationmode none
 attr recordingmode count
 attr source packetSentToUpper
@@ -8899,25 +8978,25 @@ par LoRaNetworkTest.loRaGW[0].ipv4.arp proxyArpInterfaces "\"*\""
 scalar LoRaNetworkTest.loRaGW[0].ipv4.arp arpResolutionFailed:count 0
 attr recordingmode count
 attr title "ARP failed resolutions, count"
-scalar LoRaNetworkTest.loRaGW[0].ipv4.arp arpResolutionCompleted:count 378
+scalar LoRaNetworkTest.loRaGW[0].ipv4.arp arpResolutionCompleted:count 3803
 attr recordingmode count
 attr title "ARP completed resolutions, count"
-scalar LoRaNetworkTest.loRaGW[0].ipv4.arp arpResolutionInitiated:count 378
+scalar LoRaNetworkTest.loRaGW[0].ipv4.arp arpResolutionInitiated:count 3802
 attr recordingmode count
 attr title "ARP initiated resolutions, count"
-scalar LoRaNetworkTest.loRaGW[0].ipv4.arp arpReplySent:count 0
+scalar LoRaNetworkTest.loRaGW[0].ipv4.arp arpReplySent:count 1
 attr recordingmode count
 attr source arpReplySent
 attr title "ARP replies sent, count"
-scalar LoRaNetworkTest.loRaGW[0].ipv4.arp arpReplySent:sum(packetBytes) 0
+scalar LoRaNetworkTest.loRaGW[0].ipv4.arp arpReplySent:sum(packetBytes) 28
 attr recordingmode sum(packetBytes)
 attr source arpReplySent
 attr title "ARP replies sent, sum(packetBytes)"
-scalar LoRaNetworkTest.loRaGW[0].ipv4.arp arpRequestSent:count 378
+scalar LoRaNetworkTest.loRaGW[0].ipv4.arp arpRequestSent:count 3802
 attr recordingmode count
 attr source arpRequestSent
 attr title "ARP request sent, count"
-scalar LoRaNetworkTest.loRaGW[0].ipv4.arp arpRequestSent:sum(packetBytes) 10584
+scalar LoRaNetworkTest.loRaGW[0].ipv4.arp arpRequestSent:sum(packetBytes) 106456
 attr recordingmode sum(packetBytes)
 attr source arpRequestSent
 attr title "ARP request sent, sum(packetBytes)"
@@ -8953,22 +9032,22 @@ attr title "pause sent, count"
 scalar LoRaNetworkTest.loRaGW[0].ethernet pauseSent:sum 0
 attr recordingmode sum
 attr title "pause sent, sum"
-scalar LoRaNetworkTest.loRaGW[0].ethernet decapPk:count 412
+scalar LoRaNetworkTest.loRaGW[0].ethernet decapPk:count 4193
 attr interpolationmode none
 attr recordingmode count
 attr source decapPk
 attr title "packets decapsulated, count"
-scalar LoRaNetworkTest.loRaGW[0].ethernet decapPk:sum(packetBytes) 18952
+scalar LoRaNetworkTest.loRaGW[0].ethernet decapPk:sum(packetBytes) 192878
 attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr source decapPk
 attr title "packets decapsulated, sum(packetBytes)"
-scalar LoRaNetworkTest.loRaGW[0].ethernet encapPk:count 1143
+scalar LoRaNetworkTest.loRaGW[0].ethernet encapPk:count 11725
 attr interpolationmode none
 attr recordingmode count
 attr source encapPk
 attr title "packets encapsulated, count"
-scalar LoRaNetworkTest.loRaGW[0].ethernet encapPk:sum(packetBytes) 52659
+scalar LoRaNetworkTest.loRaGW[0].ethernet encapPk:sum(packetBytes) 542194
 attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr source encapPk
@@ -8988,7 +9067,7 @@ attr unit mps
 par LoRaNetworkTest.LoRaMedium.propagation ignoreMovementDuringTransmission true
 par LoRaNetworkTest.LoRaMedium.propagation ignoreMovementDuringPropagation true
 par LoRaNetworkTest.LoRaMedium.propagation ignoreMovementDuringReception true
-scalar LoRaNetworkTest.LoRaMedium.propagation "Arrival computation count" 8860
+scalar LoRaNetworkTest.LoRaMedium.propagation "Arrival computation count" 90200
 par LoRaNetworkTest.LoRaMedium.analogModel typename "\"flora.LoRaPhy.LoRaAnalogModel\""
 par LoRaNetworkTest.LoRaMedium.analogModel ignorePartialInterference false
 par LoRaNetworkTest.LoRaMedium.backgroundNoise typename "\"inet.physicallayer.wireless.common.backgroundnoise.DimensionalBackgroundNoise\""
@@ -9041,21 +9120,21 @@ par LoRaNetworkTest.LoRaMedium listeningFilter false
 par LoRaNetworkTest.LoRaMedium macAddressFilter false
 par LoRaNetworkTest.LoRaMedium recordTransmissionLog false
 par LoRaNetworkTest.LoRaMedium recordReceptionLog false
-scalar LoRaNetworkTest.LoRaMedium "transmission count" 886
-scalar LoRaNetworkTest.LoRaMedium "signal send count" 8860
-scalar LoRaNetworkTest.LoRaMedium "reception computation count" 8860
-scalar LoRaNetworkTest.LoRaMedium "interference computation count" 3559
-scalar LoRaNetworkTest.LoRaMedium "reception decision computation count" 902
-scalar LoRaNetworkTest.LoRaMedium "listening decision computation count" 1755
-scalar LoRaNetworkTest.LoRaMedium "reception cache hit" 37.88123115754
+scalar LoRaNetworkTest.LoRaMedium "transmission count" 9020
+scalar LoRaNetworkTest.LoRaMedium "signal send count" 90200
+scalar LoRaNetworkTest.LoRaMedium "reception computation count" 90199
+scalar LoRaNetworkTest.LoRaMedium "interference computation count" 35893
+scalar LoRaNetworkTest.LoRaMedium "reception decision computation count" 9146
+scalar LoRaNetworkTest.LoRaMedium "listening decision computation count" 17598
+scalar LoRaNetworkTest.LoRaMedium "reception cache hit" 37.844803230452
 attr unit %
-scalar LoRaNetworkTest.LoRaMedium "interference cache hit" 65.559373806796
+scalar LoRaNetworkTest.LoRaMedium "interference cache hit" 65.786323507407
 attr unit %
 scalar LoRaNetworkTest.LoRaMedium "noise cache hit" 0
 attr unit %
-scalar LoRaNetworkTest.LoRaMedium "snir cache hit" 47.466511357018
+scalar LoRaNetworkTest.LoRaMedium "snir cache hit" 47.992721482998
 attr unit %
-scalar LoRaNetworkTest.LoRaMedium "reception decision cache hit" 47.466511357018
+scalar LoRaNetworkTest.LoRaMedium "reception decision cache hit" 47.992721482998
 attr unit %
 scalar LoRaNetworkTest.LoRaMedium "reception result cache hit" 0
 attr unit %
@@ -9086,22 +9165,22 @@ attr title "pause sent, count"
 scalar LoRaNetworkTest.networkServer.ethernet pauseSent:sum 0
 attr recordingmode sum
 attr title "pause sent, sum"
-scalar LoRaNetworkTest.networkServer.ethernet decapPk:count 1143
+scalar LoRaNetworkTest.networkServer.ethernet decapPk:count 11725
 attr interpolationmode none
 attr recordingmode count
 attr source decapPk
 attr title "packets decapsulated, count"
-scalar LoRaNetworkTest.networkServer.ethernet decapPk:sum(packetBytes) 59463
+scalar LoRaNetworkTest.networkServer.ethernet decapPk:sum(packetBytes) 610648
 attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr source decapPk
 attr title "packets decapsulated, sum(packetBytes)"
-scalar LoRaNetworkTest.networkServer.ethernet encapPk:count 412
+scalar LoRaNetworkTest.networkServer.ethernet encapPk:count 4193
 attr interpolationmode none
 attr recordingmode count
 attr source encapPk
 attr title "packets encapsulated, count"
-scalar LoRaNetworkTest.networkServer.ethernet encapPk:sum(packetBytes) 12080
+scalar LoRaNetworkTest.networkServer.ethernet encapPk:sum(packetBytes) 123644
 attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr source encapPk
@@ -9216,7 +9295,7 @@ attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetP
 attr title "queue bit length, timeavg"
 attr unit b
 statistic LoRaNetworkTest.networkServer.eth[0].queue queueingTime:histogram
-field count 412
+field count 4193
 field mean 0
 field stddev 0
 field min 0
@@ -9254,7 +9333,7 @@ bin	-0.08	0
 bin	-0.06	0
 bin	-0.04	0
 bin	-0.02	0
-bin	0	412
+bin	0	4193
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -9280,32 +9359,32 @@ bin	0.44	0
 bin	0.46	0
 bin	0.48	0
 bin	0.5	0
-scalar LoRaNetworkTest.networkServer.eth[0].queue outgoingPackets:count 412
+scalar LoRaNetworkTest.networkServer.eth[0].queue outgoingPackets:count 4193
 attr recordingmode count
 attr source packetPulled
 attr title "outgoing packets, count"
 attr unit pk
-scalar LoRaNetworkTest.networkServer.eth[0].queue outgoingPacketLengths:sum 155968
+scalar LoRaNetworkTest.networkServer.eth[0].queue outgoingPacketLengths:sum 1592944
 attr interpolationmode none
 attr recordingmode sum
 attr source packetLength(packetPulled)
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic LoRaNetworkTest.networkServer.eth[0].queue outgoingPacketLengths:histogram
-field count 412
-field mean 378.56310679612
-field stddev 35.263531999897
+field count 4193
+field mean 379.90555688052
+field stddev 37.181967564361
 field min 368
 field max 496
-field sum 155968
-field sqrsum 59554816
+field sum 1592944
+field sqrsum 610963712
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetLength(packetPulled)
 attr title "outgoing packet lengths"
 attr unit b
 bin	-inf	0
-bin	366	378
+bin	366	3803
 bin	370	0
 bin	374	0
 bin	378	0
@@ -9337,7 +9416,7 @@ bin	478	0
 bin	482	0
 bin	486	0
 bin	490	0
-bin	494	34
+bin	494	390
 bin	498	0
 statistic LoRaNetworkTest.networkServer.eth[0].queue flowQueueingTime:histogram
 field count 0
@@ -9355,32 +9434,32 @@ attr unit s
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar LoRaNetworkTest.networkServer.eth[0].queue incomingPackets:count 412
+scalar LoRaNetworkTest.networkServer.eth[0].queue incomingPackets:count 4193
 attr recordingmode count
 attr source packetPushStarted
 attr title "incoming packets, count"
 attr unit pk
-scalar LoRaNetworkTest.networkServer.eth[0].queue incomingPacketLengths:sum 155968
+scalar LoRaNetworkTest.networkServer.eth[0].queue incomingPacketLengths:sum 1592944
 attr interpolationmode none
 attr recordingmode sum
 attr source packetLength(packetPushStarted)
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic LoRaNetworkTest.networkServer.eth[0].queue incomingPacketLengths:histogram
-field count 412
-field mean 378.56310679612
-field stddev 35.263531999897
+field count 4193
+field mean 379.90555688052
+field stddev 37.181967564361
 field min 368
 field max 496
-field sum 155968
-field sqrsum 59554816
+field sum 1592944
+field sqrsum 610963712
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetLength(packetPushStarted)
 attr title "incoming packet lengths"
 attr unit b
 bin	-inf	0
-bin	366	378
+bin	366	3803
 bin	370	0
 bin	374	0
 bin	378	0
@@ -9412,7 +9491,7 @@ bin	478	0
 bin	482	0
 bin	486	0
 bin	490	0
-bin	494	34
+bin	494	390
 bin	498	0
 scalar LoRaNetworkTest.networkServer.eth[0].queue droppedPacketsQueueOverflow:count 0
 attr interpolationmode none
@@ -9440,14 +9519,14 @@ par LoRaNetworkTest.networkServer.eth[0].mac stopOperationExtraTime -1s
 attr unit s
 par LoRaNetworkTest.networkServer.eth[0].mac stopOperationTimeout 2s
 attr unit s
-scalar LoRaNetworkTest.networkServer.eth[0].mac "simulated time" 86400
+scalar LoRaNetworkTest.networkServer.eth[0].mac "simulated time" 867834.46148312
 scalar LoRaNetworkTest.networkServer.eth[0].mac full-duplex 1
-scalar LoRaNetworkTest.networkServer.eth[0].mac "frames/sec sent" 0.0047685185185185
-scalar LoRaNetworkTest.networkServer.eth[0].mac "frames/sec rcvd" 0.013229166666667
-scalar LoRaNetworkTest.networkServer.eth[0].mac "bits/sec sent" 2.4414814814815
-scalar LoRaNetworkTest.networkServer.eth[0].mac "bits/sec rcvd" 7.4108333333333
-scalar LoRaNetworkTest.networkServer.eth[0].mac "rx channel idle (%)" 99.99999917425
-scalar LoRaNetworkTest.networkServer.eth[0].mac "rx channel utilization (%)" 8.2575e-07
+scalar LoRaNetworkTest.networkServer.eth[0].mac "frames/sec sent" 0.0048315666018081
+scalar LoRaNetworkTest.networkServer.eth[0].mac "frames/sec rcvd" 0.013510641165323
+scalar LoRaNetworkTest.networkServer.eth[0].mac "bits/sec sent" 2.4737621001258
+scalar LoRaNetworkTest.networkServer.eth[0].mac "bits/sec rcvd" 7.574698046406
+scalar LoRaNetworkTest.networkServer.eth[0].mac "rx channel idle (%)" 99.999999156062
+scalar LoRaNetworkTest.networkServer.eth[0].mac "rx channel utilization (%)" 8.4393790809867e-07
 scalar LoRaNetworkTest.networkServer.eth[0].mac rxPausePkUnits:count 0
 attr interpolationmode none
 attr recordingmode count
@@ -9464,42 +9543,42 @@ scalar LoRaNetworkTest.networkServer.eth[0].mac txPausePkUnits:sum 0
 attr interpolationmode none
 attr recordingmode sum
 attr title "pause units sent, sum"
-scalar LoRaNetworkTest.networkServer.eth[0].mac rxPkOk:count 1143
+scalar LoRaNetworkTest.networkServer.eth[0].mac rxPkOk:count 11725
 attr interpolationmode none
 attr recordingmode count
 attr source rxPkOk
 attr title "packets received OK, count"
-scalar LoRaNetworkTest.networkServer.eth[0].mac rxPkOk:sum(packetBytes) 80037
+scalar LoRaNetworkTest.networkServer.eth[0].mac rxPkOk:sum(packetBytes) 821698
 attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr source rxPkOk
 attr title "packets received OK, sum(packetBytes)"
-scalar LoRaNetworkTest.networkServer.eth[0].mac txPk:count 412
+scalar LoRaNetworkTest.networkServer.eth[0].mac txPk:count 4193
 attr interpolationmode none
 attr recordingmode count
 attr source packetSentToLower
 attr title "packets transmitted, count"
-scalar LoRaNetworkTest.networkServer.eth[0].mac txPk:sum(packetBytes) 26368
+scalar LoRaNetworkTest.networkServer.eth[0].mac txPk:sum(packetBytes) 268352
 attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr source packetSentToLower
 attr title "packets transmitted, sum(packetBytes)"
-scalar LoRaNetworkTest.networkServer.eth[0].mac packetReceivedFromUpper:count 412
+scalar LoRaNetworkTest.networkServer.eth[0].mac packetReceivedFromUpper:count 4193
 attr interpolationmode none
 attr recordingmode count
 attr source packetReceivedFromUpper
 attr title "packet bytes from higher layer, count"
-scalar LoRaNetworkTest.networkServer.eth[0].mac packetReceivedFromUpper:sum(packetBytes) 19496
+scalar LoRaNetworkTest.networkServer.eth[0].mac packetReceivedFromUpper:sum(packetBytes) 199118
 attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr source packetReceivedFromUpper
 attr title "packet bytes from higher layer, sum(packetBytes)"
-scalar LoRaNetworkTest.networkServer.eth[0].mac passedUpPk:count 1143
+scalar LoRaNetworkTest.networkServer.eth[0].mac passedUpPk:count 11725
 attr interpolationmode none
 attr recordingmode count
 attr source packetSentToUpper
 attr title "packets passed to higher layer, count"
-scalar LoRaNetworkTest.networkServer.eth[0].mac passedUpPk:sum(packetBytes) 80037
+scalar LoRaNetworkTest.networkServer.eth[0].mac passedUpPk:sum(packetBytes) 821698
 attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr source packetSentToUpper
@@ -9713,25 +9792,25 @@ par LoRaNetworkTest.networkServer.ipv4.arp proxyArpInterfaces "\"\""
 scalar LoRaNetworkTest.networkServer.ipv4.arp arpResolutionFailed:count 0
 attr recordingmode count
 attr title "ARP failed resolutions, count"
-scalar LoRaNetworkTest.networkServer.ipv4.arp arpResolutionCompleted:count 378
+scalar LoRaNetworkTest.networkServer.ipv4.arp arpResolutionCompleted:count 3803
 attr recordingmode count
 attr title "ARP completed resolutions, count"
-scalar LoRaNetworkTest.networkServer.ipv4.arp arpResolutionInitiated:count 0
+scalar LoRaNetworkTest.networkServer.ipv4.arp arpResolutionInitiated:count 1
 attr recordingmode count
 attr title "ARP initiated resolutions, count"
-scalar LoRaNetworkTest.networkServer.ipv4.arp arpReplySent:count 378
+scalar LoRaNetworkTest.networkServer.ipv4.arp arpReplySent:count 3802
 attr recordingmode count
 attr source arpReplySent
 attr title "ARP replies sent, count"
-scalar LoRaNetworkTest.networkServer.ipv4.arp arpReplySent:sum(packetBytes) 10584
+scalar LoRaNetworkTest.networkServer.ipv4.arp arpReplySent:sum(packetBytes) 106456
 attr recordingmode sum(packetBytes)
 attr source arpReplySent
 attr title "ARP replies sent, sum(packetBytes)"
-scalar LoRaNetworkTest.networkServer.ipv4.arp arpRequestSent:count 0
+scalar LoRaNetworkTest.networkServer.ipv4.arp arpRequestSent:count 1
 attr recordingmode count
 attr source arpRequestSent
 attr title "ARP request sent, count"
-scalar LoRaNetworkTest.networkServer.ipv4.arp arpRequestSent:sum(packetBytes) 0
+scalar LoRaNetworkTest.networkServer.ipv4.arp arpRequestSent:sum(packetBytes) 28
 attr recordingmode sum(packetBytes)
 attr source arpRequestSent
 attr title "ARP request sent, sum(packetBytes)"
@@ -9755,27 +9834,27 @@ par LoRaNetworkTest.networkServer.udp icmpv6Module "\"^.ipv6.icmpv6\""
 par LoRaNetworkTest.networkServer.udp crcMode "\"declared\""
 attr enum disabled,declared,computed
 par LoRaNetworkTest.networkServer.udp defaultMulticastLoop true
-scalar LoRaNetworkTest.networkServer.udp packetReceived:count 765
+scalar LoRaNetworkTest.networkServer.udp packetReceived:count 7922
 attr interpolationmode none
 attr recordingmode count
 attr source packetReceived
 attr title "packets received, count"
-scalar LoRaNetworkTest.networkServer.udp packetReceived:sum(packetBytes) 26775
+scalar LoRaNetworkTest.networkServer.udp packetReceived:sum(packetBytes) 277270
 attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr source packetReceived
 attr title "packets received, sum(packetBytes)"
-scalar LoRaNetworkTest.networkServer.udp packetSent:count 34
+scalar LoRaNetworkTest.networkServer.udp packetSent:count 390
 attr interpolationmode none
 attr recordingmode count
 attr source packetSent
 attr title "packets sent, count"
-scalar LoRaNetworkTest.networkServer.udp packetSent:sum(packetBytes) 816
+scalar LoRaNetworkTest.networkServer.udp packetSent:sum(packetBytes) 9360
 attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr source packetSent
 attr title "packets sent, sum(packetBytes)"
-scalar LoRaNetworkTest.networkServer.udp passedUpPk:count 765
+scalar LoRaNetworkTest.networkServer.udp passedUpPk:count 7922
 attr interpolationmode none
 attr recordingmode count
 attr source packetSentToUpper
@@ -9829,35 +9908,35 @@ par LoRaNetworkTest.networkServer.app[0] headerLength 8B
 attr unit B
 par LoRaNetworkTest.networkServer.app[0] adrMethod "\"avg\""
 par LoRaNetworkTest.networkServer.app[0] adrDeviceMargin 15
-scalar LoRaNetworkTest.networkServer.app[0] LoRa_NS_DER 0.89788732394366
-scalar LoRaNetworkTest.networkServer.app[0] "Send ADR for node" 4
-scalar LoRaNetworkTest.networkServer.app[0] "Send ADR for node" 3
-scalar LoRaNetworkTest.networkServer.app[0] "Send ADR for node" 4
-scalar LoRaNetworkTest.networkServer.app[0] "Send ADR for node" 3
-scalar LoRaNetworkTest.networkServer.app[0] "Send ADR for node" 4
-scalar LoRaNetworkTest.networkServer.app[0] "Send ADR for node" 3
-scalar LoRaNetworkTest.networkServer.app[0] "Send ADR for node" 4
-scalar LoRaNetworkTest.networkServer.app[0] "Send ADR for node" 4
-scalar LoRaNetworkTest.networkServer.app[0] "Send ADR for node" 2
-scalar LoRaNetworkTest.networkServer.app[0] "Send ADR for node" 3
-scalar LoRaNetworkTest.networkServer.app[0] "numReceivedFromNode 0" 73
-scalar LoRaNetworkTest.networkServer.app[0] "numReceivedFromNode 1" 80
-scalar LoRaNetworkTest.networkServer.app[0] "numReceivedFromNode 2" 85
-scalar LoRaNetworkTest.networkServer.app[0] "numReceivedFromNode 3" 75
-scalar LoRaNetworkTest.networkServer.app[0] "numReceivedFromNode 4" 85
-scalar LoRaNetworkTest.networkServer.app[0] "numReceivedFromNode 5" 78
-scalar LoRaNetworkTest.networkServer.app[0] "numReceivedFromNode 6" 71
-scalar LoRaNetworkTest.networkServer.app[0] "numReceivedFromNode 7" 95
-scalar LoRaNetworkTest.networkServer.app[0] "numReceivedFromNode 8" 43
-scalar LoRaNetworkTest.networkServer.app[0] "numReceivedFromNode 9" 80
+scalar LoRaNetworkTest.networkServer.app[0] LoRa_NS_DER 0.9178542463214
+scalar LoRaNetworkTest.networkServer.app[0] "Send ADR for node" 39
+scalar LoRaNetworkTest.networkServer.app[0] "Send ADR for node" 39
+scalar LoRaNetworkTest.networkServer.app[0] "Send ADR for node" 37
+scalar LoRaNetworkTest.networkServer.app[0] "Send ADR for node" 43
+scalar LoRaNetworkTest.networkServer.app[0] "Send ADR for node" 44
+scalar LoRaNetworkTest.networkServer.app[0] "Send ADR for node" 39
+scalar LoRaNetworkTest.networkServer.app[0] "Send ADR for node" 40
+scalar LoRaNetworkTest.networkServer.app[0] "Send ADR for node" 38
+scalar LoRaNetworkTest.networkServer.app[0] "Send ADR for node" 31
+scalar LoRaNetworkTest.networkServer.app[0] "Send ADR for node" 40
+scalar LoRaNetworkTest.networkServer.app[0] "numReceivedFromNode 0" 796
+scalar LoRaNetworkTest.networkServer.app[0] "numReceivedFromNode 1" 795
+scalar LoRaNetworkTest.networkServer.app[0] "numReceivedFromNode 2" 754
+scalar LoRaNetworkTest.networkServer.app[0] "numReceivedFromNode 3" 797
+scalar LoRaNetworkTest.networkServer.app[0] "numReceivedFromNode 4" 778
+scalar LoRaNetworkTest.networkServer.app[0] "numReceivedFromNode 5" 860
+scalar LoRaNetworkTest.networkServer.app[0] "numReceivedFromNode 6" 798
+scalar LoRaNetworkTest.networkServer.app[0] "numReceivedFromNode 7" 813
+scalar LoRaNetworkTest.networkServer.app[0] "numReceivedFromNode 8" 639
+scalar LoRaNetworkTest.networkServer.app[0] "numReceivedFromNode 9" 892
 statistic LoRaNetworkTest.networkServer.app[0] receivedRSSI
-field count 765
-field mean -119.14631101859
-field stddev 4.6220421898836
+field count 7922
+field mean -117.27161725204
+field stddev 3.9312073071394
 field min -129.60501691637
 field max -102.41986080519
-field sum -91146.927929221
-field sqrsum 10876141.764784
+field sum -929025.75187065
+field sqrsum 109070766.62091
 bin	-inf	0
 bin	-135.5	0
 bin	-135	0
@@ -9876,71 +9955,71 @@ bin	-129	3
 bin	-128.5	4
 bin	-128	4
 bin	-127.5	5
-bin	-127	6
-bin	-126.5	15
-bin	-126	14
-bin	-125.5	19
-bin	-125	20
-bin	-124.5	17
-bin	-124	22
-bin	-123.5	30
-bin	-123	31
-bin	-122.5	37
-bin	-122	28
-bin	-121.5	36
-bin	-121	34
-bin	-120.5	29
-bin	-120	27
-bin	-119.5	41
-bin	-119	26
-bin	-118.5	32
-bin	-118	19
-bin	-117.5	17
-bin	-117	23
-bin	-116.5	21
-bin	-116	25
-bin	-115.5	21
-bin	-115	29
-bin	-114.5	12
-bin	-114	22
-bin	-113.5	10
-bin	-113	9
-bin	-112.5	18
-bin	-112	13
-bin	-111.5	9
-bin	-111	5
-bin	-110.5	7
-bin	-110	5
-bin	-109.5	2
-bin	-109	3
-bin	-108.5	3
-bin	-108	3
-bin	-107.5	2
-bin	-107	1
-bin	-106.5	1
-bin	-106	1
-bin	-105.5	0
-bin	-105	0
-bin	-104.5	0
-bin	-104	0
-bin	-103.5	0
-bin	-103	0
+bin	-127	15
+bin	-126.5	19
+bin	-126	22
+bin	-125.5	32
+bin	-125	34
+bin	-124.5	30
+bin	-124	154
+bin	-123.5	183
+bin	-123	192
+bin	-122.5	235
+bin	-122	245
+bin	-121.5	264
+bin	-121	310
+bin	-120.5	340
+bin	-120	321
+bin	-119.5	387
+bin	-119	361
+bin	-118.5	348
+bin	-118	385
+bin	-117.5	343
+bin	-117	411
+bin	-116.5	362
+bin	-116	338
+bin	-115.5	351
+bin	-115	321
+bin	-114.5	287
+bin	-114	260
+bin	-113.5	217
+bin	-113	197
+bin	-112.5	169
+bin	-112	159
+bin	-111.5	121
+bin	-111	93
+bin	-110.5	93
+bin	-110	81
+bin	-109.5	53
+bin	-109	34
+bin	-108.5	33
+bin	-108	42
+bin	-107.5	15
+bin	-107	11
+bin	-106.5	10
+bin	-106	2
+bin	-105.5	10
+bin	-105	3
+bin	-104.5	4
+bin	-104	2
+bin	-103.5	1
+bin	-103	2
 bin	-102.5	1
 bin	-102	0
-scalar LoRaNetworkTest.networkServer.app[0] totalReceivedPackets 765
-scalar LoRaNetworkTest.networkServer.app[0] "counterUniqueReceivedPacketsPerSF SF7" 389
-scalar LoRaNetworkTest.networkServer.app[0] "counterUniqueReceivedPacketsPerSF SF8" 316
+scalar LoRaNetworkTest.networkServer.app[0] totalReceivedPackets 7922
+scalar LoRaNetworkTest.networkServer.app[0] "counterUniqueReceivedPacketsPerSF SF7" 7182
+scalar LoRaNetworkTest.networkServer.app[0] "counterUniqueReceivedPacketsPerSF SF8" 680
 scalar LoRaNetworkTest.networkServer.app[0] "counterUniqueReceivedPacketsPerSF SF9" 60
 scalar LoRaNetworkTest.networkServer.app[0] "counterUniqueReceivedPacketsPerSF SF10" 0
 scalar LoRaNetworkTest.networkServer.app[0] "counterUniqueReceivedPacketsPerSF SF11" 0
 scalar LoRaNetworkTest.networkServer.app[0] "counterUniqueReceivedPacketsPerSF SF12" 0
-scalar LoRaNetworkTest.networkServer.app[0] "DER SF7" 0.8963133640553
-scalar LoRaNetworkTest.networkServer.app[0] "DER SF8" 0.8876404494382
+scalar LoRaNetworkTest.networkServer.app[0] "DER SF7" 0.91817949373562
+scalar LoRaNetworkTest.networkServer.app[0] "DER SF8" 0.91030789825971
 scalar LoRaNetworkTest.networkServer.app[0] "DER SF9" 0.96774193548387
 scalar LoRaNetworkTest.networkServer.app[0] "DER SF10" 0
 scalar LoRaNetworkTest.networkServer.app[0] "DER SF11" 0
 scalar LoRaNetworkTest.networkServer.app[0] "DER SF12" 0
-scalar LoRaNetworkTest.networkServer.app[0] LoRa_ServerPacketReceived:count 765
+scalar LoRaNetworkTest.networkServer.app[0] LoRa_ServerPacketReceived:count 7922
 attr recordingmode count
 attr source LoRa_ServerPacketReceived
 par LoRaNetworkTest.networkServer.at typename "\"inet.common.MessageDispatcher\""
@@ -10062,7 +10141,7 @@ attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetP
 attr title "queue bit length, timeavg"
 attr unit b
 statistic LoRaNetworkTest.internetCloud.ppp[0].queue queueingTime:histogram
-field count 765
+field count 7922
 field mean 0
 field stddev 0
 field min 0
@@ -10100,7 +10179,7 @@ bin	-0.08	0
 bin	-0.06	0
 bin	-0.04	0
 bin	-0.02	0
-bin	0	765
+bin	0	7922
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -10126,25 +10205,25 @@ bin	0.44	0
 bin	0.46	0
 bin	0.48	0
 bin	0.5	0
-scalar LoRaNetworkTest.internetCloud.ppp[0].queue outgoingPackets:count 765
+scalar LoRaNetworkTest.internetCloud.ppp[0].queue outgoingPackets:count 7922
 attr recordingmode count
 attr source packetPulled
 attr title "outgoing packets, count"
 attr unit pk
-scalar LoRaNetworkTest.internetCloud.ppp[0].queue outgoingPacketLengths:sum 336600
+scalar LoRaNetworkTest.internetCloud.ppp[0].queue outgoingPacketLengths:sum 3485680
 attr interpolationmode none
 attr recordingmode sum
 attr source packetLength(packetPulled)
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic LoRaNetworkTest.internetCloud.ppp[0].queue outgoingPacketLengths:histogram
-field count 765
+field count 7922
 field mean 440
 field stddev 0
 field min 440
 field max 440
-field sum 336600
-field sqrsum 148104000
+field sum 3485680
+field sqrsum 1533699200
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetLength(packetPulled)
@@ -10152,7 +10231,7 @@ attr title "outgoing packet lengths"
 attr unit b
 bin	-inf	0
 bin	439	0
-bin	440	765
+bin	440	7922
 bin	441	0
 statistic LoRaNetworkTest.internetCloud.ppp[0].queue flowQueueingTime:histogram
 field count 0
@@ -10170,25 +10249,25 @@ attr unit s
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar LoRaNetworkTest.internetCloud.ppp[0].queue incomingPackets:count 765
+scalar LoRaNetworkTest.internetCloud.ppp[0].queue incomingPackets:count 7922
 attr recordingmode count
 attr source packetPushStarted
 attr title "incoming packets, count"
 attr unit pk
-scalar LoRaNetworkTest.internetCloud.ppp[0].queue incomingPacketLengths:sum 336600
+scalar LoRaNetworkTest.internetCloud.ppp[0].queue incomingPacketLengths:sum 3485680
 attr interpolationmode none
 attr recordingmode sum
 attr source packetLength(packetPushStarted)
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic LoRaNetworkTest.internetCloud.ppp[0].queue incomingPacketLengths:histogram
-field count 765
+field count 7922
 field mean 440
 field stddev 0
 field min 440
 field max 440
-field sum 336600
-field sqrsum 148104000
+field sum 3485680
+field sqrsum 1533699200
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetLength(packetPushStarted)
@@ -10196,7 +10275,7 @@ attr title "incoming packet lengths"
 attr unit b
 bin	-inf	0
 bin	439	0
-bin	440	765
+bin	440	7922
 bin	441	0
 scalar LoRaNetworkTest.internetCloud.ppp[0].queue droppedPacketsQueueOverflow:count 0
 attr interpolationmode none
@@ -10220,27 +10299,27 @@ par LoRaNetworkTest.internetCloud.ppp[0].ppp stopOperationExtraTime -1s
 attr unit s
 par LoRaNetworkTest.internetCloud.ppp[0].ppp stopOperationTimeout 2s
 attr unit s
-scalar LoRaNetworkTest.internetCloud.ppp[0].ppp transmissionState:timeavg 4.3916666666667e-09
+scalar LoRaNetworkTest.internetCloud.ppp[0].ppp transmissionState:timeavg 4.5277206361278e-09
 attr interpolationmode sample-hold
 attr recordingmode timeavg
 attr source transmissionStateChanged
 attr title "tx state, timeavg"
-scalar LoRaNetworkTest.internetCloud.ppp[0].ppp rxPkOk:count 34
+scalar LoRaNetworkTest.internetCloud.ppp[0].ppp rxPkOk:count 390
 attr interpolationmode none
 attr recordingmode count
 attr source rxPkOk
 attr title "packets received OK, count"
-scalar LoRaNetworkTest.internetCloud.ppp[0].ppp rxPkOk:sum(packetBytes) 1734
+scalar LoRaNetworkTest.internetCloud.ppp[0].ppp rxPkOk:sum(packetBytes) 19890
 attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr source rxPkOk
 attr title "packets received OK, sum(packetBytes)"
-scalar LoRaNetworkTest.internetCloud.ppp[0].ppp txPk:count 765
+scalar LoRaNetworkTest.internetCloud.ppp[0].ppp txPk:count 7922
 attr interpolationmode none
 attr recordingmode count
 attr source packetSentToLower
 attr title "packets transmitted, count"
-scalar LoRaNetworkTest.internetCloud.ppp[0].ppp txPk:sum(packetBytes) 47430
+scalar LoRaNetworkTest.internetCloud.ppp[0].ppp txPk:sum(packetBytes) 491164
 attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr source packetSentToLower
@@ -10255,12 +10334,12 @@ attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr source packetReceivedFromUpper
 attr title "packets received from higher layer, sum(packetBytes)"
-scalar LoRaNetworkTest.internetCloud.ppp[0].ppp passedUpPk:count 34
+scalar LoRaNetworkTest.internetCloud.ppp[0].ppp passedUpPk:count 390
 attr interpolationmode none
 attr recordingmode count
 attr source packetSentToUpper
 attr title "packets passed to higher layer, count"
-scalar LoRaNetworkTest.internetCloud.ppp[0].ppp passedUpPk:sum(packetBytes) 1496
+scalar LoRaNetworkTest.internetCloud.ppp[0].ppp passedUpPk:sum(packetBytes) 17160
 attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr source packetSentToUpper
@@ -10365,7 +10444,7 @@ attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetP
 attr title "queue bit length, timeavg"
 attr unit b
 statistic LoRaNetworkTest.internetCloud.ppp[1].queue queueingTime:histogram
-field count 34
+field count 390
 field mean 0
 field stddev 0
 field min 0
@@ -10403,7 +10482,7 @@ bin	-0.08	0
 bin	-0.06	0
 bin	-0.04	0
 bin	-0.02	0
-bin	0	34
+bin	0	390
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -10429,25 +10508,25 @@ bin	0.44	0
 bin	0.46	0
 bin	0.48	0
 bin	0.5	0
-scalar LoRaNetworkTest.internetCloud.ppp[1].queue outgoingPackets:count 34
+scalar LoRaNetworkTest.internetCloud.ppp[1].queue outgoingPackets:count 390
 attr recordingmode count
 attr source packetPulled
 attr title "outgoing packets, count"
 attr unit pk
-scalar LoRaNetworkTest.internetCloud.ppp[1].queue outgoingPacketLengths:sum 11968
+scalar LoRaNetworkTest.internetCloud.ppp[1].queue outgoingPacketLengths:sum 137280
 attr interpolationmode none
 attr recordingmode sum
 attr source packetLength(packetPulled)
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic LoRaNetworkTest.internetCloud.ppp[1].queue outgoingPacketLengths:histogram
-field count 34
+field count 390
 field mean 352
 field stddev 0
 field min 352
 field max 352
-field sum 11968
-field sqrsum 4212736
+field sum 137280
+field sqrsum 48322560
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetLength(packetPulled)
@@ -10455,7 +10534,7 @@ attr title "outgoing packet lengths"
 attr unit b
 bin	-inf	0
 bin	351	0
-bin	352	34
+bin	352	390
 bin	353	0
 statistic LoRaNetworkTest.internetCloud.ppp[1].queue flowQueueingTime:histogram
 field count 0
@@ -10473,25 +10552,25 @@ attr unit s
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar LoRaNetworkTest.internetCloud.ppp[1].queue incomingPackets:count 34
+scalar LoRaNetworkTest.internetCloud.ppp[1].queue incomingPackets:count 390
 attr recordingmode count
 attr source packetPushStarted
 attr title "incoming packets, count"
 attr unit pk
-scalar LoRaNetworkTest.internetCloud.ppp[1].queue incomingPacketLengths:sum 11968
+scalar LoRaNetworkTest.internetCloud.ppp[1].queue incomingPacketLengths:sum 137280
 attr interpolationmode none
 attr recordingmode sum
 attr source packetLength(packetPushStarted)
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic LoRaNetworkTest.internetCloud.ppp[1].queue incomingPacketLengths:histogram
-field count 34
+field count 390
 field mean 352
 field stddev 0
 field min 352
 field max 352
-field sum 11968
-field sqrsum 4212736
+field sum 137280
+field sqrsum 48322560
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetLength(packetPushStarted)
@@ -10499,7 +10578,7 @@ attr title "incoming packet lengths"
 attr unit b
 bin	-inf	0
 bin	351	0
-bin	352	34
+bin	352	390
 bin	353	0
 scalar LoRaNetworkTest.internetCloud.ppp[1].queue droppedPacketsQueueOverflow:count 0
 attr interpolationmode none
@@ -10523,27 +10602,27 @@ par LoRaNetworkTest.internetCloud.ppp[1].ppp stopOperationExtraTime -1s
 attr unit s
 par LoRaNetworkTest.internetCloud.ppp[1].ppp stopOperationTimeout 2s
 attr unit s
-scalar LoRaNetworkTest.internetCloud.ppp[1].ppp transmissionState:timeavg 1.6055555555556e-10
+scalar LoRaNetworkTest.internetCloud.ppp[1].ppp transmissionState:timeavg 1.8335294006194e-10
 attr interpolationmode sample-hold
 attr recordingmode timeavg
 attr source transmissionStateChanged
 attr title "tx state, timeavg"
-scalar LoRaNetworkTest.internetCloud.ppp[1].ppp rxPkOk:count 765
+scalar LoRaNetworkTest.internetCloud.ppp[1].ppp rxPkOk:count 7922
 attr interpolationmode none
 attr recordingmode count
 attr source rxPkOk
 attr title "packets received OK, count"
-scalar LoRaNetworkTest.internetCloud.ppp[1].ppp rxPkOk:sum(packetBytes) 47430
+scalar LoRaNetworkTest.internetCloud.ppp[1].ppp rxPkOk:sum(packetBytes) 491164
 attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr source rxPkOk
 attr title "packets received OK, sum(packetBytes)"
-scalar LoRaNetworkTest.internetCloud.ppp[1].ppp txPk:count 34
+scalar LoRaNetworkTest.internetCloud.ppp[1].ppp txPk:count 390
 attr interpolationmode none
 attr recordingmode count
 attr source packetSentToLower
 attr title "packets transmitted, count"
-scalar LoRaNetworkTest.internetCloud.ppp[1].ppp txPk:sum(packetBytes) 1734
+scalar LoRaNetworkTest.internetCloud.ppp[1].ppp txPk:sum(packetBytes) 19890
 attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr source packetSentToLower
@@ -10558,12 +10637,12 @@ attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr source packetReceivedFromUpper
 attr title "packets received from higher layer, sum(packetBytes)"
-scalar LoRaNetworkTest.internetCloud.ppp[1].ppp passedUpPk:count 765
+scalar LoRaNetworkTest.internetCloud.ppp[1].ppp passedUpPk:count 7922
 attr interpolationmode none
 attr recordingmode count
 attr source packetSentToUpper
 attr title "packets passed to higher layer, count"
-scalar LoRaNetworkTest.internetCloud.ppp[1].ppp passedUpPk:sum(packetBytes) 42075
+scalar LoRaNetworkTest.internetCloud.ppp[1].ppp passedUpPk:sum(packetBytes) 435710
 attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr source packetSentToUpper
@@ -10847,22 +10926,22 @@ attr title "pause sent, count"
 scalar LoRaNetworkTest.gwRouter[0].ethernet pauseSent:sum 0
 attr recordingmode sum
 attr title "pause sent, sum"
-scalar LoRaNetworkTest.gwRouter[0].ethernet decapPk:count 1143
+scalar LoRaNetworkTest.gwRouter[0].ethernet decapPk:count 11725
 attr interpolationmode none
 attr recordingmode count
 attr source decapPk
 attr title "packets decapsulated, count"
-scalar LoRaNetworkTest.gwRouter[0].ethernet decapPk:sum(packetBytes) 59463
+scalar LoRaNetworkTest.gwRouter[0].ethernet decapPk:sum(packetBytes) 610648
 attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr source decapPk
 attr title "packets decapsulated, sum(packetBytes)"
-scalar LoRaNetworkTest.gwRouter[0].ethernet encapPk:count 412
+scalar LoRaNetworkTest.gwRouter[0].ethernet encapPk:count 4193
 attr interpolationmode none
 attr recordingmode count
 attr source encapPk
 attr title "packets encapsulated, count"
-scalar LoRaNetworkTest.gwRouter[0].ethernet encapPk:sum(packetBytes) 12080
+scalar LoRaNetworkTest.gwRouter[0].ethernet encapPk:sum(packetBytes) 123644
 attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr source encapPk
@@ -10977,7 +11056,7 @@ attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetP
 attr title "queue bit length, timeavg"
 attr unit b
 statistic LoRaNetworkTest.gwRouter[0].ppp[0].queue queueingTime:histogram
-field count 765
+field count 7922
 field mean 0
 field stddev 0
 field min 0
@@ -11015,7 +11094,7 @@ bin	-0.08	0
 bin	-0.06	0
 bin	-0.04	0
 bin	-0.02	0
-bin	0	765
+bin	0	7922
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -11041,25 +11120,25 @@ bin	0.44	0
 bin	0.46	0
 bin	0.48	0
 bin	0.5	0
-scalar LoRaNetworkTest.gwRouter[0].ppp[0].queue outgoingPackets:count 765
+scalar LoRaNetworkTest.gwRouter[0].ppp[0].queue outgoingPackets:count 7922
 attr recordingmode count
 attr source packetPulled
 attr title "outgoing packets, count"
 attr unit pk
-scalar LoRaNetworkTest.gwRouter[0].ppp[0].queue outgoingPacketLengths:sum 336600
+scalar LoRaNetworkTest.gwRouter[0].ppp[0].queue outgoingPacketLengths:sum 3485680
 attr interpolationmode none
 attr recordingmode sum
 attr source packetLength(packetPulled)
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic LoRaNetworkTest.gwRouter[0].ppp[0].queue outgoingPacketLengths:histogram
-field count 765
+field count 7922
 field mean 440
 field stddev 0
 field min 440
 field max 440
-field sum 336600
-field sqrsum 148104000
+field sum 3485680
+field sqrsum 1533699200
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetLength(packetPulled)
@@ -11067,7 +11146,7 @@ attr title "outgoing packet lengths"
 attr unit b
 bin	-inf	0
 bin	439	0
-bin	440	765
+bin	440	7922
 bin	441	0
 statistic LoRaNetworkTest.gwRouter[0].ppp[0].queue flowQueueingTime:histogram
 field count 0
@@ -11085,25 +11164,25 @@ attr unit s
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar LoRaNetworkTest.gwRouter[0].ppp[0].queue incomingPackets:count 765
+scalar LoRaNetworkTest.gwRouter[0].ppp[0].queue incomingPackets:count 7922
 attr recordingmode count
 attr source packetPushStarted
 attr title "incoming packets, count"
 attr unit pk
-scalar LoRaNetworkTest.gwRouter[0].ppp[0].queue incomingPacketLengths:sum 336600
+scalar LoRaNetworkTest.gwRouter[0].ppp[0].queue incomingPacketLengths:sum 3485680
 attr interpolationmode none
 attr recordingmode sum
 attr source packetLength(packetPushStarted)
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic LoRaNetworkTest.gwRouter[0].ppp[0].queue incomingPacketLengths:histogram
-field count 765
+field count 7922
 field mean 440
 field stddev 0
 field min 440
 field max 440
-field sum 336600
-field sqrsum 148104000
+field sum 3485680
+field sqrsum 1533699200
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetLength(packetPushStarted)
@@ -11111,7 +11190,7 @@ attr title "incoming packet lengths"
 attr unit b
 bin	-inf	0
 bin	439	0
-bin	440	765
+bin	440	7922
 bin	441	0
 scalar LoRaNetworkTest.gwRouter[0].ppp[0].queue droppedPacketsQueueOverflow:count 0
 attr interpolationmode none
@@ -11135,27 +11214,27 @@ par LoRaNetworkTest.gwRouter[0].ppp[0].ppp stopOperationExtraTime -1s
 attr unit s
 par LoRaNetworkTest.gwRouter[0].ppp[0].ppp stopOperationTimeout 2s
 attr unit s
-scalar LoRaNetworkTest.gwRouter[0].ppp[0].ppp transmissionState:timeavg 4.3916666666667e-09
+scalar LoRaNetworkTest.gwRouter[0].ppp[0].ppp transmissionState:timeavg 4.5277206361278e-09
 attr interpolationmode sample-hold
 attr recordingmode timeavg
 attr source transmissionStateChanged
 attr title "tx state, timeavg"
-scalar LoRaNetworkTest.gwRouter[0].ppp[0].ppp rxPkOk:count 34
+scalar LoRaNetworkTest.gwRouter[0].ppp[0].ppp rxPkOk:count 390
 attr interpolationmode none
 attr recordingmode count
 attr source rxPkOk
 attr title "packets received OK, count"
-scalar LoRaNetworkTest.gwRouter[0].ppp[0].ppp rxPkOk:sum(packetBytes) 1734
+scalar LoRaNetworkTest.gwRouter[0].ppp[0].ppp rxPkOk:sum(packetBytes) 19890
 attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr source rxPkOk
 attr title "packets received OK, sum(packetBytes)"
-scalar LoRaNetworkTest.gwRouter[0].ppp[0].ppp txPk:count 765
+scalar LoRaNetworkTest.gwRouter[0].ppp[0].ppp txPk:count 7922
 attr interpolationmode none
 attr recordingmode count
 attr source packetSentToLower
 attr title "packets transmitted, count"
-scalar LoRaNetworkTest.gwRouter[0].ppp[0].ppp txPk:sum(packetBytes) 47430
+scalar LoRaNetworkTest.gwRouter[0].ppp[0].ppp txPk:sum(packetBytes) 491164
 attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr source packetSentToLower
@@ -11170,12 +11249,12 @@ attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr source packetReceivedFromUpper
 attr title "packets received from higher layer, sum(packetBytes)"
-scalar LoRaNetworkTest.gwRouter[0].ppp[0].ppp passedUpPk:count 34
+scalar LoRaNetworkTest.gwRouter[0].ppp[0].ppp passedUpPk:count 390
 attr interpolationmode none
 attr recordingmode count
 attr source packetSentToUpper
 attr title "packets passed to higher layer, count"
-scalar LoRaNetworkTest.gwRouter[0].ppp[0].ppp passedUpPk:sum(packetBytes) 1496
+scalar LoRaNetworkTest.gwRouter[0].ppp[0].ppp passedUpPk:sum(packetBytes) 17160
 attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr source packetSentToUpper
@@ -11280,7 +11359,7 @@ attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetP
 attr title "queue bit length, timeavg"
 attr unit b
 statistic LoRaNetworkTest.gwRouter[0].eth[0].queue queueingTime:histogram
-field count 412
+field count 4193
 field mean 0
 field stddev 0
 field min 0
@@ -11318,7 +11397,7 @@ bin	-0.08	0
 bin	-0.06	0
 bin	-0.04	0
 bin	-0.02	0
-bin	0	412
+bin	0	4193
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -11344,32 +11423,32 @@ bin	0.44	0
 bin	0.46	0
 bin	0.48	0
 bin	0.5	0
-scalar LoRaNetworkTest.gwRouter[0].eth[0].queue outgoingPackets:count 412
+scalar LoRaNetworkTest.gwRouter[0].eth[0].queue outgoingPackets:count 4193
 attr recordingmode count
 attr source packetPulled
 attr title "outgoing packets, count"
 attr unit pk
-scalar LoRaNetworkTest.gwRouter[0].eth[0].queue outgoingPacketLengths:sum 155968
+scalar LoRaNetworkTest.gwRouter[0].eth[0].queue outgoingPacketLengths:sum 1592944
 attr interpolationmode none
 attr recordingmode sum
 attr source packetLength(packetPulled)
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic LoRaNetworkTest.gwRouter[0].eth[0].queue outgoingPacketLengths:histogram
-field count 412
-field mean 378.56310679612
-field stddev 35.263531999897
+field count 4193
+field mean 379.90555688052
+field stddev 37.181967564361
 field min 368
 field max 496
-field sum 155968
-field sqrsum 59554816
+field sum 1592944
+field sqrsum 610963712
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetLength(packetPulled)
 attr title "outgoing packet lengths"
 attr unit b
 bin	-inf	0
-bin	366	378
+bin	366	3803
 bin	370	0
 bin	374	0
 bin	378	0
@@ -11401,7 +11480,7 @@ bin	478	0
 bin	482	0
 bin	486	0
 bin	490	0
-bin	494	34
+bin	494	390
 bin	498	0
 statistic LoRaNetworkTest.gwRouter[0].eth[0].queue flowQueueingTime:histogram
 field count 0
@@ -11419,32 +11498,32 @@ attr unit s
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar LoRaNetworkTest.gwRouter[0].eth[0].queue incomingPackets:count 412
+scalar LoRaNetworkTest.gwRouter[0].eth[0].queue incomingPackets:count 4193
 attr recordingmode count
 attr source packetPushStarted
 attr title "incoming packets, count"
 attr unit pk
-scalar LoRaNetworkTest.gwRouter[0].eth[0].queue incomingPacketLengths:sum 155968
+scalar LoRaNetworkTest.gwRouter[0].eth[0].queue incomingPacketLengths:sum 1592944
 attr interpolationmode none
 attr recordingmode sum
 attr source packetLength(packetPushStarted)
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic LoRaNetworkTest.gwRouter[0].eth[0].queue incomingPacketLengths:histogram
-field count 412
-field mean 378.56310679612
-field stddev 35.263531999897
+field count 4193
+field mean 379.90555688052
+field stddev 37.181967564361
 field min 368
 field max 496
-field sum 155968
-field sqrsum 59554816
+field sum 1592944
+field sqrsum 610963712
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetLength(packetPushStarted)
 attr title "incoming packet lengths"
 attr unit b
 bin	-inf	0
-bin	366	378
+bin	366	3803
 bin	370	0
 bin	374	0
 bin	378	0
@@ -11476,7 +11555,7 @@ bin	478	0
 bin	482	0
 bin	486	0
 bin	490	0
-bin	494	34
+bin	494	390
 bin	498	0
 scalar LoRaNetworkTest.gwRouter[0].eth[0].queue droppedPacketsQueueOverflow:count 0
 attr interpolationmode none
@@ -11504,14 +11583,14 @@ par LoRaNetworkTest.gwRouter[0].eth[0].mac stopOperationExtraTime -1s
 attr unit s
 par LoRaNetworkTest.gwRouter[0].eth[0].mac stopOperationTimeout 2s
 attr unit s
-scalar LoRaNetworkTest.gwRouter[0].eth[0].mac "simulated time" 86400
+scalar LoRaNetworkTest.gwRouter[0].eth[0].mac "simulated time" 867834.46148312
 scalar LoRaNetworkTest.gwRouter[0].eth[0].mac full-duplex 1
-scalar LoRaNetworkTest.gwRouter[0].eth[0].mac "frames/sec sent" 0.0047685185185185
-scalar LoRaNetworkTest.gwRouter[0].eth[0].mac "frames/sec rcvd" 0.013229166666667
-scalar LoRaNetworkTest.gwRouter[0].eth[0].mac "bits/sec sent" 2.4414814814815
-scalar LoRaNetworkTest.gwRouter[0].eth[0].mac "bits/sec rcvd" 7.4108333333333
-scalar LoRaNetworkTest.gwRouter[0].eth[0].mac "rx channel idle (%)" 99.99999917425
-scalar LoRaNetworkTest.gwRouter[0].eth[0].mac "rx channel utilization (%)" 8.2575e-07
+scalar LoRaNetworkTest.gwRouter[0].eth[0].mac "frames/sec sent" 0.0048315666018081
+scalar LoRaNetworkTest.gwRouter[0].eth[0].mac "frames/sec rcvd" 0.013510641165323
+scalar LoRaNetworkTest.gwRouter[0].eth[0].mac "bits/sec sent" 2.4737621001258
+scalar LoRaNetworkTest.gwRouter[0].eth[0].mac "bits/sec rcvd" 7.574698046406
+scalar LoRaNetworkTest.gwRouter[0].eth[0].mac "rx channel idle (%)" 99.999999156062
+scalar LoRaNetworkTest.gwRouter[0].eth[0].mac "rx channel utilization (%)" 8.4393790809867e-07
 scalar LoRaNetworkTest.gwRouter[0].eth[0].mac rxPausePkUnits:count 0
 attr interpolationmode none
 attr recordingmode count
@@ -11528,42 +11607,42 @@ scalar LoRaNetworkTest.gwRouter[0].eth[0].mac txPausePkUnits:sum 0
 attr interpolationmode none
 attr recordingmode sum
 attr title "pause units sent, sum"
-scalar LoRaNetworkTest.gwRouter[0].eth[0].mac rxPkOk:count 1143
+scalar LoRaNetworkTest.gwRouter[0].eth[0].mac rxPkOk:count 11725
 attr interpolationmode none
 attr recordingmode count
 attr source rxPkOk
 attr title "packets received OK, count"
-scalar LoRaNetworkTest.gwRouter[0].eth[0].mac rxPkOk:sum(packetBytes) 80037
+scalar LoRaNetworkTest.gwRouter[0].eth[0].mac rxPkOk:sum(packetBytes) 821698
 attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr source rxPkOk
 attr title "packets received OK, sum(packetBytes)"
-scalar LoRaNetworkTest.gwRouter[0].eth[0].mac txPk:count 412
+scalar LoRaNetworkTest.gwRouter[0].eth[0].mac txPk:count 4193
 attr interpolationmode none
 attr recordingmode count
 attr source packetSentToLower
 attr title "packets transmitted, count"
-scalar LoRaNetworkTest.gwRouter[0].eth[0].mac txPk:sum(packetBytes) 26368
+scalar LoRaNetworkTest.gwRouter[0].eth[0].mac txPk:sum(packetBytes) 268352
 attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr source packetSentToLower
 attr title "packets transmitted, sum(packetBytes)"
-scalar LoRaNetworkTest.gwRouter[0].eth[0].mac packetReceivedFromUpper:count 412
+scalar LoRaNetworkTest.gwRouter[0].eth[0].mac packetReceivedFromUpper:count 4193
 attr interpolationmode none
 attr recordingmode count
 attr source packetReceivedFromUpper
 attr title "packet bytes from higher layer, count"
-scalar LoRaNetworkTest.gwRouter[0].eth[0].mac packetReceivedFromUpper:sum(packetBytes) 19496
+scalar LoRaNetworkTest.gwRouter[0].eth[0].mac packetReceivedFromUpper:sum(packetBytes) 199118
 attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr source packetReceivedFromUpper
 attr title "packet bytes from higher layer, sum(packetBytes)"
-scalar LoRaNetworkTest.gwRouter[0].eth[0].mac passedUpPk:count 1143
+scalar LoRaNetworkTest.gwRouter[0].eth[0].mac passedUpPk:count 11725
 attr interpolationmode none
 attr recordingmode count
 attr source packetSentToUpper
 attr title "packets passed to higher layer, count"
-scalar LoRaNetworkTest.gwRouter[0].eth[0].mac passedUpPk:sum(packetBytes) 80037
+scalar LoRaNetworkTest.gwRouter[0].eth[0].mac passedUpPk:sum(packetBytes) 821698
 attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr source packetSentToUpper
@@ -11777,25 +11856,25 @@ par LoRaNetworkTest.gwRouter[0].ipv4.arp proxyArpInterfaces "\"*\""
 scalar LoRaNetworkTest.gwRouter[0].ipv4.arp arpResolutionFailed:count 0
 attr recordingmode count
 attr title "ARP failed resolutions, count"
-scalar LoRaNetworkTest.gwRouter[0].ipv4.arp arpResolutionCompleted:count 378
+scalar LoRaNetworkTest.gwRouter[0].ipv4.arp arpResolutionCompleted:count 3803
 attr recordingmode count
 attr title "ARP completed resolutions, count"
-scalar LoRaNetworkTest.gwRouter[0].ipv4.arp arpResolutionInitiated:count 0
+scalar LoRaNetworkTest.gwRouter[0].ipv4.arp arpResolutionInitiated:count 1
 attr recordingmode count
 attr title "ARP initiated resolutions, count"
-scalar LoRaNetworkTest.gwRouter[0].ipv4.arp arpReplySent:count 378
+scalar LoRaNetworkTest.gwRouter[0].ipv4.arp arpReplySent:count 3802
 attr recordingmode count
 attr source arpReplySent
 attr title "ARP replies sent, count"
-scalar LoRaNetworkTest.gwRouter[0].ipv4.arp arpReplySent:sum(packetBytes) 10584
+scalar LoRaNetworkTest.gwRouter[0].ipv4.arp arpReplySent:sum(packetBytes) 106456
 attr recordingmode sum(packetBytes)
 attr source arpReplySent
 attr title "ARP replies sent, sum(packetBytes)"
-scalar LoRaNetworkTest.gwRouter[0].ipv4.arp arpRequestSent:count 0
+scalar LoRaNetworkTest.gwRouter[0].ipv4.arp arpRequestSent:count 1
 attr recordingmode count
 attr source arpRequestSent
 attr title "ARP request sent, count"
-scalar LoRaNetworkTest.gwRouter[0].ipv4.arp arpRequestSent:sum(packetBytes) 0
+scalar LoRaNetworkTest.gwRouter[0].ipv4.arp arpRequestSent:sum(packetBytes) 28
 attr recordingmode sum(packetBytes)
 attr source arpRequestSent
 attr title "ARP request sent, sum(packetBytes)"
@@ -11880,22 +11959,22 @@ attr title "pause sent, count"
 scalar LoRaNetworkTest.nsRouter.ethernet pauseSent:sum 0
 attr recordingmode sum
 attr title "pause sent, sum"
-scalar LoRaNetworkTest.nsRouter.ethernet decapPk:count 412
+scalar LoRaNetworkTest.nsRouter.ethernet decapPk:count 4193
 attr interpolationmode none
 attr recordingmode count
 attr source decapPk
 attr title "packets decapsulated, count"
-scalar LoRaNetworkTest.nsRouter.ethernet decapPk:sum(packetBytes) 18952
+scalar LoRaNetworkTest.nsRouter.ethernet decapPk:sum(packetBytes) 192878
 attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr source decapPk
 attr title "packets decapsulated, sum(packetBytes)"
-scalar LoRaNetworkTest.nsRouter.ethernet encapPk:count 1143
+scalar LoRaNetworkTest.nsRouter.ethernet encapPk:count 11725
 attr interpolationmode none
 attr recordingmode count
 attr source encapPk
 attr title "packets encapsulated, count"
-scalar LoRaNetworkTest.nsRouter.ethernet encapPk:sum(packetBytes) 52659
+scalar LoRaNetworkTest.nsRouter.ethernet encapPk:sum(packetBytes) 542194
 attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr source encapPk
@@ -12010,7 +12089,7 @@ attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetP
 attr title "queue bit length, timeavg"
 attr unit b
 statistic LoRaNetworkTest.nsRouter.ppp[0].queue queueingTime:histogram
-field count 34
+field count 390
 field mean 0
 field stddev 0
 field min 0
@@ -12048,7 +12127,7 @@ bin	-0.08	0
 bin	-0.06	0
 bin	-0.04	0
 bin	-0.02	0
-bin	0	34
+bin	0	390
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -12074,25 +12153,25 @@ bin	0.44	0
 bin	0.46	0
 bin	0.48	0
 bin	0.5	0
-scalar LoRaNetworkTest.nsRouter.ppp[0].queue outgoingPackets:count 34
+scalar LoRaNetworkTest.nsRouter.ppp[0].queue outgoingPackets:count 390
 attr recordingmode count
 attr source packetPulled
 attr title "outgoing packets, count"
 attr unit pk
-scalar LoRaNetworkTest.nsRouter.ppp[0].queue outgoingPacketLengths:sum 11968
+scalar LoRaNetworkTest.nsRouter.ppp[0].queue outgoingPacketLengths:sum 137280
 attr interpolationmode none
 attr recordingmode sum
 attr source packetLength(packetPulled)
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic LoRaNetworkTest.nsRouter.ppp[0].queue outgoingPacketLengths:histogram
-field count 34
+field count 390
 field mean 352
 field stddev 0
 field min 352
 field max 352
-field sum 11968
-field sqrsum 4212736
+field sum 137280
+field sqrsum 48322560
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetLength(packetPulled)
@@ -12100,7 +12179,7 @@ attr title "outgoing packet lengths"
 attr unit b
 bin	-inf	0
 bin	351	0
-bin	352	34
+bin	352	390
 bin	353	0
 statistic LoRaNetworkTest.nsRouter.ppp[0].queue flowQueueingTime:histogram
 field count 0
@@ -12118,25 +12197,25 @@ attr unit s
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar LoRaNetworkTest.nsRouter.ppp[0].queue incomingPackets:count 34
+scalar LoRaNetworkTest.nsRouter.ppp[0].queue incomingPackets:count 390
 attr recordingmode count
 attr source packetPushStarted
 attr title "incoming packets, count"
 attr unit pk
-scalar LoRaNetworkTest.nsRouter.ppp[0].queue incomingPacketLengths:sum 11968
+scalar LoRaNetworkTest.nsRouter.ppp[0].queue incomingPacketLengths:sum 137280
 attr interpolationmode none
 attr recordingmode sum
 attr source packetLength(packetPushStarted)
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic LoRaNetworkTest.nsRouter.ppp[0].queue incomingPacketLengths:histogram
-field count 34
+field count 390
 field mean 352
 field stddev 0
 field min 352
 field max 352
-field sum 11968
-field sqrsum 4212736
+field sum 137280
+field sqrsum 48322560
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetLength(packetPushStarted)
@@ -12144,7 +12223,7 @@ attr title "incoming packet lengths"
 attr unit b
 bin	-inf	0
 bin	351	0
-bin	352	34
+bin	352	390
 bin	353	0
 scalar LoRaNetworkTest.nsRouter.ppp[0].queue droppedPacketsQueueOverflow:count 0
 attr interpolationmode none
@@ -12168,27 +12247,27 @@ par LoRaNetworkTest.nsRouter.ppp[0].ppp stopOperationExtraTime -1s
 attr unit s
 par LoRaNetworkTest.nsRouter.ppp[0].ppp stopOperationTimeout 2s
 attr unit s
-scalar LoRaNetworkTest.nsRouter.ppp[0].ppp transmissionState:timeavg 1.6055555555556e-10
+scalar LoRaNetworkTest.nsRouter.ppp[0].ppp transmissionState:timeavg 1.8335294006194e-10
 attr interpolationmode sample-hold
 attr recordingmode timeavg
 attr source transmissionStateChanged
 attr title "tx state, timeavg"
-scalar LoRaNetworkTest.nsRouter.ppp[0].ppp rxPkOk:count 765
+scalar LoRaNetworkTest.nsRouter.ppp[0].ppp rxPkOk:count 7922
 attr interpolationmode none
 attr recordingmode count
 attr source rxPkOk
 attr title "packets received OK, count"
-scalar LoRaNetworkTest.nsRouter.ppp[0].ppp rxPkOk:sum(packetBytes) 47430
+scalar LoRaNetworkTest.nsRouter.ppp[0].ppp rxPkOk:sum(packetBytes) 491164
 attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr source rxPkOk
 attr title "packets received OK, sum(packetBytes)"
-scalar LoRaNetworkTest.nsRouter.ppp[0].ppp txPk:count 34
+scalar LoRaNetworkTest.nsRouter.ppp[0].ppp txPk:count 390
 attr interpolationmode none
 attr recordingmode count
 attr source packetSentToLower
 attr title "packets transmitted, count"
-scalar LoRaNetworkTest.nsRouter.ppp[0].ppp txPk:sum(packetBytes) 1734
+scalar LoRaNetworkTest.nsRouter.ppp[0].ppp txPk:sum(packetBytes) 19890
 attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr source packetSentToLower
@@ -12203,12 +12282,12 @@ attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr source packetReceivedFromUpper
 attr title "packets received from higher layer, sum(packetBytes)"
-scalar LoRaNetworkTest.nsRouter.ppp[0].ppp passedUpPk:count 765
+scalar LoRaNetworkTest.nsRouter.ppp[0].ppp passedUpPk:count 7922
 attr interpolationmode none
 attr recordingmode count
 attr source packetSentToUpper
 attr title "packets passed to higher layer, count"
-scalar LoRaNetworkTest.nsRouter.ppp[0].ppp passedUpPk:sum(packetBytes) 42075
+scalar LoRaNetworkTest.nsRouter.ppp[0].ppp passedUpPk:sum(packetBytes) 435710
 attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr source packetSentToUpper
@@ -12313,7 +12392,7 @@ attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetP
 attr title "queue bit length, timeavg"
 attr unit b
 statistic LoRaNetworkTest.nsRouter.eth[0].queue queueingTime:histogram
-field count 1143
+field count 11725
 field mean 0
 field stddev 0
 field min 0
@@ -12351,7 +12430,7 @@ bin	-0.08	0
 bin	-0.06	0
 bin	-0.04	0
 bin	-0.02	0
-bin	0	1143
+bin	0	11725
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -12377,25 +12456,25 @@ bin	0.44	0
 bin	0.46	0
 bin	0.48	0
 bin	0.5	0
-scalar LoRaNetworkTest.nsRouter.eth[0].queue outgoingPackets:count 1143
+scalar LoRaNetworkTest.nsRouter.eth[0].queue outgoingPackets:count 11725
 attr recordingmode count
 attr source packetPulled
 attr title "outgoing packets, count"
 attr unit pk
-scalar LoRaNetworkTest.nsRouter.eth[0].queue outgoingPacketLengths:sum 585864
+scalar LoRaNetworkTest.nsRouter.eth[0].queue outgoingPacketLengths:sum 6025952
 attr interpolationmode none
 attr recordingmode sum
 attr source packetLength(packetPulled)
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic LoRaNetworkTest.nsRouter.eth[0].queue outgoingPacketLengths:histogram
-field count 1143
-field mean 512.56692913386
-field stddev 101.6656405972
+field count 11725
+field mean 513.94046908316
+field stddev 101.12068486462
 field min 368
 field max 584
-field sum 585864
-field sqrsum 312098112
+field sum 6025952
+field sqrsum 3216863104
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetLength(packetPulled)
@@ -12413,7 +12492,7 @@ bin	345	0
 bin	350	0
 bin	355	0
 bin	360	0
-bin	365	378
+bin	365	3803
 bin	370	0
 bin	375	0
 bin	380	0
@@ -12456,7 +12535,7 @@ bin	560	0
 bin	565	0
 bin	570	0
 bin	575	0
-bin	580	765
+bin	580	7922
 bin	585	0
 bin	590	0
 bin	595	0
@@ -12485,25 +12564,25 @@ attr unit s
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar LoRaNetworkTest.nsRouter.eth[0].queue incomingPackets:count 1143
+scalar LoRaNetworkTest.nsRouter.eth[0].queue incomingPackets:count 11725
 attr recordingmode count
 attr source packetPushStarted
 attr title "incoming packets, count"
 attr unit pk
-scalar LoRaNetworkTest.nsRouter.eth[0].queue incomingPacketLengths:sum 585864
+scalar LoRaNetworkTest.nsRouter.eth[0].queue incomingPacketLengths:sum 6025952
 attr interpolationmode none
 attr recordingmode sum
 attr source packetLength(packetPushStarted)
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic LoRaNetworkTest.nsRouter.eth[0].queue incomingPacketLengths:histogram
-field count 1143
-field mean 512.56692913386
-field stddev 101.6656405972
+field count 11725
+field mean 513.94046908316
+field stddev 101.12068486462
 field min 368
 field max 584
-field sum 585864
-field sqrsum 312098112
+field sum 6025952
+field sqrsum 3216863104
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetLength(packetPushStarted)
@@ -12521,7 +12600,7 @@ bin	345	0
 bin	350	0
 bin	355	0
 bin	360	0
-bin	365	378
+bin	365	3803
 bin	370	0
 bin	375	0
 bin	380	0
@@ -12564,7 +12643,7 @@ bin	560	0
 bin	565	0
 bin	570	0
 bin	575	0
-bin	580	765
+bin	580	7922
 bin	585	0
 bin	590	0
 bin	595	0
@@ -12603,14 +12682,14 @@ par LoRaNetworkTest.nsRouter.eth[0].mac stopOperationExtraTime -1s
 attr unit s
 par LoRaNetworkTest.nsRouter.eth[0].mac stopOperationTimeout 2s
 attr unit s
-scalar LoRaNetworkTest.nsRouter.eth[0].mac "simulated time" 86400
+scalar LoRaNetworkTest.nsRouter.eth[0].mac "simulated time" 867834.46148312
 scalar LoRaNetworkTest.nsRouter.eth[0].mac full-duplex 1
-scalar LoRaNetworkTest.nsRouter.eth[0].mac "frames/sec sent" 0.013229166666667
-scalar LoRaNetworkTest.nsRouter.eth[0].mac "frames/sec rcvd" 0.0047685185185185
-scalar LoRaNetworkTest.nsRouter.eth[0].mac "bits/sec sent" 7.4108333333333
-scalar LoRaNetworkTest.nsRouter.eth[0].mac "bits/sec rcvd" 2.4414814814815
-scalar LoRaNetworkTest.nsRouter.eth[0].mac "rx channel idle (%)" 99.999999725333
-scalar LoRaNetworkTest.nsRouter.eth[0].mac "rx channel utilization (%)" 2.7466666666667e-07
+scalar LoRaNetworkTest.nsRouter.eth[0].mac "frames/sec sent" 0.013510641165323
+scalar LoRaNetworkTest.nsRouter.eth[0].mac "frames/sec rcvd" 0.0048315666018081
+scalar LoRaNetworkTest.nsRouter.eth[0].mac "bits/sec sent" 7.574698046406
+scalar LoRaNetworkTest.nsRouter.eth[0].mac "bits/sec rcvd" 2.4737621001258
+scalar LoRaNetworkTest.nsRouter.eth[0].mac "rx channel idle (%)" 99.999999721702
+scalar LoRaNetworkTest.nsRouter.eth[0].mac "rx channel utilization (%)" 2.7829823626415e-07
 scalar LoRaNetworkTest.nsRouter.eth[0].mac rxPausePkUnits:count 0
 attr interpolationmode none
 attr recordingmode count
@@ -12627,42 +12706,42 @@ scalar LoRaNetworkTest.nsRouter.eth[0].mac txPausePkUnits:sum 0
 attr interpolationmode none
 attr recordingmode sum
 attr title "pause units sent, sum"
-scalar LoRaNetworkTest.nsRouter.eth[0].mac rxPkOk:count 412
+scalar LoRaNetworkTest.nsRouter.eth[0].mac rxPkOk:count 4193
 attr interpolationmode none
 attr recordingmode count
 attr source rxPkOk
 attr title "packets received OK, count"
-scalar LoRaNetworkTest.nsRouter.eth[0].mac rxPkOk:sum(packetBytes) 26368
+scalar LoRaNetworkTest.nsRouter.eth[0].mac rxPkOk:sum(packetBytes) 268352
 attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr source rxPkOk
 attr title "packets received OK, sum(packetBytes)"
-scalar LoRaNetworkTest.nsRouter.eth[0].mac txPk:count 1143
+scalar LoRaNetworkTest.nsRouter.eth[0].mac txPk:count 11725
 attr interpolationmode none
 attr recordingmode count
 attr source packetSentToLower
 attr title "packets transmitted, count"
-scalar LoRaNetworkTest.nsRouter.eth[0].mac txPk:sum(packetBytes) 80037
+scalar LoRaNetworkTest.nsRouter.eth[0].mac txPk:sum(packetBytes) 821698
 attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr source packetSentToLower
 attr title "packets transmitted, sum(packetBytes)"
-scalar LoRaNetworkTest.nsRouter.eth[0].mac packetReceivedFromUpper:count 1143
+scalar LoRaNetworkTest.nsRouter.eth[0].mac packetReceivedFromUpper:count 11725
 attr interpolationmode none
 attr recordingmode count
 attr source packetReceivedFromUpper
 attr title "packet bytes from higher layer, count"
-scalar LoRaNetworkTest.nsRouter.eth[0].mac packetReceivedFromUpper:sum(packetBytes) 73233
+scalar LoRaNetworkTest.nsRouter.eth[0].mac packetReceivedFromUpper:sum(packetBytes) 753244
 attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr source packetReceivedFromUpper
 attr title "packet bytes from higher layer, sum(packetBytes)"
-scalar LoRaNetworkTest.nsRouter.eth[0].mac passedUpPk:count 412
+scalar LoRaNetworkTest.nsRouter.eth[0].mac passedUpPk:count 4193
 attr interpolationmode none
 attr recordingmode count
 attr source packetSentToUpper
 attr title "packets passed to higher layer, count"
-scalar LoRaNetworkTest.nsRouter.eth[0].mac passedUpPk:sum(packetBytes) 26368
+scalar LoRaNetworkTest.nsRouter.eth[0].mac passedUpPk:sum(packetBytes) 268352
 attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr source packetSentToUpper
@@ -12876,25 +12955,25 @@ par LoRaNetworkTest.nsRouter.ipv4.arp proxyArpInterfaces "\"*\""
 scalar LoRaNetworkTest.nsRouter.ipv4.arp arpResolutionFailed:count 0
 attr recordingmode count
 attr title "ARP failed resolutions, count"
-scalar LoRaNetworkTest.nsRouter.ipv4.arp arpResolutionCompleted:count 378
+scalar LoRaNetworkTest.nsRouter.ipv4.arp arpResolutionCompleted:count 3803
 attr recordingmode count
 attr title "ARP completed resolutions, count"
-scalar LoRaNetworkTest.nsRouter.ipv4.arp arpResolutionInitiated:count 378
+scalar LoRaNetworkTest.nsRouter.ipv4.arp arpResolutionInitiated:count 3802
 attr recordingmode count
 attr title "ARP initiated resolutions, count"
-scalar LoRaNetworkTest.nsRouter.ipv4.arp arpReplySent:count 0
+scalar LoRaNetworkTest.nsRouter.ipv4.arp arpReplySent:count 1
 attr recordingmode count
 attr source arpReplySent
 attr title "ARP replies sent, count"
-scalar LoRaNetworkTest.nsRouter.ipv4.arp arpReplySent:sum(packetBytes) 0
+scalar LoRaNetworkTest.nsRouter.ipv4.arp arpReplySent:sum(packetBytes) 28
 attr recordingmode sum(packetBytes)
 attr source arpReplySent
 attr title "ARP replies sent, sum(packetBytes)"
-scalar LoRaNetworkTest.nsRouter.ipv4.arp arpRequestSent:count 378
+scalar LoRaNetworkTest.nsRouter.ipv4.arp arpRequestSent:count 3802
 attr recordingmode count
 attr source arpRequestSent
 attr title "ARP request sent, count"
-scalar LoRaNetworkTest.nsRouter.ipv4.arp arpRequestSent:sum(packetBytes) 10584
+scalar LoRaNetworkTest.nsRouter.ipv4.arp arpRequestSent:sum(packetBytes) 106456
 attr recordingmode sum(packetBytes)
 attr source arpRequestSent
 attr title "ARP request sent, sum(packetBytes)"
