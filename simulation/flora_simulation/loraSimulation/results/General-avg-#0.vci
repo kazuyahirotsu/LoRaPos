@@ -1,0 +1,138 @@
+file 5398 1681994999                                            
+version 3
+run General-0-20230420-14:49:54-74310
+attr configname General
+attr datetime 20230420-14:49:54
+attr datetimef 20230420-144954
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars "$0=\"avg\""
+attr iterationvarsd avg
+attr iterationvarsf avg-
+attr measurement "$0=\"avg\""
+attr network loraSimulation.LoRaNetwork
+attr processid 74310
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config image-path ../../../../Downloads/omnetpp-6.0.1/samples/inet4.4/images
+config network loraSimulation.LoRaNetwork
+config **.maxTransmissionDuration 4s
+config **.energyDetection -110dBm
+config **.vector-recording true
+config rng-class cMersenneTwister
+config **.loRaGW[*].numUdpApps 1
+config **.loRaGW[0].packetForwarder.localPort 2000
+config **.loRaGW[0].packetForwarder.destPort 1000
+config **.loRaGW[0].packetForwarder.destAddresses "\"networkServer\""
+config **.loRaGW[0].packetForwarder.indexNumber 0
+config **.networkServer.numApps 1
+config **.networkServer.**.evaluateADRinServer true
+config **.networkServer.app[0].typename NetworkServerApp
+config **.networkServer.app[0].destAddresses "\"loRaGW[0]\""
+config **.networkServer.app[0].destPort 2000
+config **.networkServer.app[0].localPort 1000
+config **.networkServer.app[0].adrMethod "\"avg\""
+config **.numberOfPacketsToSend 0
+config sim-time-limit 1d
+config simtime-resolution -11
+config repeat 30
+config **.timeToFirstPacket exponential(1000s)
+config **.timeToNextPacket exponential(1000s)
+config **.alohaChannelModel false
+config **.numberOfNodes 1
+config **.constraintAreaMaxX 1000m
+config **.constraintAreaMaxY 1000m
+config **.loRaNodes[0].**.initialX 300m
+config **.loRaNodes[0].**.initialY 350m
+config **.loRaNodes[0].**initialLoRaSF 12
+config **.loRaNodes[0].**initialLoRaTP 14dBm
+config **.loRaNodes[0].**initialLoRaBW "125 kHz"
+config **.loRaNodes[0].**initialLoRaCR 4
+config **.loRaNodes[0].**.initFromDisplayString false
+config **.loRaNodes[0].**.evaluateADRinNode true
+config **.loRaNodes[*].numApps 1
+config **.loRaNodes[*].app[0].typename SimpleLoRaApp
+config **.numberOfGateways 1
+config **.loRaGW[0].**.initialX 200.00m
+config **.loRaGW[0].**.initialY 200.00m
+config **.LoRaGWNic.radio.iAmGateway true
+config **.loRaGW[*].**.initFromDisplayString false
+config **.loRaNodes[*].LoRaNic.radio.energyConsumer.typename LoRaEnergyConsumer
+config **.loRaNodes[*].**.energySourceModule "\"^.IdealEpEnergyStorage\""
+config **.loRaNodes[*].LoRaNic.radio.energyConsumer.configFile "xmldoc(\"energyConsumptionParameters.xml\")"
+config **.sigma 3.57
+config **.constraintAreaMinX 0m
+config **.constraintAreaMinY 0m
+config **.constraintAreaMinZ 0m
+config **.constraintAreaMaxZ 0m
+config LoRaNetworkTest.**.radio.separateTransmissionParts false
+config LoRaNetworkTest.**.radio.separateReceptionParts false
+config **.ipv4Delayer.config "xmldoc(\"cloudDelays.xml\")"
+config **.radio.radioMediumModule "\"LoRaMedium\""
+config **.LoRaMedium.pathLossType "\"LoRaLogNormalShadowing\""
+config **.minInterferenceTime 0s
+config **.displayAddresses false
+config **.LoRaMedium.mediumLimitCacheType "\"LoRaMediumCache\""
+config **.LoRaMedium.rangeFilter "\"communicationRange\""
+config **.LoRaMedium.neighborCacheType "\"LoRaNeighborCache\""
+config **.LoRaMedium.neighborCache.range 546m
+config **.LoRaMedium.neighborCache.refillPeriod 3000s
+
+vector 0 LoRaNetwork.loRaGW[0].udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetSentToUpper
+attr title "packets passed up, count"
+vector 1 LoRaNetwork.loRaGW[0].udp droppedPkWrongPort:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+vector 2 LoRaNetwork.loRaGW[0].udp droppedPkBadChecksum:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+vector 3 LoRaNetwork.loRaNodes[0].LoRaNic.radio.IdealEpEnergyStorage powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source powerConsumptionChanged
+attr title "Power consumption"
+vector 4 LoRaNetwork.loRaNodes[0].LoRaNic.radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source radioModeChanged
+attr title "Radio mode"
+vector 5 LoRaNetwork.loRaNodes[0].LoRaNic.radio.energyConsumer powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source powerConsumptionChanged
+attr title "Power consumption"
+vector 6 LoRaNetwork.loRaGW[0].LoRaGWNic.radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source radioModeChanged
+attr title "Radio mode"
+vector 7 LoRaNetwork.loRaGW[0].LoRaGWNic.radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source receptionStateChanged
+attr title "Radio reception state"
+vector 8 LoRaNetwork.loRaGW[0].LoRaGWNic.radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "Radio transmission state"
+0	5253 8 0 0 0 0 1 0 0 0 0
+1	5261 8 0 0 0 0 1 0 0 0 0
+2	5269 8 0 0 0 0 1 0 0 0 0
+3	5277 32 0 0 0 0 4 0 0 0 0
+4	5309 24 0 0 0 0 3 0 1 1 1
+5	5333 24 0 0 0 0 3 0 0 0 0
+6	5357 24 0 0 0 0 3 0 4 4 16
+7	5381 8 0 0 0 0 1 1 1 1 1
+8	5389 8 0 0 0 0 1 1 1 1 1
+
