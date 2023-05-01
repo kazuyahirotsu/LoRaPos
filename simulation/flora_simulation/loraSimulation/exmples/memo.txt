@@ -1,0 +1,7 @@
+change to no adr
+record rssi also when no adr
+generate position
+
+introduce obstacles with xml
+change obstacleloss
+change pathloss for multipath

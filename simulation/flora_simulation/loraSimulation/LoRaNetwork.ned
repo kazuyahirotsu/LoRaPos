@@ -8,6 +8,10 @@ import flora.LoraNode.LoRaGW;
 import inet.node.inet.StandardHost;
 import inet.networklayer.configurator.ipv4.Ipv4NetworkConfigurator;
 import inet.node.ethernet.Eth1G;
+import inet.environment.common.PhysicalEnvironment;
+import inet.visualizer.common.IntegratedVisualizer;
+import inet.visualizer.base.SceneVisualizerBase;
+import inet.visualizer.contract.ISceneVisualizer;
 
 @license(LGPL);
 network LoRaNetwork
@@ -19,6 +23,10 @@ network LoRaNetwork
         int networkSizeY = default(500);
         @display("bgb=562,417");
     submodules:
+        visualizer: IntegratedVisualizer {
+            parameters:
+            @display("p=100,50");
+        }
         loRaNodes[numberOfNodes]: LoRaNode {
             @display("p=400,304");
         }
@@ -45,6 +53,9 @@ network LoRaNetwork
         }
         nsRouter: Router {
             @display("p=137,44");
+        }
+        physicalEnvironment: PhysicalEnvironment {
+            @display("p=400,200");
         }
     connections:
         networkServer.ethg++ <--> Eth1G <--> nsRouter.ethg++;
