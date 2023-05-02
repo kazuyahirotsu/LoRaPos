@@ -1,11 +1,11 @@
 run,repetition,module,name,value
-General-0-20230501-22:06:21-60307,0,LoRaNetwork.networkServer.app[0],numReceivedFromNode 0,492
-General-0-20230501-22:06:21-60307,0,LoRaNetwork.networkServer.app[0],numReceivedFromNode 1,498
-General-0-20230501-22:06:21-60307,0,LoRaNetwork.networkServer.app[0],numReceivedFromNode 2,503
-General-0-20230501-22:06:21-60307,0,LoRaNetwork.networkServer.app[0],numReceivedFromNode 3,506
-General-0-20230501-22:06:21-60307,0,LoRaNetwork.networkServer.app[0],numReceivedFromNode 4,518
-General-0-20230501-22:06:21-60307,0,LoRaNetwork.networkServer.app[0],numReceivedFromNode 5,511
-General-0-20230501-22:06:21-60307,0,LoRaNetwork.networkServer.app[0],numReceivedFromNode 6,526
-General-0-20230501-22:06:21-60307,0,LoRaNetwork.networkServer.app[0],numReceivedFromNode 7,528
-General-0-20230501-22:06:21-60307,0,LoRaNetwork.networkServer.app[0],numReceivedFromNode 8,530
-General-0-20230501-22:06:21-60307,0,LoRaNetwork.networkServer.app[0],numReceivedFromNode 9,535
+General-0-20230502-15:06:52-44960,0,LoRaNetwork.networkServer.app[0],numReceivedFromNode 0,543
+General-0-20230502-15:06:52-44960,0,LoRaNetwork.networkServer.app[0],numReceivedFromNode 1,564
+General-0-20230502-15:06:52-44960,0,LoRaNetwork.networkServer.app[0],numReceivedFromNode 2,581
+General-0-20230502-15:06:52-44960,0,LoRaNetwork.networkServer.app[0],numReceivedFromNode 3,604
+General-0-20230502-15:06:52-44960,0,LoRaNetwork.networkServer.app[0],numReceivedFromNode 4,621
+General-0-20230502-15:06:52-44960,0,LoRaNetwork.networkServer.app[0],numReceivedFromNode 5,641
+General-0-20230502-15:06:52-44960,0,LoRaNetwork.networkServer.app[0],numReceivedFromNode 6,663
+General-0-20230502-15:06:52-44960,0,LoRaNetwork.networkServer.app[0],numReceivedFromNode 7,678
+General-0-20230502-15:06:52-44960,0,LoRaNetwork.networkServer.app[0],numReceivedFromNode 8,700
+General-0-20230502-15:06:52-44960,0,LoRaNetwork.networkServer.app[0],numReceivedFromNode 9,726

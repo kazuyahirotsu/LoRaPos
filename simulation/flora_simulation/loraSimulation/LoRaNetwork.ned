@@ -21,41 +21,41 @@ network LoRaNetwork
         int numberOfGateways = default(1);
         int networkSizeX = default(500);
         int networkSizeY = default(500);
-        @display("bgb=562,417");
+        @display("bgb=-562,417");
     submodules:
         visualizer: IntegratedVisualizer {
             parameters:
-            @display("p=100,50");
+            @display("p=-100,50");
         }
         loRaNodes[numberOfNodes]: LoRaNode {
-            @display("p=400,304");
+            @display("p=-400,304");
         }
         loRaGW[numberOfGateways]: LoRaGW {
-            @display("p=157,238;is=s");
+            @display("p=-157,238;is=s");
         }
         LoRaMedium: LoRaMedium {
-            @display("p=309,102");
+            @display("p=-309,102");
         }
         networkServer: StandardHost {
             parameters:
-                @display("p=49,44");
+                @display("p=-49,44");
         }
         configurator: Ipv4NetworkConfigurator {
             parameters:
                 assignDisjunctSubnetAddresses = false;
-                @display("p=318,27");
+                @display("p=-318,27");
         }
         internetCloud: InternetCloud {
-            @display("p=231,44");
+            @display("p=-231,44");
         }
         gwRouter[numberOfGateways]: Router {
-            @display("p=231,134");
+            @display("p=-231,134");
         }
         nsRouter: Router {
-            @display("p=137,44");
+            @display("p=-137,44");
         }
         physicalEnvironment: PhysicalEnvironment {
-            @display("p=400,200");
+            @display("p=-400,200");
         }
     connections:
         networkServer.ethg++ <--> Eth1G <--> nsRouter.ethg++;
