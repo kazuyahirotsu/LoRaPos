@@ -1,4 +1,4 @@
-                                                                
+file 15073 1683057878                                           
 version 3
 run General-0-20230502-15:31:11-50803
 attr configname General
@@ -279,4 +279,93 @@ vector 33 LoRaNetwork.loRaNodes[6].LoRaNic.radio.energyConsumer powerConsumption
 attr interpolationmode sample-hold
 attr recordingmode vector
 attr source powerConsumptionChanged
-attr title "Power c
+attr title "Power consumption"
+vector 34 LoRaNetwork.loRaNodes[7].LoRaNic.radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source radioModeChanged
+attr title "Radio mode"
+vector 35 LoRaNetwork.loRaNodes[7].LoRaNic.radio.energyConsumer powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source powerConsumptionChanged
+attr title "Power consumption"
+vector 36 LoRaNetwork.loRaNodes[8].LoRaNic.radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source radioModeChanged
+attr title "Radio mode"
+vector 37 LoRaNetwork.loRaNodes[8].LoRaNic.radio.energyConsumer powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source powerConsumptionChanged
+attr title "Power consumption"
+vector 38 LoRaNetwork.loRaNodes[9].LoRaNic.radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source radioModeChanged
+attr title "Radio mode"
+vector 39 LoRaNetwork.loRaNodes[9].LoRaNic.radio.energyConsumer powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source powerConsumptionChanged
+attr title "Power consumption"
+vector 40 LoRaNetwork.loRaGW[0].LoRaGWNic.radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source radioModeChanged
+attr title "Radio mode"
+vector 41 LoRaNetwork.loRaGW[0].LoRaGWNic.radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source receptionStateChanged
+attr title "Radio reception state"
+vector 42 LoRaNetwork.loRaGW[0].LoRaGWNic.radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "Radio transmission state"
+0	14047 8 0 0 0 0 1 0 0 0 0
+1	14055 8 0 0 0 0 1 0 0 0 0
+2	14063 8 0 0 0 0 1 0 0 0 0
+3	14071 8 0 0 0 0 1 0 0 0 0
+4	14079 8 0 0 0 0 1 0 0 0 0
+5	14087 8 0 0 0 0 1 0 0 0 0
+6	14095 8 0 0 0 0 1 0 0 0 0
+7	14103 8 0 0 0 0 1 0 0 0 0
+8	14111 8 0 0 0 0 1 0 0 0 0
+9	14119 8 0 0 0 0 1 0 0 0 0
+10	14127 36 0 0 0 0 4 0 0 0 0
+11	14163 36 0 0 0 0 4 0 0 0 0
+12	14199 36 0 0 0 0 4 0 0 0 0
+13	14235 36 0 0 0 0 4 0 0 0 0
+14	14271 36 0 0 0 0 4 0 0 0 0
+15	14307 36 0 0 0 0 4 0 0 0 0
+16	14343 36 0 0 0 0 4 0 0 0 0
+17	14379 36 0 0 0 0 4 0 0 0 0
+18	14415 36 0 0 0 0 4 0 0 0 0
+19	14451 36 0 0 0 0 4 0 0 0 0
+20	14487 27 0 0 0 0 3 0 1 1 1
+21	14514 27 0 0 0 0 3 0 0 0 0
+22	14541 27 0 0 0 0 3 0 1 1 1
+23	14568 27 0 0 0 0 3 0 0 0 0
+24	14595 27 0 0 0 0 3 0 1 1 1
+25	14622 27 0 0 0 0 3 0 0 0 0
+26	14649 27 0 0 0 0 3 0 1 1 1
+27	14676 27 0 0 0 0 3 0 0 0 0
+28	14703 27 0 0 0 0 3 0 1 1 1
+29	14730 27 0 0 0 0 3 0 0 0 0
+30	14757 27 0 0 0 0 3 0 1 1 1
+31	14784 27 0 0 0 0 3 0 0 0 0
+32	14811 27 0 0 0 0 3 0 1 1 1
+33	14838 27 0 0 0 0 3 0 0 0 0
+34	14865 27 0 0 0 0 3 0 1 1 1
+35	14892 27 0 0 0 0 3 0 0 0 0
+36	14919 27 0 0 0 0 3 0 1 1 1
+37	14946 27 0 0 0 0 3 0 0 0 0
+38	14973 27 0 0 0 0 3 0 1 1 1
+39	15000 27 0 0 0 0 3 0 0 0 0
+40	15027 27 0 0 0 0 3 0 4 4 16
+41	15054 9 0 0 0 0 1 1 1 1 1
+42	15063 9 0 0 0 0 1 1 1 1 1
+
