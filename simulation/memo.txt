@@ -1,3 +1,4 @@
+// 1. add recordRSSI
 // NetworkServerApp.cc
 void NetworkServerApp::processScheduledPacket(cMessage* selfMsg)
 {
@@ -72,7 +73,7 @@ void NetworkServerApp::recordRSSI(Packet* pkt, L3Address pickedGateway, double S
     }
 }
 
-//NetworkServerApp.h
+// NetworkServerApp.h
   protected:
     virtual void initialize(int stage) override;
     virtual void handleMessage(cMessage *msg) override;
@@ -89,3 +90,150 @@ void NetworkServerApp::recordRSSI(Packet* pkt, L3Address pickedGateway, double S
     void recordRSSI(Packet *pkt, L3Address pickedGateway, double SNIRinGW, double RSSIinGW);
     void receiveSignal(cComponent *source, simsignal_t signalID, intval_t value, cObject *details) override;
     bool evaluateADRinServer;
+
+// 2. frequent sending
+// SimpleLoRaApp.cc
+
+void SimpleLoRaApp::initialize(int stage)
+{
+    cSimpleModule::initialize(stage);
+    if (stage == INITSTAGE_LOCAL) {
+        std::pair<double,double> coordsValues = std::make_pair(-1, -1);
+        cModule *host = getContainingNode(this);
+        // Generate random location for nodes if circle deployment type
+        if (strcmp(host->par("deploymentType").stringValue(), "circle")==0) {
+           coordsValues = generateUniformCircleCoordinates(host->par("maxGatewayDistance").doubleValue(), host->par("gatewayX").doubleValue(), host->par("gatewayY").doubleValue());
+           StationaryMobility *mobility = check_and_cast<StationaryMobility *>(host->getSubmodule("mobility"));
+           mobility->par("initialX").setDoubleValue(coordsValues.first);
+           mobility->par("initialY").setDoubleValue(coordsValues.second);
+        }
+    }
+    else if (stage == INITSTAGE_APPLICATION_LAYER) {
+        bool isOperational;
+        NodeStatus *nodeStatus = dynamic_cast<NodeStatus *>(findContainingNode(this)->getSubmodule("status"));
+        isOperational = (!nodeStatus) || nodeStatus->getState() == NodeStatus::UP;
+        if (!isOperational)
+            throw cRuntimeError("This module doesn't support starting in node DOWN state");
+            timeToFirstPacket = par("timeToFirstPacket");
+            EV << "Wylosowalem czas :" << timeToFirstPacket << endl;
+//        do {
+//            timeToFirstPacket = par("timeToFirstPacket");
+//            EV << "Wylosowalem czas :" << timeToFirstPacket << endl;
+//            //if(timeToNextPacket < 5) error("Time to next packet must be grater than 3");
+//        } while(timeToFirstPacket <= 5);
+
+        //timeToFirstPacket = par("timeToFirstPacket");
+        sendMeasurements = new cMessage("sendMeasurements");
+        scheduleAt(simTime()+timeToFirstPacket, sendMeasurements);
+
+        sentPackets = 0;
+        receivedADRCommands = 0;
+        numberOfPacketsToSend = par("numberOfPacketsToSend");
+
+        LoRa_AppPacketSent = registerSignal("LoRa_AppPacketSent");
+
+        //LoRa physical layer parameters
+        loRaRadio = check_and_cast<LoRaRadio *>(getParentModule()->getSubmodule("LoRaNic")->getSubmodule("radio"));
+        loRaRadio->loRaTP = par("initialLoRaTP").doubleValue();
+//        setTP(par("initialLoRaTP").doubleValue());
+//        loRaCF = units::values::Hz(par("initialLoRaCF").doubleValue());
+        loRaRadio->loRaCF = units::values::Hz(par("initialLoRaCF").doubleValue());
+//        loRaSF = par("initialLoRaSF");
+        loRaRadio->loRaSF = par("initialLoRaSF");
+//        loRaBW = inet::units::values::Hz(par("initialLoRaBW").doubleValue());
+        loRaRadio->loRaBW = inet::units::values::Hz(par("initialLoRaBW").doubleValue());
+//        loRaCR = par("initialLoRaCR");
+        loRaRadio->loRaCR = par("initialLoRaCR");
+//        loRaUseHeader = par("initialUseHeader");
+        loRaRadio->loRaUseHeader = par("initialUseHeader");
+        evaluateADRinNode = par("evaluateADRinNode");
+        sfVector.setName("SF Vector");
+        tpVector.setName("TP Vector");
+    }
+}
+
+void SimpleLoRaApp::handleMessage(cMessage *msg)
+{
+    if (msg->isSelfMessage()) {
+        if (msg == sendMeasurements)
+        {
+            sendJoinRequest();
+            if (simTime() >= getSimulation()->getWarmupPeriod())
+                sentPackets++;
+            delete msg;
+            if(numberOfPacketsToSend == 0 || sentPackets < numberOfPacketsToSend)
+            {
+                double time;
+                int loRaSF = getSF();
+                if(loRaSF == 7) time = 7.808;
+                if(loRaSF == 8) time = 13.9776;
+                if(loRaSF == 9) time = 24.6784;
+                if(loRaSF == 10) time = 49.3568;
+                if(loRaSF == 11) time = 85.6064;
+                if(loRaSF == 12) time = 171.2128;
+
+                timeToNextPacket = par("timeToNextPacket");
+//                do {
+//                    timeToNextPacket = par("timeToNextPacket");
+//                    //if(timeToNextPacket < 3) error("Time to next packet must be grater than 3");
+//                } while(timeToNextPacket <= time);
+                sendMeasurements = new cMessage("sendMeasurements");
+                scheduleAt(simTime() + timeToNextPacket, sendMeasurements);
+            }
+        }
+    }
+    else
+    {
+        handleMessageFromLowerLayer(msg);
+        delete msg;
+        //cancelAndDelete(sendMeasurements);
+        //sendMeasurements = new cMessage("sendMeasurements");
+        //scheduleAt(simTime(), sendMeasurements);
+    }
+}
+
+// LoRaRadio.cc
+
+void LoRaRadio::handleUpperPacket(Packet *packet)
+{
+    emit(packetReceivedFromUpperSignal, packet);
+    if (isTransmitterMode(radioMode)) {
+        auto tag = packet->removeTag<LoRaTag>();
+        auto preamble = makeShared<LoRaPhyPreamble>();
+
+        preamble->setBandwidth(tag->getBandwidth());
+        preamble->setCenterFrequency(tag->getCenterFrequency());
+        preamble->setCodeRendundance(tag->getCodeRendundance());
+        preamble->setPower(tag->getPower());
+        preamble->setSpreadFactor(tag->getSpreadFactor());
+        preamble->setUseHeader(tag->getUseHeader());
+        const auto & loraHeader =  packet->peekAtFront<LoRaMacFrame>();
+        preamble->setReceiverAddress(loraHeader->getReceiverAddress());
+
+        auto signalPowerReq = packet->addTagIfAbsent<SignalPowerReq>();
+        signalPowerReq->setPower(tag->getPower());
+
+        preamble->setChunkLength(b(16));
+        packet->insertAtFront(preamble);
+
+        // if (transmissionTimer->isScheduled())
+        //     throw cRuntimeError("Received frame from upper layer while already transmitting.");
+        if (transmissionTimer->isScheduled()){
+            cancelEvent(transmissionTimer);
+        }
+        else{
+            if (separateTransmissionParts)
+                startTransmission(packet, IRadioSignal::SIGNAL_PART_PREAMBLE);
+            else
+                startTransmission(packet, IRadioSignal::SIGNAL_PART_WHOLE);
+        }
+        // if (separateTransmissionParts)
+        //     startTransmission(packet, IRadioSignal::SIGNAL_PART_PREAMBLE);
+        // else
+        //     startTransmission(packet, IRadioSignal::SIGNAL_PART_WHOLE);
+    }
+    else {
+        EV_ERROR << "Radio is not in transmitter or transceiver mode, dropping frame." << endl;
+        delete packet;
+    }
+}

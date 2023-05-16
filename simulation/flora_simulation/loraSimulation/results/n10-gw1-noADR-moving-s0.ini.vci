@@ -1,0 +1,376 @@
+file 15696 1684094613                                           
+version 3
+run General-0-20230512-18:47:14-24112
+attr configname General
+attr datetime 20230512-18:47:14
+attr datetimef 20230512-184714
+attr experiment General
+attr inifile n10-gw1-noADR_moving.ini
+attr iterationvars "$0=\"avg\""
+attr iterationvarsd avg
+attr iterationvarsf avg-
+attr measurement "$0=\"avg\""
+attr network loraSimulation.LoRaNetwork_moving
+attr processid 24112
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config image-path ../../../../../Downloads/omnetpp-6.0.1/samples/inet4.4/images
+config network loraSimulation.LoRaNetwork_moving
+config output-vector-file ../results/n10-gw1-noADR-moving-s0.ini.vec
+config record-eventlog true
+config **.maxTransmissionDuration 4s
+config **.energyDetection -110dBm
+config **.vector-recording true
+config rng-class cMersenneTwister
+config **.loRaGW_moving[*].numUdpApps 1
+config **.loRaGW_moving[0].packetForwarder.localPort 2000
+config **.loRaGW_moving[0].packetForwarder.destPort 1000
+config **.loRaGW_moving[0].packetForwarder.destAddresses "\"networkServer\""
+config **.loRaGW_moving[0].packetForwarder.indexNumber 0
+config **.networkServer.numApps 1
+config **.networkServer.**.evaluateADRinServer false
+config **.networkServer.app[0].typename NetworkServerApp
+config **.networkServer.app[0].destAddresses "\"loRaGW[0]\""
+config **.networkServer.app[0].destPort 2000
+config **.networkServer.app[0].localPort 1000
+config **.networkServer.app[0].adrMethod "\"avg\""
+config **.loRaNodes[0].app[0].numberOfPacketsToSend 550
+config **.loRaNodes[1].app[0].numberOfPacketsToSend 570
+config **.loRaNodes[2].app[0].numberOfPacketsToSend 590
+config **.loRaNodes[3].app[0].numberOfPacketsToSend 610
+config **.loRaNodes[4].app[0].numberOfPacketsToSend 630
+config **.loRaNodes[5].app[0].numberOfPacketsToSend 650
+config **.loRaNodes[6].app[0].numberOfPacketsToSend 670
+config **.loRaNodes[7].app[0].numberOfPacketsToSend 690
+config **.loRaNodes[8].app[0].numberOfPacketsToSend 710
+config **.loRaNodes[9].app[0].numberOfPacketsToSend 730
+config sim-time-limit 1d
+config simtime-resolution -11
+config repeat 1
+config **.timeToFirstPacket exponential(10s)
+config **.timeToNextPacket exponential(10s)
+config **.alohaChannelModel false
+config **.loRaNodes[*].**.initFromDisplayString false
+config **.loRaNodes[*].**.evaluateADRinNode false
+config **.loRaNodes[*].**initialLoRaBW "500 kHz"
+config **.loRaNodes[*].**initialLoRaCR 4
+config **.loRaNodes[*].**initialLoRaSF 7
+config **.loRaNodes[*].numApps 1
+config **.loRaNodes[*].app[0].typename SimpleLoRaApp
+config **.LoRaGWNic.radio.iAmGateway true
+config **.loRaGW_moving[*].**.initFromDisplayString false
+config **.loRaNodes[*].LoRaNic.radio.energyConsumer.typename LoRaEnergyConsumer
+config **.loRaNodes[*].**.energySourceModule "\"^.IdealEpEnergyStorage\""
+config **.loRaNodes[*].LoRaNic.radio.energyConsumer.configFile "xmldoc(\"../energyConsumptionParameters.xml\")"
+config **.sigma 3.57
+config LoRaNetwork_moving.**.radio.separateTransmissionParts false
+config LoRaNetwork_moving.**.radio.separateReceptionParts false
+config **.ipv4Delayer.config "xmldoc(\"../cloudDelays.xml\")"
+config **.radio.radioMediumModule "\"LoRaMedium\""
+config **.LoRaMedium.pathLoss.typename NakagamiFading
+config **.minInterferenceTime 0s
+config **.displayAddresses false
+config **.numberOfNodes 10
+config **.numberOfGateways 1
+config output-scalar-file ../results/n10-gw1-noADR-moving-s0.ini.sca
+config **.loRaGW_moving[0].**.cx 452m
+config **.loRaGW_moving[0].**.cy 426m
+config **.loRaGW_moving[0].**.cz 100m
+config **.loRaGW_moving[0].**.r 200m
+config **.loRaGW_moving[0].**.speed 1mps
+config **.loRaGW_moving[0].**.startAngle 0deg
+config **.loRaNodes[0].**.initialX 822.0194698360865m
+config **.loRaNodes[0].**.initialY 739.4046194171533m
+config **.loRaNodes[0].**.initialZ 23m
+config **.loRaNodes[1].**.initialX 263.9939801048604m
+config **.loRaNodes[1].**.initialY 299.80550314765424m
+config **.loRaNodes[1].**.initialZ 23m
+config **.loRaNodes[2].**.initialX 468.6109037408023m
+config **.loRaNodes[2].**.initialY 606.6390164084733m
+config **.loRaNodes[2].**.initialZ 23m
+config **.loRaNodes[3].**.initialX 677.377121595724m
+config **.loRaNodes[3].**.initialY 311.6158274188638m
+config **.loRaNodes[3].**.initialZ 5.1m
+config **.loRaNodes[4].**.initialX 734.4841017249855m
+config **.loRaNodes[4].**.initialY 487.4600875368342m
+config **.loRaNodes[4].**.initialZ 23m
+config **.loRaNodes[5].**.initialX 714.6851075206068m
+config **.loRaNodes[5].**.initialY 205.09913122281432m
+config **.loRaNodes[5].**.initialZ 19m
+config **.loRaNodes[6].**.initialX 403.5160410553799m
+config **.loRaNodes[6].**.initialY 136.8531596083194m
+config **.loRaNodes[6].**.initialZ 23m
+config **.loRaNodes[7].**.initialX 220.07116886903532m
+config **.loRaNodes[7].**.initialY 212.38414978329092m
+config **.loRaNodes[7].**.initialZ 23m
+config **.loRaNodes[8].**.initialX 108.28748674801318m
+config **.loRaNodes[8].**.initialY 581.6178667871282m
+config **.loRaNodes[8].**.initialZ 19m
+config **.loRaNodes[9].**.initialX 511.31633024220355m
+config **.loRaNodes[9].**.initialY 295.69291112665087m
+config **.loRaNodes[9].**.initialZ 23m
+config **.LoRaMedium.obstacleLoss.typename DielectricObstacleLoss
+config *.physicalEnvironment.config "xmldoc(\"buildings_pyproj.xml\")"
+
+vector 0 LoRaNetwork_moving.loRaGW_moving[0].udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetSentToUpper
+attr title "packets passed up, count"
+vector 1 LoRaNetwork_moving.loRaGW_moving[0].udp droppedPkWrongPort:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+vector 2 LoRaNetwork_moving.loRaGW_moving[0].udp droppedPkBadChecksum:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+vector 3 LoRaNetwork_moving.networkServer.udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetSentToUpper
+attr title "packets passed up, count"
+vector 4 LoRaNetwork_moving.networkServer.udp droppedPkWrongPort:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+vector 5 LoRaNetwork_moving.networkServer.udp droppedPkBadChecksum:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+vector 6 LoRaNetwork_moving.internetCloud.ppp[0].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 7 LoRaNetwork_moving.internetCloud.ppp[1].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 8 LoRaNetwork_moving.gwRouter[0].ppp[0].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 9 LoRaNetwork_moving.nsRouter.ppp[0].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 10 LoRaNetwork_moving.loRaNodes[0].LoRaNic.radio.IdealEpEnergyStorage powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source powerConsumptionChanged
+attr title "Power consumption"
+vector 11 LoRaNetwork_moving.loRaNodes[1].LoRaNic.radio.IdealEpEnergyStorage powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source powerConsumptionChanged
+attr title "Power consumption"
+vector 12 LoRaNetwork_moving.loRaNodes[2].LoRaNic.radio.IdealEpEnergyStorage powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source powerConsumptionChanged
+attr title "Power consumption"
+vector 13 LoRaNetwork_moving.loRaNodes[3].LoRaNic.radio.IdealEpEnergyStorage powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source powerConsumptionChanged
+attr title "Power consumption"
+vector 14 LoRaNetwork_moving.loRaNodes[4].LoRaNic.radio.IdealEpEnergyStorage powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source powerConsumptionChanged
+attr title "Power consumption"
+vector 15 LoRaNetwork_moving.loRaNodes[5].LoRaNic.radio.IdealEpEnergyStorage powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source powerConsumptionChanged
+attr title "Power consumption"
+vector 16 LoRaNetwork_moving.loRaNodes[6].LoRaNic.radio.IdealEpEnergyStorage powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source powerConsumptionChanged
+attr title "Power consumption"
+vector 17 LoRaNetwork_moving.loRaNodes[7].LoRaNic.radio.IdealEpEnergyStorage powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source powerConsumptionChanged
+attr title "Power consumption"
+vector 18 LoRaNetwork_moving.loRaNodes[8].LoRaNic.radio.IdealEpEnergyStorage powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source powerConsumptionChanged
+attr title "Power consumption"
+vector 19 LoRaNetwork_moving.loRaNodes[9].LoRaNic.radio.IdealEpEnergyStorage powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source powerConsumptionChanged
+attr title "Power consumption"
+vector 20 LoRaNetwork_moving.loRaNodes[0].LoRaNic.radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source radioModeChanged
+attr title "Radio mode"
+vector 21 LoRaNetwork_moving.loRaNodes[0].LoRaNic.radio.energyConsumer powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source powerConsumptionChanged
+attr title "Power consumption"
+vector 22 LoRaNetwork_moving.loRaNodes[1].LoRaNic.radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source radioModeChanged
+attr title "Radio mode"
+vector 23 LoRaNetwork_moving.loRaNodes[1].LoRaNic.radio.energyConsumer powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source powerConsumptionChanged
+attr title "Power consumption"
+vector 24 LoRaNetwork_moving.loRaNodes[2].LoRaNic.radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source radioModeChanged
+attr title "Radio mode"
+vector 25 LoRaNetwork_moving.loRaNodes[2].LoRaNic.radio.energyConsumer powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source powerConsumptionChanged
+attr title "Power consumption"
+vector 26 LoRaNetwork_moving.loRaNodes[3].LoRaNic.radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source radioModeChanged
+attr title "Radio mode"
+vector 27 LoRaNetwork_moving.loRaNodes[3].LoRaNic.radio.energyConsumer powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source powerConsumptionChanged
+attr title "Power consumption"
+vector 28 LoRaNetwork_moving.loRaNodes[4].LoRaNic.radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source radioModeChanged
+attr title "Radio mode"
+vector 29 LoRaNetwork_moving.loRaNodes[4].LoRaNic.radio.energyConsumer powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source powerConsumptionChanged
+attr title "Power consumption"
+vector 30 LoRaNetwork_moving.loRaNodes[5].LoRaNic.radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source radioModeChanged
+attr title "Radio mode"
+vector 31 LoRaNetwork_moving.loRaNodes[5].LoRaNic.radio.energyConsumer powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source powerConsumptionChanged
+attr title "Power consumption"
+vector 32 LoRaNetwork_moving.loRaNodes[6].LoRaNic.radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source radioModeChanged
+attr title "Radio mode"
+vector 33 LoRaNetwork_moving.loRaNodes[6].LoRaNic.radio.energyConsumer powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source powerConsumptionChanged
+attr title "Power consumption"
+vector 34 LoRaNetwork_moving.loRaNodes[7].LoRaNic.radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source radioModeChanged
+attr title "Radio mode"
+vector 35 LoRaNetwork_moving.loRaNodes[7].LoRaNic.radio.energyConsumer powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source powerConsumptionChanged
+attr title "Power consumption"
+vector 36 LoRaNetwork_moving.loRaNodes[8].LoRaNic.radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source radioModeChanged
+attr title "Radio mode"
+vector 37 LoRaNetwork_moving.loRaNodes[8].LoRaNic.radio.energyConsumer powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source powerConsumptionChanged
+attr title "Power consumption"
+vector 38 LoRaNetwork_moving.loRaNodes[9].LoRaNic.radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source radioModeChanged
+attr title "Radio mode"
+vector 39 LoRaNetwork_moving.loRaNodes[9].LoRaNic.radio.energyConsumer powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source powerConsumptionChanged
+attr title "Power consumption"
+vector 40 LoRaNetwork_moving.loRaGW_moving[0].LoRaGWNic.radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source radioModeChanged
+attr title "Radio mode"
+vector 41 LoRaNetwork_moving.loRaGW_moving[0].LoRaGWNic.radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source receptionStateChanged
+attr title "Radio reception state"
+vector 42 LoRaNetwork_moving.loRaGW_moving[0].LoRaGWNic.radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "Radio transmission state"
+0	14670 8 0 0 0 0 1 0 0 0 0
+1	14678 8 0 0 0 0 1 0 0 0 0
+2	14686 8 0 0 0 0 1 0 0 0 0
+3	14694 8 0 0 0 0 1 0 0 0 0
+4	14702 8 0 0 0 0 1 0 0 0 0
+5	14710 8 0 0 0 0 1 0 0 0 0
+6	14718 8 0 0 0 0 1 0 0 0 0
+7	14726 8 0 0 0 0 1 0 0 0 0
+8	14734 8 0 0 0 0 1 0 0 0 0
+9	14742 8 0 0 0 0 1 0 0 0 0
+10	14750 36 0 0 0 0 4 0 0 0 0
+11	14786 36 0 0 0 0 4 0 0 0 0
+12	14822 36 0 0 0 0 4 0 0 0 0
+13	14858 36 0 0 0 0 4 0 0 0 0
+14	14894 36 0 0 0 0 4 0 0 0 0
+15	14930 36 0 0 0 0 4 0 0 0 0
+16	14966 36 0 0 0 0 4 0 0 0 0
+17	15002 36 0 0 0 0 4 0 0 0 0
+18	15038 36 0 0 0 0 4 0 0 0 0
+19	15074 36 0 0 0 0 4 0 0 0 0
+20	15110 27 0 0 0 0 3 0 1 1 1
+21	15137 27 0 0 0 0 3 0 0 0 0
+22	15164 27 0 0 0 0 3 0 1 1 1
+23	15191 27 0 0 0 0 3 0 0 0 0
+24	15218 27 0 0 0 0 3 0 1 1 1
+25	15245 27 0 0 0 0 3 0 0 0 0
+26	15272 27 0 0 0 0 3 0 1 1 1
+27	15299 27 0 0 0 0 3 0 0 0 0
+28	15326 27 0 0 0 0 3 0 1 1 1
+29	15353 27 0 0 0 0 3 0 0 0 0
+30	15380 27 0 0 0 0 3 0 1 1 1
+31	15407 27 0 0 0 0 3 0 0 0 0
+32	15434 27 0 0 0 0 3 0 1 1 1
+33	15461 27 0 0 0 0 3 0 0 0 0
+34	15488 27 0 0 0 0 3 0 1 1 1
+35	15515 27 0 0 0 0 3 0 0 0 0
+36	15542 27 0 0 0 0 3 0 1 1 1
+37	15569 27 0 0 0 0 3 0 0 0 0
+38	15596 27 0 0 0 0 3 0 1 1 1
+39	15623 27 0 0 0 0 3 0 0 0 0
+40	15650 27 0 0 0 0 3 0 4 4 16
+41	15677 9 0 0 0 0 1 1 1 1 1
+42	15686 9 0 0 0 0 1 1 1 1 1
+
