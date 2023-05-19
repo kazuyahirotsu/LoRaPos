@@ -4,7 +4,7 @@ import inet.node.inet.Router;
 import inet.node.internetcloud.InternetCloud;
 import flora.LoRaPhy.LoRaMedium;
 import flora.LoraNode.LoRaNode;
-import loraSimulation.LoRaGW_moving;
+import loraSimulation.LoRaGW_straight;
 import inet.node.inet.StandardHost;
 import inet.networklayer.configurator.ipv4.Ipv4NetworkConfigurator;
 import inet.node.ethernet.Eth1G;
@@ -14,7 +14,7 @@ import inet.visualizer.base.SceneVisualizerBase;
 import inet.visualizer.contract.ISceneVisualizer;
 
 @license(LGPL);
-network LoRaNetwork_moving
+network LoRaNetwork_straight
 {
     parameters:
         int numberOfNodes = default(1);
@@ -30,7 +30,7 @@ network LoRaNetwork_moving
         loRaNodes[numberOfNodes]: LoRaNode {
             @display("p=-400,304");
         }
-        loRaGW_moving[numberOfGateways]: LoRaGW_moving {
+        loRaGW_straight[numberOfGateways]: LoRaGW_straight {
             @display("p=-157,238;is=s");
         }
         LoRaMedium: LoRaMedium {
@@ -62,6 +62,6 @@ network LoRaNetwork_moving
         nsRouter.pppg++ <--> Eth1G <--> internetCloud.pppg++;
         for i=0..numberOfGateways-1 {
             internetCloud.pppg++ <--> Eth1G <--> gwRouter[i].pppg++;
-            gwRouter[i].ethg++ <--> Eth1G <--> loRaGW_moving[i].ethg++;
+            gwRouter[i].ethg++ <--> Eth1G <--> loRaGW_straight[i].ethg++;
         }
 }

@@ -1,0 +1,7 @@
+<movement>
+    <set speed="1" angle="45"/>
+	    <repeat n="6">
+	        <forward d="1000"/>
+	        <turn angle="180"/>
+	    </repeat>
+</movement>

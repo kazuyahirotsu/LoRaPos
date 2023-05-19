@@ -18,6 +18,7 @@ package loraSimulation;
 import inet.node.contract.INetworkNode;
 import inet.mobility.static.StationaryMobility;
 import inet.mobility.single.CircleMobility;
+import inet.mobility.single.TurtleMobility;
 import inet.networklayer.common.InterfaceTable;
 import inet.networklayer.contract.INetworkLayer;
 import inet.linklayer.loopback.LoopbackInterface;
