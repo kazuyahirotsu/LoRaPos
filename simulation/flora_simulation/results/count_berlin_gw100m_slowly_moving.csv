@@ -1,0 +1,11 @@
+run,repetition,module,name,value
+General-0-20230519-12:58:40-59336,0,LoRaNetwork_moving.networkServer.app[0],numReceivedFromNode 0,5440
+General-0-20230519-12:58:40-59336,0,LoRaNetwork_moving.networkServer.app[0],numReceivedFromNode 1,5655
+General-0-20230519-12:58:40-59336,0,LoRaNetwork_moving.networkServer.app[0],numReceivedFromNode 2,5867
+General-0-20230519-12:58:40-59336,0,LoRaNetwork_moving.networkServer.app[0],numReceivedFromNode 3,6021
+General-0-20230519-12:58:40-59336,0,LoRaNetwork_moving.networkServer.app[0],numReceivedFromNode 4,6248
+General-0-20230519-12:58:40-59336,0,LoRaNetwork_moving.networkServer.app[0],numReceivedFromNode 5,6418
+General-0-20230519-12:58:40-59336,0,LoRaNetwork_moving.networkServer.app[0],numReceivedFromNode 6,6633
+General-0-20230519-12:58:40-59336,0,LoRaNetwork_moving.networkServer.app[0],numReceivedFromNode 7,6823
+General-0-20230519-12:58:40-59336,0,LoRaNetwork_moving.networkServer.app[0],numReceivedFromNode 8,7043
+General-0-20230519-12:58:40-59336,0,LoRaNetwork_moving.networkServer.app[0],numReceivedFromNode 9,7127

@@ -3,6 +3,7 @@
     <inputs>
         <input pattern="/flora_simulation/loraSimulation/results/n10-gw1-noADR-moving-s0.ini.vec"/>
         <input pattern="/flora_simulation/loraSimulation/results/n10-gw1-noADR-moving-s0.ini.sca"/>
+        <input pattern="results/n10-gw1-noADR-moving-s0.ini.sca"/>
     </inputs>
     <charts/>
 </analysis>

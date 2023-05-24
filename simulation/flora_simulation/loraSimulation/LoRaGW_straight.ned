@@ -18,7 +18,7 @@ package loraSimulation;
 import inet.node.contract.INetworkNode;
 import inet.mobility.static.StationaryMobility;
 import inet.mobility.single.CircleMobility;
-import inet.mobility.single.TurtleMobility;
+import inet.mobility.single.BonnMotionMobility;
 import inet.networklayer.common.InterfaceTable;
 import inet.networklayer.contract.INetworkLayer;
 import inet.linklayer.loopback.LoopbackInterface;
@@ -33,7 +33,7 @@ import inet.common.MessageDispatcher;
 import inet.linklayer.ethernet.contract.IEthernetLayer;
 import inet.protocolelement.contract.IProtocolLayer;
 
-module LoRaGW_moving like INetworkNode
+module LoRaGW_straight like INetworkNode
 {
     parameters:
         @networkNode();
@@ -88,7 +88,7 @@ module LoRaGW_moving like INetworkNode
         interfaceTable: InterfaceTable {
             @display("p=135.36,69.936005");
         }
-        mobility: CircleMobility {
+        mobility: BonnMotionMobility {
             @display("p=135.36,199.656");
         }
         LoRaGWNic: LoRaGWNic {
