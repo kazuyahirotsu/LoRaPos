@@ -2,15 +2,6 @@ from pymavlink import mavutil
 import time
 import sys
 
-# Start a connection listening on a UDP port
-master = mavutil.mavlink_connection('/dev/ttyACM0')
-print("connection initializing")
-# Wait for the first heartbeat 
-# This sets the system and component ID of remote system for the link
-master.wait_heartbeat()
-print("Heartbeat from system (system %u component %u)" % (master.target_system, master.target_component))
-
-
 def request_message_interval(message_id: int, frequency_hz: float):
     """
     Request MAVLink message in a desired frequency,
@@ -29,6 +20,27 @@ def request_message_interval(message_id: int, frequency_hz: float):
         0, 0, 0, 0, # Unused parameters
         0, # Target address of message stream (if message has target address fields). 0: Flight-stack default (recommended), 1: address of requestor, 2: broadcast.
     )
+
+def send_heartbeat(master):
+    if master.mavlink10():
+        master.mav.heartbeat_send(mavutil.mavlink.MAV_TYPE_GCS, mavutil.mavlink.MAV_AUTOPILOT_INVALID,
+                                  0, 0, 0)
+    else:
+        MAV_GROUND = 5
+        MAV_AUTOPILOT_NONE = 4
+        master.mav.heartbeat_send(MAV_GROUND, MAV_AUTOPILOT_NONE)
+
+# Start a connection listening on a USB port
+master = mavutil.mavlink_connection('/dev/ttyACM0', baud=57600)
+print("connection initializing")
+
+# Wait for the first heartbeat 
+# This sets the system and component ID of remote system for the link
+send_heartbeat(master)
+print("heartbeat sent to master")
+master.wait_heartbeat()
+print("Heartbeat from system (system %u component %u)" % (master.target_system, master.target_component))
+
 
 # # Configure AHRS2 message to be sent at 1Hz
 # request_message_interval(mavutil.mavlink.MAVLINK_MSG_ID_AHRS2, 1)
