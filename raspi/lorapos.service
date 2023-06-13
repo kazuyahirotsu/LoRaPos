@@ -1,0 +1,12 @@
+// put this here -> /etc/systemd/system/lorapos.service
+// and sudo start lorapos.service
+
+[Unit]
+Description=gps data fetch for lorapos
+After=multi-user.target
+[Service]
+Type=simple
+Restart=always
+ExecStart=/usr/bin/python /home/kazuya/LoRaPos/raspi/pymavlink_store_info.py
+[Install]
+WantedBy=multi-user.target
