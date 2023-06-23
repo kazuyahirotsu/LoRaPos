@@ -13,12 +13,14 @@ print(rfm9x.ack_retries, rfm9x.spreading_factor, rfm9x.signal_bandwidth, rfm9x.b
 rfm9x.ack_retries = 0
 rfm9x.spreading_factor = 7 
 rfm9x.signal_bandwidth = 250000
+rfm9x.enable_crc = False
 print(rfm9x.ack_retries, rfm9x.spreading_factor, rfm9x.signal_bandwidth)
 
 while True:
     packet = rfm9x.receive()
     # Optionally change the receive timeout from its default of 0.5 seconds:
     packet = rfm9x.receive(timeout=5.0)
+    print("time: ", time.time_ns())
     # If no packet was received during the timeout then None is returned.
     if packet is None:
         # Packet has not been received
