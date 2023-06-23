@@ -21,6 +21,7 @@ print(rfm9x.coding_rate, rfm9x.enable_crc, rfm9x.preamble_length, rfm9x.ack_wait
 while True:
     start_time = time.process_time_ns()
     rfm9x.send(data_to_send)
+    rfm9x.receive()
     finish_time = time.process_time_ns()
-    print("transmission time: ", finish_time - start_time)
+    print("rtt time: ", finish_time - start_time)
     time.sleep(1)
