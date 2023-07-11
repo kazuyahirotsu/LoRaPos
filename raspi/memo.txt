@@ -1,0 +1,5 @@
+rtlsdr_rssi.py: record rssi at 915Mhz with rtl sdr
+rfm9x_receive_aloha.py: record received packets, time and rssi
+pymavlink_store_info.py: get gps data from pixhawk and record them
+
+need to runn these 3 script when testing
