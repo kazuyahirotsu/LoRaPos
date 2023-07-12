@@ -46,7 +46,7 @@ def send_heartbeat(master):
         master.mav.heartbeat_send(MAV_GROUND, MAV_AUTOPILOT_NONE)
 
 # Start a connection listening on a USB port
-master = mavutil.mavlink_connection('/dev/ttyACM0', baud=57600)
+master = mavutil.mavlink_connection('/dev/ttyAMA0', baud=57600)
 print("connection initializing")
 
 # Wait for the first heartbeat 
