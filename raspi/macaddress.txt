@@ -1,0 +1,5 @@
+raspberrypi: b8:27:eb:93:71:35
+raspberrypi2: b8:27:eb:c0:32:22
+raspberrypi3: b8:27:eb:01:82:7b
+raspberrypi4: b8:27:eb:f4:bc:6a
+raspberrypi5: b8:27:eb:09:45:32
