@@ -1,5 +1,5 @@
 // put this here -> /etc/systemd/system/lorapos.service
-// and sudo start lorapos.service
+// and sudo systemctl start lorapos.service
 
 [Unit]
 Description=gps data fetch for lorapos

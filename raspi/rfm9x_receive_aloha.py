@@ -17,8 +17,12 @@ rfm9x.enable_crc = False
 print(rfm9x.ack_retries, rfm9x.spreading_factor, rfm9x.signal_bandwidth)
 
 packets = []
+start_time = time.time_ns()
+f = open(f"/home/kazuya/LoRaPos/raspi/data/lora_module_received_{start_time}.csv", "a")
+f.writelines(f"received_time, packet_text, rssi\n")
 
 while True:
+    f = open(f"/home/kazuya/LoRaPos/raspi/data/lora_module_received_{start_time}.csv", "a")
     packet = rfm9x.receive()
     received_time = time.time_ns()
     print("time: ", received_time)
@@ -26,13 +30,19 @@ while True:
         # Packet has not been received
         print("Received nothing! Listening again...")
     else:
-        # Received a packet!
-        print("Received (raw bytes): {0}".format(packet))
+        try:
+            
+            # Received a packet!
+            print("Received (raw bytes): {0}".format(packet))
 
-        packet_text = str(packet, "ascii")
-        print("Received (ASCII): {0}".format(packet_text))
-        rssi = rfm9x.last_rssi
-        print("Received signal strength: {0} dB".format(rssi))
+            packet_text = str(packet, "ascii")
+            print("Received (ASCII): {0}".format(packet_text))
+            rssi = rfm9x.last_rssi
+            print("Received signal strength: {0} dB".format(rssi))
 
-        packets.append([received_time, packet_text, rssi])
+            packets.append([received_time, packet_text, rssi])
+            f.writelines(f"{received_time}, {packet_text}, {rssi}\n")
+        except:
+            pass
 
+    f.close()

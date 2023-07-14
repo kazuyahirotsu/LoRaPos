@@ -8,7 +8,7 @@ import logging
 
 root_logger= logging.getLogger()
 root_logger.setLevel(logging.DEBUG) # or whatever
-handler = logging.FileHandler('/home/kazuya/LoRaPos/raspi/test.log',  encoding='utf-8') # or whatever
+handler = logging.FileHandler('/home/kazuya/LoRaPos/raspi/data/test.log',  encoding='utf-8') # or whatever
 handler.setFormatter(logging.Formatter('%(asctime)s %(message)s')) # or whatever
 root_logger.addHandler(handler)
 
@@ -46,7 +46,7 @@ def send_heartbeat(master):
         master.mav.heartbeat_send(MAV_GROUND, MAV_AUTOPILOT_NONE)
 
 # Start a connection listening on a USB port
-master = mavutil.mavlink_connection('/dev/ttyACM0', baud=57600)
+master = mavutil.mavlink_connection('/dev/ttyAMA0', baud=57600)
 print("connection initializing")
 
 # Wait for the first heartbeat 
@@ -64,23 +64,30 @@ print("Heartbeat from system (system %u component %u)" % (master.target_system, 
 # request_message_interval(mavutil.mavlink.MAVLINK_MSG_ID_ATTITUDE, 2)
 
 # request_message_interval(mavutil.mavlink.MAVLINK_MSG_ID_GPS_RAW_INT, 5)
-
-
+start_time = time.time_ns()
+f = open(f"/home/kazuya/LoRaPos/raspi/data/pixhawk_gps_{start_time}.csv", "a")
+f.writelines(f"received_time, altitude, lat, lon, alt\n")
 # Get some information !
 while True:
+    f = open(f"/home/kazuya/LoRaPos/raspi/data/pixhawk_gps_{start_time}.csv", "a")
     try:
         # print(master.recv_match(type='ALTITUDE').to_dict()['altitude_local'])
         msg = master.recv_match()
         if msg.get_type() == 'ALTITUDE':
             # print("altitude_local: ", msg.to_dict()['altitude_local'])
             logging.info("altitude_local: " + str(msg.to_dict()['altitude_local']))
+            f.writelines(f"{time.time_ns()}, {msg.to_dict()['altitude_local']}, , , \n")
         elif msg.get_type() == 'GPS_RAW_INT':
             logging.info("lat: " + str(msg.to_dict()['lat']))
             logging.info("lon: " + str(msg.to_dict()['lon']))
             logging.info("alt: " + str(msg.to_dict()['alt']))
+            f.writelines(f"{time.time_ns()}, , {msg.to_dict()['lat']}, {msg.to_dict()['lon']}, {msg.to_dict()['alt']}\n")
             # print("lat: ", msg.to_dict()['lat'])
             # print("lon: ", msg.to_dict()['lon'])
             # print("alt: ", msg.to_dict()['alt'])
     except:
         pass
+    finally:
+        f.close()
+    f.close()
     time.sleep(0.01)
